@@ -310,105 +310,32 @@ nav{
 .dflash{position:fixed;inset:0;background:radial-gradient(circle at var(--cx,50%) var(--cy,50%),rgba(201,168,76,.07) 0%,transparent 65%);pointer-events:none;z-index:9989;opacity:0;animation:dOut .55s ease forwards;}
 @keyframes dOut{0%{opacity:1;}100%{opacity:0;}}
 
-/* ── VISUAL GALLERY ── */
-.vg-tabs{
-  display:flex;border-bottom:1px solid var(--border);
-  margin-bottom:3rem;overflow-x:auto;
-  scrollbar-width:none;
-}
-.vg-tabs::-webkit-scrollbar{display:none;}
-.vg-tab{
-  font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--mid);background:none;border:none;border-bottom:1px solid transparent;
-  padding:.75rem 1.4rem;margin-bottom:-1px;cursor:pointer;
-  white-space:nowrap;transition:color .22s,border-color .22s;
-}
-.vg-tab:hover{color:rgba(201,168,76,.7);}
-.vg-tab.active{color:var(--gold);border-bottom-color:var(--gold);}
-
-/* Spotlight (featured first card) */
-.vg-spotlight{
-  display:grid;grid-template-columns:1fr 2fr;gap:2px;
-  margin-bottom:2px;
-}
-@media(max-width:860px){.vg-spotlight{grid-template-columns:1fr;}}
-
-/* Main grid */
-.vg-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:2px;
-}
-@media(max-width:860px){.vg-grid{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:480px){.vg-grid{grid-template-columns:1fr;}}
-
-/* Card */
-.vg-card{
-  background:var(--card);cursor:pointer;
-  display:flex;flex-direction:column;
-  outline:1px solid var(--border);
-  outline-offset:-1px;
-  transition:outline-color .35s;
-  position:relative;
-}
-.vg-card:hover{outline-color:rgba(201,168,76,.45);}
-.vg-card-img{
-  overflow:hidden;
-  aspect-ratio:2/3;
-  flex-shrink:0;
-}
-.vg-spotlight .vg-card:first-child .vg-card-img{aspect-ratio:auto;flex:1;min-height:420px;background:var(--deep);}
-.vg-spotlight .vg-card:first-child .vg-card-img img{object-fit:contain;}
-.vg-card-img img{
-  width:100%;height:100%;object-fit:cover;display:block;
-  transition:transform .65s cubic-bezier(.16,1,.3,1),filter .4s;
-  filter:brightness(.82) saturate(.8);
-}
-.vg-card:hover .vg-card-img img{transform:scale(1.04);filter:brightness(1) saturate(1);}
-.vg-card-foot{
-  padding:.85rem 1rem .8rem;
+/* ── PAPERS ── */
+.papers-tabs{display:flex;border-bottom:1px solid var(--border);margin-bottom:0;overflow-x:auto;scrollbar-width:none;}
+.papers-tabs::-webkit-scrollbar{display:none;}
+.papers-tab{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);background:none;border:none;border-bottom:1px solid transparent;padding:.75rem 1.4rem;margin-bottom:-1px;cursor:pointer;white-space:nowrap;transition:color .22s,border-color .22s;}
+.papers-tab:hover{color:rgba(201,168,76,.7);}
+.papers-tab.active{color:var(--gold);border-bottom-color:var(--gold);}
+.papers-list{margin-top:0;border-bottom:1px solid var(--border);}
+.paper-row{
+  display:grid;grid-template-columns:2.8rem 1fr auto auto;
+  align-items:center;gap:1.5rem;
+  padding:1.05rem 1rem;
   border-top:1px solid var(--border);
-  background:var(--card);
-  display:flex;flex-direction:column;gap:.28rem;
+  cursor:pointer;position:relative;
+  transition:background .2s;
+  text-decoration:none;color:inherit;
 }
-.vg-pill{
-  font-family:'DM Mono',monospace;font-size:.5rem;letter-spacing:.2em;
-  text-transform:uppercase;color:var(--gold);opacity:.55;
-}
-.vg-title{
-  font-size:.8rem;color:rgba(240,234,216,.82);line-height:1.35;
-  transition:color .25s;
-}
-.vg-card:hover .vg-title{color:var(--gold2);}
-.vg-card.hidden{display:none;}
-
-/* Spotlight right column sub-grid */
-.vg-spotlight-right{
-  display:grid;grid-template-columns:1fr 1fr;gap:2px;
-}
-@media(max-width:860px){.vg-spotlight-right{display:none;}}
-
-/* ── LIGHTBOX ── */
-#lb{
-  position:fixed;inset:0;z-index:10000;
-  background:rgba(4,3,2,.96);backdrop-filter:blur(16px);
-  display:flex;align-items:center;justify-content:center;
-  opacity:0;pointer-events:none;transition:opacity .3s;
-}
-#lb.open{opacity:1;pointer-events:all;}
-#lb-img{max-width:88vw;max-height:90vh;object-fit:contain;border:1px solid var(--border2);box-shadow:0 0 60px rgba(201,168,76,.1);}
-#lb-close{
-  position:absolute;top:1.5rem;right:1.8rem;
-  font-family:'DM Mono',monospace;font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--mid);cursor:pointer;transition:color .2s;border:none;background:none;padding:.4rem;
-}
-#lb-close:hover{color:var(--gold);}
-#lb-cap{position:absolute;bottom:1.6rem;left:50%;transform:translateX(-50%);font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);white-space:nowrap;}
-#lb-prev,#lb-next{
-  position:absolute;top:50%;transform:translateY(-50%);
-  font-family:'DM Mono',monospace;font-size:.64rem;letter-spacing:.12em;
-  color:var(--mid);cursor:pointer;transition:color .2s;border:none;background:none;padding:1rem;
-}
-#lb-prev{left:1rem;}#lb-next{right:1rem;}
-#lb-prev:hover,#lb-next:hover{color:var(--gold);}
+.paper-row::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--gold);transform:scaleY(0);transform-origin:center;transition:transform .35s cubic-bezier(.16,1,.3,1);}
+.paper-row:hover{background:rgba(201,168,76,.03);}
+.paper-row:hover::before{transform:scaleY(1);}
+.paper-num{font-family:'DM Mono',monospace;font-size:.52rem;color:var(--mid);opacity:.4;letter-spacing:.06em;padding-left:.5rem;}
+.paper-title{font-size:.9rem;color:rgba(240,234,216,.88);line-height:1.35;transition:color .22s;}
+.paper-row:hover .paper-title{color:var(--gold2);}
+.paper-tag{font-family:'DM Mono',monospace;font-size:.48rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mid);opacity:.5;white-space:nowrap;}
+.paper-dl{font-size:.75rem;color:var(--gold);opacity:0;transform:translateX(-5px);transition:opacity .22s,transform .22s;}
+.paper-row:hover .paper-dl{opacity:.8;transform:translateX(0);}
+@media(max-width:600px){.paper-row{grid-template-columns:2rem 1fr auto;}.paper-tag{display:none;}}
 
 /* ── FOOTER ── */
 footer{
@@ -443,7 +370,7 @@ footer a:hover{color:var(--gold2);}
     <a href="#stages">Stages</a>
     <a href="#timelines">Timelines</a>
     <a href="#method">Method</a>
-    <a href="#visual">Visual</a>
+    <a href="#papers">Papers</a>
     <a href="#corpus">Corpus</a>
     <a href="https://instagram.com/anthony_vondoom" target="_blank" rel="noopener" class="nav-ig rh">
       <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
@@ -457,7 +384,7 @@ footer a:hover{color:var(--gold2);}
 <div class="hero">
   <div>
     <div class="hero-kicker">A Framework in Cognitive Archaeology</div>
-    <h1 class="hero-title">Deep<br/><em>Symbolic</em><br/>Systems<br/>Model</h1>
+    <h1 class="hero-title">The Deep<br/><em>Symbolic</em><br/>Systems<br/>Model</h1>
     <p class="hero-sub">Civilization does not begin with monuments or writing. It begins with the recursive stabilization of embodied practices into durable symbolic systems across generations.</p>
     <div class="cta-row">
       <a class="btn-primary rh" href="#framework"><span>Explore the framework <span class="arr">→</span></span></a>
@@ -563,7 +490,7 @@ footer a:hover{color:var(--gold2);}
 
 <!-- STATS -->
 <div class="stats rev">
-  <div class="stat"><span class="stat-num" data-c="50">0</span><span class="stat-label">Papers published</span></div>
+  <div class="stat"><span class="stat-num" data-c="62">0</span><span class="stat-label">Papers published</span></div>
   <div class="stat"><span class="stat-num" data-c="5">0</span><span class="stat-label">Civilizations mapped</span></div>
   <div class="stat"><span class="stat-num">1.5M</span><span class="stat-label">Years of symbolic record</span></div>
   <div class="stat"><span class="stat-num" data-c="6">0</span><span class="stat-label">FCP observables</span></div>
@@ -639,104 +566,19 @@ footer a:hover{color:var(--gold2);}
 
 <div class="rule"></div>
 
-<!-- VISUAL RESEARCH -->
-<section class="section rev" id="visual">
-  <div class="sec-hd"><span class="sec-n">05</span><h2 class="sec-t">Visual Research</h2></div>
-  <p style="color:var(--mid);font-size:.95rem;max-width:520px;margin-bottom:2.8rem;line-height:1.85;">Research posters and illustrated explainers from the DSSM corpus. Click any to expand.</p>
-
-  <div class="vg-tabs">
-    <button class="vg-tab active" data-filter="all">All &nbsp;<span style="opacity:.4">19</span></button>
-    <button class="vg-tab" data-filter="framework">Framework &nbsp;<span style="opacity:.4">3</span></button>
-    <button class="vg-tab" data-filter="background">Deep Background &nbsp;<span style="opacity:.4">3</span></button>
-    <button class="vg-tab" data-filter="civilizations">Civilizations &nbsp;<span style="opacity:.4">8</span></button>
-    <button class="vg-tab" data-filter="concepts">Concepts &nbsp;<span style="opacity:.4">5</span></button>
+<!-- PAPERS -->
+<section class="section rev" id="papers">
+  <div class="sec-hd"><span class="sec-n">05</span><h2 class="sec-t">The Papers</h2></div>
+  <p style="color:var(--mid);font-size:.95rem;max-width:520px;margin-bottom:2.8rem;line-height:1.85;">62 papers spanning cognitive archaeology, symbolic systems theory, and civilizational analysis. Click any to open.</p>
+  <div class="papers-tabs" id="papers-tabs">
+    <button class="papers-tab active" data-filter="all">All &nbsp;<span style="opacity:.4">62</span></button>
+    <button class="papers-tab" data-filter="foundation">Foundation &nbsp;<span style="opacity:.4">7</span></button>
+    <button class="papers-tab" data-filter="civilizations">Civilizations &nbsp;<span style="opacity:.4">14</span></button>
+    <button class="papers-tab" data-filter="archaeology">Archaeology &nbsp;<span style="opacity:.4">7</span></button>
+    <button class="papers-tab" data-filter="theory">Theory &nbsp;<span style="opacity:.4">22</span></button>
+    <button class="papers-tab" data-filter="extended">Extended &nbsp;<span style="opacity:.4">12</span></button>
   </div>
-
-  <!-- Spotlight row -->
-  <div class="vg-spotlight" id="vg-spotlight">
-    <div class="vg-card" data-cat="framework" data-title="The Deep Symbolic Systems Model — The Hidden Grammar of Civilization">
-      <div class="vg-card-img"><img src="img/dssm-overview.jpg" alt="DSSM Overview" loading="lazy"/></div>
-      <div class="vg-card-foot"><div class="vg-pill">Framework</div><div class="vg-title">The Deep Symbolic Systems Model</div></div>
-    </div>
-    <div class="vg-spotlight-right">
-      <div class="vg-card" data-cat="framework" data-title="DSSM for Beginners">
-        <div class="vg-card-img"><img src="img/dssm-beginners.jpg" alt="DSSM for Beginners" loading="lazy"/></div>
-        <div class="vg-card-foot"><div class="vg-pill">Framework</div><div class="vg-title">DSSM for Beginners</div></div>
-      </div>
-      <div class="vg-card" data-cat="framework" data-title="Global Synthesis: The Universal Civilizational Sequence">
-        <div class="vg-card-img"><img src="img/global-synthesis.jpg" alt="Global Synthesis" loading="lazy"/></div>
-        <div class="vg-card-foot"><div class="vg-pill">Framework</div><div class="vg-title">Global Synthesis</div></div>
-      </div>
-      <div class="vg-card" data-cat="background" data-title="Cognitive Preconditions of Civilization">
-        <div class="vg-card-img"><img src="img/cognitive-preconditions.jpg" alt="Cognitive Preconditions" loading="lazy"/></div>
-        <div class="vg-card-foot"><div class="vg-pill">Deep Background</div><div class="vg-title">Cognitive Preconditions</div></div>
-      </div>
-      <div class="vg-card" data-cat="background" data-title="Neural Evolution and Symbolic Stabilization">
-        <div class="vg-card-img"><img src="img/neural-evolution.jpg" alt="Neural Evolution" loading="lazy"/></div>
-        <div class="vg-card-foot"><div class="vg-pill">Deep Background</div><div class="vg-title">Neural Evolution & Symbolic Stabilization</div></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Main grid -->
-  <div class="vg-grid" id="vg-grid" style="margin-top:2px;">
-    <div class="vg-card" data-cat="background" data-title="Cognitive Continuities Across Human and AI DSSMs">
-      <div class="vg-card-img"><img src="img/cognitive-continuities-ai.jpg" alt="Human and AI DSSMs" loading="lazy"/></div>
-      <div class="vg-card-foot"><div class="vg-pill">Deep Background</div><div class="vg-title">Human & AI DSSMs</div></div>
-    </div>
-    <div class="vg-card" data-cat="civilizations" data-title="Cognitive Foundations of Early Egyptian Civilization">
-      <div class="vg-card-img"><img src="img/egypt-foundations.jpg" alt="Egypt" loading="lazy"/></div>
-      <div class="vg-card-foot"><div class="vg-pill">Civilization</div><div class="vg-title">Egypt</div></div>
-    </div>
-    <div class="vg-card" data-cat="civilizations" data-title="Cognitive Foundations of Early Mesopotamian Civilization">
-      <div class="vg-card-img"><img src="img/mesopotamia-foundations.jpg" alt="Mesopotamia" loading="lazy"/></div>
-      <div class="vg-card-foot"><div class="vg-pill">Civilization</div><div class="vg-title">Mesopotamia</div></div>
-    </div>
-    <div class="vg-card" data-cat="civilizations" data-title="Vinca Culture: Europe's First Stabilized Symbolic System">
-      <div class="vg-card-img"><img src="img/vinca-culture.jpg" alt="Vinca Culture" loading="lazy"/></div>
-      <div class="vg-card-foot"><div class="vg-pill">Civilization</div><div class="vg-title">Vinca Culture</div></div>
-    </div>
-    <div class="vg-card" data-cat="civilizations" data-title="Vinca Symbols and Early Symbolic Transmission">
-      <div class="vg-card-img"><img src="img/vinca-symbols.jpg" alt="Vinca Symbols" loading="lazy"/></div>
-      <div class="vg-card-foot"><div class="vg-pill">Civilization</div><div class="vg-title">Vinca Symbols</div></div>
-    </div>
-    <div class="vg-card" data-cat="civilizations" data-title="Deep Symbolic Stabilization in Sri Lanka">
-      <div class="vg-card-img"><img src="img/sri-lanka.jpg" alt="Sri Lanka" loading="lazy"/></div>
-      <div class="vg-card-foot"><div class="vg-pill">Civilization</div><div class="vg-title">Sri Lanka</div></div>
-    </div>
-    <div class="vg-card" data-cat="civilizations" data-title="East Asia: Portable and Craft-Based Pathway">
-      <div class="vg-card-img"><img src="img/east-asia.jpg" alt="East Asia" loading="lazy"/></div>
-      <div class="vg-card-foot"><div class="vg-pill">Civilization</div><div class="vg-title">East Asia</div></div>
-    </div>
-    <div class="vg-card" data-cat="civilizations" data-title="Mesoamerica: Distributed Network Pathway">
-      <div class="vg-card-img"><img src="img/mesoamerica.jpg" alt="Mesoamerica" loading="lazy"/></div>
-      <div class="vg-card-foot"><div class="vg-pill">Civilization</div><div class="vg-title">Mesoamerica</div></div>
-    </div>
-    <div class="vg-card" data-cat="civilizations" data-title="Indus Valley Civilization">
-      <div class="vg-card-img"><img src="img/indus-valley.jpg" alt="Indus Valley" loading="lazy"/></div>
-      <div class="vg-card-foot"><div class="vg-pill">Civilization</div><div class="vg-title">Indus Valley</div></div>
-    </div>
-    <div class="vg-card" data-cat="concepts" data-title="Before Writing">
-      <div class="vg-card-img"><img src="img/before-writing.jpg" alt="Before Writing" loading="lazy"/></div>
-      <div class="vg-card-foot"><div class="vg-pill">Concept</div><div class="vg-title">Before Writing</div></div>
-    </div>
-    <div class="vg-card" data-cat="concepts" data-title="Dawn of Writing">
-      <div class="vg-card-img"><img src="img/dawn-of-writing.jpg" alt="Dawn of Writing" loading="lazy"/></div>
-      <div class="vg-card-foot"><div class="vg-pill">Concept</div><div class="vg-title">Dawn of Writing</div></div>
-    </div>
-    <div class="vg-card" data-cat="concepts" data-title="Technology as Fossilized Ritual">
-      <div class="vg-card-img"><img src="img/technology-ritual.jpg" alt="Technology as Fossilized Ritual" loading="lazy"/></div>
-      <div class="vg-card-foot"><div class="vg-pill">Concept</div><div class="vg-title">Technology as Fossilized Ritual</div></div>
-    </div>
-    <div class="vg-card" data-cat="concepts" data-title="From Symbols to Protocols">
-      <div class="vg-card-img"><img src="img/symbols-to-protocols.jpg" alt="From Symbols to Protocols" loading="lazy"/></div>
-      <div class="vg-card-foot"><div class="vg-pill">Concept</div><div class="vg-title">From Symbols to Protocols</div></div>
-    </div>
-    <div class="vg-card" data-cat="concepts" data-title="War is Not Inevitable — It is a Breakdown">
-      <div class="vg-card-img"><img src="img/war-breakdown.jpg" alt="War is Not Inevitable" loading="lazy"/></div>
-      <div class="vg-card-foot"><div class="vg-pill">Concept</div><div class="vg-title">War is Not Inevitable</div></div>
-    </div>
-  </div>
+  <div class="papers-list" id="papers-list"></div>
 </section>
 
 <div class="rule"></div>
@@ -772,15 +614,6 @@ footer a:hover{color:var(--gold2);}
 </section>
 
 </div><!-- /wrap -->
-
-<!-- LIGHTBOX -->
-<div id="lb">
-  <button id="lb-close">✕ Close</button>
-  <button id="lb-prev">← Prev</button>
-  <img id="lb-img" src="" alt=""/>
-  <button id="lb-next">Next →</button>
-  <div id="lb-cap"></div>
-</div>
 
 <footer>
   <p>Deep Symbolic Systems Model &nbsp;·&nbsp; <a href="https://orcid.org/0009-0003-4953-1427" target="_blank" rel="noopener">Anthony Vondoom</a> &nbsp;·&nbsp; Independent Researcher &nbsp;·&nbsp; © 2026</p>
@@ -967,62 +800,101 @@ const bObs=new IntersectionObserver(entries=>{
 },{threshold:.15});
 document.querySelectorAll('.chart').forEach(el=>bObs.observe(el));
 
-// ══ GALLERY FILTER ══
-const vgTabs=document.querySelectorAll('.vg-tab');
-const vgCards=document.querySelectorAll('.vg-card');
-const vgSpotlight=document.getElementById('vg-spotlight');
-const vgGrid=document.getElementById('vg-grid');
+// ══ PAPERS ══
+const PAPERS=[
+  // Foundation
+  {title:'DSSM: Core Framework',cat:'foundation',file:'1 DSSM Core Revised v9 fixed.docx'},
+  {title:'Cognitive Preconditions for the Deep Symbolic Systems Model',cat:'foundation',file:'2 Cognitive Preconditions for the Deep Symbolic Systems Model.docx'},
+  {title:'The DSSM: Canonical Model for Macro-Regions',cat:'foundation',file:'8 The Deep Symbolic Systems Model cannonical model for macro regions.docx'},
+  {title:'DSSM for Beginners',cat:'foundation',file:'17 DSSM for Beginners.docx'},
+  {title:'DSSM Toolkit',cat:'foundation',file:'20 DSSM toolkit.docx'},
+  {title:'DSSM Toolkit v1.1',cat:'foundation',file:'20_DSSM_Toolkit_v1.1.docx'},
+  {title:'Global Synthesis: Deep Symbolic Stabilization Across Early Civilizations',cat:'foundation',file:'9 Deep Symbolic Stabilization Across Early Civilizations GLOBAL SYNTHESIS .docx'},
+  // Civilizations
+  {title:'Deep Symbolic Stabilization Along the Nile',cat:'civilizations',file:'3 Deep Symbolic Stabilization Along the Nile.docx'},
+  {title:'Deep Symbolic Stabilization Along the Tigris and Euphrates',cat:'civilizations',file:'4 Deep Symbolic Stabilization Along the Tigris and Euphrates.docx'},
+  {title:'Deep Symbolic Stabilization in East Asia',cat:'civilizations',file:'5 Deep Symbolic Stabilization in East Asia.docx'},
+  {title:'Deep Symbolic Stabilization in Prehistoric Mesoamerica',cat:'civilizations',file:'6 Deep Symbolic Stabilization in Prehistoric Mesoamerica.docx'},
+  {title:'Deep Symbolic Stabilization in the Indus Valley',cat:'civilizations',file:'7 Deep Symbolic Stabilization in the Indus Valley Region.docx'},
+  {title:'Symbolic Continuity Without Monumentality: Sri Lanka',cat:'civilizations',file:'10 Symbolic Continuity Without Monumentality, a sri lanka based dssm case study.docx'},
+  {title:'Cognitive Preconditions of Early Egyptian Civilisation',cat:'civilizations',file:'12 Cognitive preconditions of early Egyptian civilisation IWNW .docx'},
+  {title:'Deep Symbolic Stabilization in Sri Lanka',cat:'civilizations',file:'29 Deep Symbolic Stabilization in Sri Lanka  .docx'},
+  {title:'Mehrgarh Culture and the Origins of Deep Symbolic Stabilization',cat:'civilizations',file:'30 Mehrgarh Culture and the Origins of Deep Symbolic Stabilization.docx'},
+  {title:'Cognitive Foundations of Early Mesopotamian Civilization',cat:'civilizations',file:'31 Cognitive Foundations of Early Mesopotamian Civilization.docx'},
+  {title:'Vinča Culture and the Origins of Deep Symbolic Stabilization',cat:'civilizations',file:'32 Vinca Culture and the Origins of Deep Symbolic Stabilization.docx'},
+  {title:'Vinča Symbols and Early Symbolic Transmission',cat:'civilizations',file:'33 Vinca Symbols and Early Symbolic Transmission.docx'},
+  {title:'Cognitive Foundations of Early Indus Valley Civilization',cat:'civilizations',file:'34 Cognitive Foundations of Early Indus Valley Civilization.docx'},
+  {title:'Vinča Symbols, Distributed Symbolic Stabilization, and the Contingent Emergence of Writing',cat:'civilizations',file:'37 Vinča Symbols, Distributed Symbolic Stabilization, and the Contingent Emergence of Writing  .docx'},
+  // Archaeology
+  {title:'DSSM Analysis: Bruniquel Cave',cat:'archaeology',file:'23 DSSM Analysis Report Bruniquel Cave.docx'},
+  {title:'DSSM Analysis: Omo Kibish',cat:'archaeology',file:'24 DSSM Analysis Report Omo Kibish.docx'},
+  {title:'DSSM Analysis: Blombos Cave',cat:'archaeology',file:'25 DSSM Analysis Report blombos cave .docx'},
+  {title:'DSSM Analysis: Sulawesi Cave Art (≥67.8 ka)',cat:'archaeology',file:'35 DSSM Analysis Report- Sulawesi Cave Art Anchor Assemblage (≥67.8 ka).docx'},
+  {title:'Indonesia\'s Deep-Time Cave Art: A DSSM Stress Test',cat:'archaeology',file:'36 Indonesia\'s Deep-Time Cave Art as a DSSM Stress Test.docx'},
+  {title:'From Bruniquel to Blombos',cat:'archaeology',file:'26 From Bruniquel to Blombos.docx'},
+  {title:'From Bruniquel to Blombos: European Societies',cat:'archaeology',file:'26 From Bruniquel to Blombos european societies draft.docx'},
+  // Theory
+  {title:'Neural Evolution and Symbolic Stabilization',cat:'theory',file:'11 Neural Evolution and Symbolic Stabilization.docx'},
+  {title:'Technology as Fossilized Ritual',cat:'theory',file:'13 Technology as Fossilized Ritual.docx'},
+  {title:'From Fossilized Ritual to Fossilized Power',cat:'theory',file:'14 From Fossilized Ritual to Fossilized Power.docx'},
+  {title:'From Symbols to Protocols',cat:'theory',file:'15 From Symbols to Protocols.docx'},
+  {title:'From Fossilized Ritual to Industrial Protocols',cat:'theory',file:'16 From Fossilized Ritual to Industrial Protocols.docx'},
+  {title:'War Is Not Inevitable: It is a Breakdown',cat:'theory',file:'18 War Is Not Inevitable. It is a Breakdown .docx'},
+  {title:'Cognitive Continuities Across Human and AI DSSMs',cat:'theory',file:'19 Cognitive Continuities Across Human and AI DSSMs.docx'},
+  {title:'The NEG II Woman–Goose Figurine',cat:'theory',file:'21 The NEG II Woman–Goose Figurine .docx'},
+  {title:'From Petals to Patterns',cat:'theory',file:'22 From Petals to Patterns.docx'},
+  {title:'Before Writing',cat:'theory',file:'27 BEFORE WRITING.docx'},
+  {title:'Dawn of Writing',cat:'theory',file:'28 dawn of writing .docx'},
+  {title:'From Ritual to Protocol Power',cat:'theory',file:'38 From Ritual to Protocol Power.docx'},
+  {title:'The World as Fossilized Power',cat:'theory',file:'40 The World as Fossilized Power.docx'},
+  {title:'Civilization is Rehearsed',cat:'theory',file:'41 civilization is rehearsed.docx'},
+  {title:'When the Substrate Breaks',cat:'theory',file:'44 _when_the_substrate_breaks.docx'},
+  {title:'Heritage-Based Alignment',cat:'theory',file:'54 Heritage-Based Alignment.docx'},
+  {title:'Memory Made Stone',cat:'theory',file:'56 MEMORY MADE STONE .docx'},
+  {title:'Symbolic Depth Without Vessel',cat:'theory',file:'53 Symbolic_Depth_Without_Vessel_Vondoom_2026_1.docx'},
+  {title:'Manufactured Consent Architecture',cat:'theory',file:'58_manufactured_consent_architecture.docx'},
+  {title:'Sky as Shared Referent',cat:'theory',file:'59 Sky_as_Shared_Referent_Vondoom_v3_FINAL.docx'},
+  {title:'Building Eternity: Ramesses II',cat:'theory',file:'57 Building_Eternity_Ramesses_II_Vondoom_6.docx'},
+  {title:'The Great Pyramid of Khufu',cat:'theory',file:'61 The_Great_Pyramid_of_Khufu_Vondoom_2026_4.docx'},
+  {title:'The Eternal Mother',cat:'theory',file:'60 eternal_mother_complete.docx'},
+  {title:'Civilization is Rehearsed (Final)',cat:'theory',file:'55 civilization_is_Rehearshed FINAL.docx'},
+  // Extended
+  {title:'Netjeru',cat:'extended',file:'42 netjeru_paper.docx'},
+  {title:'Netjeru: Cycle I',cat:'extended',file:'43 netjeru_cycle1_paper43.docx'},
+  {title:'The Council: Gulf',cat:'extended',file:'45_council_gulf.docx'},
+  {title:'Eye of Horus: Rewritten',cat:'extended',file:'46 FINAL Eye_of_Horus_Rewritten.docx'},
+  {title:'Netjeru v6',cat:'extended',file:'47 NETJERU_v6.docx'},
+  {title:'The Council',cat:'extended',file:'48 THE_COUNCIL.docx'},
+  {title:'The Council: Validation Paper',cat:'extended',file:'49 Council_Validation_Paper.docx'},
+  {title:'Netjeru: Validation Paper',cat:'extended',file:'50 NETJERU_Validation_Paper.docx'},
+  {title:'Rehearsed Sacred',cat:'extended',file:'51_rehearsed_sacred_final.docx'},
+  {title:'Taş Tepeler',cat:'extended',file:'52 TasTepeler v2.docx'},
+  {title:'Eye of Horus (rewritten)',cat:'extended',file:'46 FINAL Eye_of_Horus_Rewritten.docx'},
+  {title:'Symbolic Depth Without Vessel',cat:'extended',file:'53 Symbolic_Depth_Without_Vessel_Vondoom_2026_1.docx'},
+];
 
-vgTabs.forEach(tab=>{
-  tab.addEventListener('click',()=>{
-    vgTabs.forEach(t=>t.classList.remove('active'));
-    tab.classList.add('active');
-    const f=tab.dataset.filter;
-    if(f==='all'){
-      vgSpotlight.style.display='';
-      vgCards.forEach(c=>c.classList.remove('hidden'));
-    } else {
-      vgSpotlight.style.display='none';
-      vgCards.forEach(c=>c.classList.toggle('hidden',c.dataset.cat!==f));
-    }
-  });
-});
+const CAT_LABELS={foundation:'Foundation',civilizations:'Civilizations',archaeology:'Archaeology',theory:'Theory',extended:'Extended'};
 
-// ══ LIGHTBOX ══
-const lb=document.getElementById('lb');
-const lbImg=document.getElementById('lb-img');
-const lbCap=document.getElementById('lb-cap');
-let lbVisible=[],lbIdx=0;
-
-function lbOpen(items,idx){
-  lbVisible=items;lbIdx=idx;
-  lbImg.src=items[idx].querySelector('img').src;
-  lbCap.textContent=items[idx].dataset.title||'';
-  lb.classList.add('open');
-  document.body.style.overflow='hidden';
+function renderPapers(filter){
+  const list=document.getElementById('papers-list');
+  const data=filter==='all'?PAPERS:PAPERS.filter(p=>p.cat===filter);
+  list.innerHTML=data.map((p,i)=>`
+    <a class="paper-row" href="papers/${encodeURIComponent(p.file)}" target="_blank">
+      <span class="paper-num">${String(i+1).padStart(2,'0')}</span>
+      <span class="paper-title">${p.title}</span>
+      <span class="paper-tag">${CAT_LABELS[p.cat]||p.cat}</span>
+      <span class="paper-dl">↗</span>
+    </a>
+  `).join('');
 }
-function lbClose(){lb.classList.remove('open');document.body.style.overflow='';}
-function lbGo(dir){
-  lbIdx=(lbIdx+dir+lbVisible.length)%lbVisible.length;
-  lbImg.src=lbVisible[lbIdx].querySelector('img').src;
-  lbCap.textContent=lbVisible[lbIdx].dataset.title||'';
-}
+renderPapers('all');
 
-vgCards.forEach(card=>{
-  card.addEventListener('click',()=>{
-    const visible=[...vgCards].filter(c=>!c.classList.contains('hidden'));
-    lbOpen(visible,visible.indexOf(card));
-  });
-});
-document.getElementById('lb-close').addEventListener('click',lbClose);
-document.getElementById('lb-prev').addEventListener('click',()=>lbGo(-1));
-document.getElementById('lb-next').addEventListener('click',()=>lbGo(1));
-lb.addEventListener('click',e=>{if(e.target===lb)lbClose();});
-document.addEventListener('keydown',e=>{
-  if(!lb.classList.contains('open'))return;
-  if(e.key==='Escape')lbClose();
-  if(e.key==='ArrowLeft')lbGo(-1);
-  if(e.key==='ArrowRight')lbGo(1);
+document.getElementById('papers-tabs').addEventListener('click',e=>{
+  const tab=e.target.closest('.papers-tab');
+  if(!tab)return;
+  document.querySelectorAll('.papers-tab').forEach(t=>t.classList.remove('active'));
+  tab.classList.add('active');
+  renderPapers(tab.dataset.filter);
 });
 </script>
 </body>
