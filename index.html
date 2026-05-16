@@ -346,6 +346,38 @@ nav{
 @media(max-width:700px){.paper-row{grid-template-columns:2rem 1fr auto;}.paper-tag{display:none;}}
 @media(max-width:480px){.paper-desc{font-size:.74rem;}}
 
+/* ── STAGES EXPANDED ── */
+.stages-intro{font-size:.95rem;color:rgba(240,234,216,.72);line-height:1.85;max-width:760px;margin-bottom:2.8rem;}
+.s-evidence{font-size:.68rem;color:rgba(240,234,216,.35);line-height:1.5;margin-top:.95rem;font-family:'DM Mono',monospace;letter-spacing:.02em;border-top:1px solid rgba(201,168,76,.07);padding-top:.75rem;}
+.s-evidence::before{content:'↳ ';color:var(--gold);opacity:.35;}
+
+/* ── TIMELINES EXPANDED ── */
+.tl-intro{font-size:.95rem;color:rgba(240,234,216,.72);line-height:1.85;max-width:760px;margin-bottom:2.4rem;}
+.pathway-guide{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);margin-bottom:2rem;}
+@media(max-width:620px){.pathway-guide{grid-template-columns:1fr;}}
+.pw{background:var(--black);padding:1.2rem 1.5rem;display:flex;flex-direction:column;gap:.28rem;}
+.pw-lbl{font-family:'DM Mono',monospace;font-size:.47rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);opacity:.42;}
+.pw-name{font-size:.84rem;color:var(--white);font-weight:400;line-height:1.3;}
+.pw-desc{font-size:.74rem;color:rgba(240,234,216,.5);line-height:1.55;}
+.neg-cases{margin-top:1.6rem;border:1px solid var(--border);}
+.neg-hd{font-family:'DM Mono',monospace;font-size:.5rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);opacity:.4;padding:.9rem 1.5rem;border-bottom:1px solid var(--border);background:var(--card);}
+.neg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);}
+@media(max-width:720px){.neg-grid{grid-template-columns:1fr;}}
+.neg-item{background:var(--black);padding:1.5rem 1.5rem;}
+.neg-civ{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--mid);margin-bottom:.55rem;}
+.neg-reason{font-size:.76rem;color:rgba(240,234,216,.45);line-height:1.65;}
+
+/* ── METHOD EXPANDED ── */
+.fcp-intro{font-size:.93rem;color:rgba(240,234,216,.72);line-height:1.85;max-width:760px;margin-bottom:1.4rem;}
+.fcp-intro strong{color:rgba(232,201,106,.85);font-weight:400;}
+.fcp-intro+.fcp-intro{margin-bottom:2.8rem;}
+.fcp-threshold{display:flex;align-items:flex-start;gap:2rem;padding:1.8rem 2rem;border:1px solid var(--border);background:var(--card);margin-top:1.4rem;position:relative;overflow:hidden;}
+.fcp-threshold::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+.fcp-t-num{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:900;line-height:1;flex-shrink:0;background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.fcp-t-label{font-family:'DM Mono',monospace;font-size:.48rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);opacity:.5;margin-bottom:.55rem;}
+.fcp-t-text{font-size:.82rem;color:rgba(240,234,216,.65);line-height:1.72;}
+@media(max-width:600px){.fcp-threshold{flex-direction:column;gap:1rem;}}
+
 /* ── FOOTER ── */
 footer{
   border-top:1px solid var(--border);padding:2rem 3rem;
@@ -537,11 +569,40 @@ footer a:hover{color:var(--gold2);}
 <!-- STAGES -->
 <section class="section rev" id="stages">
   <div class="sec-hd"><span class="sec-n">02</span><h2 class="sec-t">Four Stages</h2></div>
+  <p class="stages-intro">The DSSM identifies four sequential stages through which every symbolic system must pass before producing the forms we recognize as civilization — writing, monuments, law. These are not optional phases. Every civilization the framework has examined follows this sequence. The sequence itself is the argument.</p>
   <div class="stages">
-    <div class="stage rh"><div class="stage-glow"></div><div class="s-num">01</div><div class="s-name">Embodied Symbolic Familiarity</div><div class="s-desc">Repeated gestures, spatial orientation, and embodied ritual form the earliest symbolic substrate. Pre-linguistic, pre-monumental, but structurally significant.</div><div class="s-tag">Origin substrate</div></div>
-    <div class="stage rh"><div class="stage-glow"></div><div class="s-num">02</div><div class="s-name">Cognitive Offloading</div><div class="s-desc">Symbolic load distributes into objects, spaces, and bodies. Memory externalizes into the environment. The world becomes a mnemonic architecture.</div><div class="s-tag">Distributed memory</div></div>
-    <div class="stage rh"><div class="stage-glow"></div><div class="s-num">03</div><div class="s-name">Institutional Emergence</div><div class="s-desc">At ~500 individuals, symbolic systems cross a stabilization threshold. Protocols calcify. Repeated practice becomes enforced structure.</div><div class="s-tag">Threshold ~500 individuals</div></div>
-    <div class="stage rh"><div class="stage-glow"></div><div class="s-num">04</div><div class="s-name">Monumental Externalization</div><div class="s-desc">Writing, architecture, and codified law emerge as visible outputs — late-stage crystallizations of symbolic infrastructure already millennia in the making.</div><div class="s-tag">Late-stage output</div></div>
+    <div class="stage rh">
+      <div class="stage-glow"></div>
+      <div class="s-num">01</div>
+      <div class="s-name">Embodied Symbolic Familiarity</div>
+      <div class="s-desc">It begins not with art or religion, but with repetition. The same gesture at the same threshold. The same body orientation at the same ritual moment. The same sequence of acts, season after season, generation after generation — until the behavior stops being voluntary and becomes structural. The environment begins to encode behavior before anyone decides to build anything.</div>
+      <div class="s-evidence">ochre deposits, burial orientation patterns, spatial clustering of activity, wear traces on surfaces, body-relative positioning in site layouts</div>
+      <div class="s-tag">Origin substrate</div>
+    </div>
+    <div class="stage rh">
+      <div class="stage-glow"></div>
+      <div class="s-num">02</div>
+      <div class="s-name">Cognitive Offloading</div>
+      <div class="s-desc">When what a community must remember exceeds what individual memory can reliably carry, memory distributes into the environment. The pot holds the mark. The threshold holds the gesture. The body carries the tattoo. The world becomes a mnemonic architecture — not metaphorically, but literally. Memory is no longer biological. It is material. And material lasts longer than any individual.</div>
+      <div class="s-evidence">portable symbolic anchors (figurines, marked stones), craft repetition across generations, patterned spatial reuse, cross-media symbolic consistency</div>
+      <div class="s-tag">Distributed memory</div>
+    </div>
+    <div class="stage rh">
+      <div class="stage-glow"></div>
+      <div class="s-num">03</div>
+      <div class="s-name">Institutional Emergence</div>
+      <div class="s-desc">At approximately 500 individuals, interpersonal trust networks break down. Shared practice alone can no longer hold the system together. What was voluntary repetition becomes enforced protocol. The first institutions appear — not governments, not laws, but symbolic enforcement mechanisms. This is the pivot point of the entire model. Everything that follows is a consequence of this threshold crossing.</div>
+      <div class="s-evidence">cross-site standardization, redistribution of symbolic goods, spatial role separation, evidence of punished deviation, specialist production</div>
+      <div class="s-tag">Threshold ~500 individuals</div>
+    </div>
+    <div class="stage rh">
+      <div class="stage-glow"></div>
+      <div class="s-num">04</div>
+      <div class="s-name">Monumental Externalization</div>
+      <div class="s-desc">The pyramid arrives last, not first. By the time the first stone is cut, the symbolic system it celebrates has been running for centuries — sometimes millennia. Writing, monumental architecture, and codified law are not inventions. They are receipts. They make the pre-existing symbolic infrastructure legible to the civilization itself, and to archaeologists 5,000 years later. The monument is a late-stage output, not an origin.</div>
+      <div class="s-evidence">monumental construction, writing systems, standardized weights and measures, bureaucratic records, codified law, named authority</div>
+      <div class="s-tag">Late-stage output</div>
+    </div>
   </div>
 </section>
 
@@ -550,14 +611,58 @@ footer a:hover{color:var(--gold2);}
 <!-- TIMELINES -->
 <section class="section rev" id="timelines">
   <div class="sec-hd"><span class="sec-n">03</span><h2 class="sec-t">Saturation Timelines</h2></div>
-  <div class="tl-grid">
-    <div class="tl-row rh"><div class="tl-bar"></div><div><div class="tl-civ">Egypt</div><div class="tl-det">Axial-River / Stone-Anchor pathway</div></div><div class="tl-date">~12,500 BCE</div></div>
-    <div class="tl-row rh"><div class="tl-bar"></div><div><div class="tl-civ">Mesopotamia</div><div class="tl-det">Axial-River / Stone-Anchor pathway</div></div><div class="tl-date">~8,000 BCE</div></div>
-    <div class="tl-row rh"><div class="tl-bar"></div><div><div class="tl-civ">East Asia</div><div class="tl-det">Portable / Craft-based pathway</div></div><div class="tl-date">~6,000 BCE</div></div>
-    <div class="tl-row rh"><div class="tl-bar"></div><div><div class="tl-civ">Indus Valley</div><div class="tl-det">Infrastructural Embedding pathway</div></div><div class="tl-date">~5,500 BCE</div></div>
-    <div class="tl-row rh"><div class="tl-bar"></div><div><div class="tl-civ">Mesoamerica</div><div class="tl-det">Distributed / Network pathway</div></div><div class="tl-date">~4,000 BCE</div></div>
-    <div class="tl-row" style="background:var(--card);"><div class="tl-bar"></div><div><div class="tl-civ" style="color:var(--mid);font-size:.9rem;">Negative cases</div><div class="tl-det" style="max-width:320px;line-height:1.55;">Australia (deliberate equilibrium) · Sub-Saharan Africa (Stage III absent) · Late Neolithic Europe (partial, delayed)</div></div><div class="tl-date" style="color:var(--mid);">—</div></div>
+  <p class="tl-intro">These dates mark <em>symbolic saturation depth</em> — the earliest point at which the DSSM framework can confirm sufficient symbolic infrastructure to sustain the Stage III threshold crossing. They are not the start of each civilization's "history." They are when the archaeological record first shows the conditions that would produce, centuries or millennia later, what history books call a civilization. The monument comes last.</p>
+  <p class="tl-intro" style="margin-bottom:2.4rem;">Each civilization reached saturation through a distinct material pathway — the same underlying logic, different physical substrates.</p>
+
+  <div class="pathway-guide">
+    <div class="pw">
+      <span class="pw-lbl">Pathway A</span>
+      <span class="pw-name">Axial-River / Stone-Anchor</span>
+      <span class="pw-desc">Symbolic stabilization through fixed monumental sites anchored along river corridors. Spatial permanence does the work that writing will later do. Egypt and Mesopotamia.</span>
+    </div>
+    <div class="pw">
+      <span class="pw-lbl">Pathway B</span>
+      <span class="pw-name">Portable / Craft-based</span>
+      <span class="pw-desc">Stabilization through portable symbolic objects and craft traditions rather than fixed monuments. The jade network carries what the stone temple cannot. East Asia.</span>
+    </div>
+    <div class="pw">
+      <span class="pw-lbl">Pathway C</span>
+      <span class="pw-name">Infrastructural Embedding</span>
+      <span class="pw-desc">Symbolic load encoded into standardized physical infrastructure — drainage systems, brick dimensions, weights and measures. The city itself is the text. Indus Valley.</span>
+    </div>
+    <div class="pw">
+      <span class="pw-lbl">Pathway D</span>
+      <span class="pw-name">Distributed / Network</span>
+      <span class="pw-desc">Stabilization through a web of shared ceremonial practice distributed across sites rather than concentrated at a single anchor. No capital. No monument. A network. Mesoamerica.</span>
+    </div>
   </div>
+
+  <div class="tl-grid">
+    <div class="tl-row rh"><div class="tl-bar"></div><div><div class="tl-civ">Egypt</div><div class="tl-det">Pathway A · Nabta Playa as earliest confirmed saturation site, ~7,500 BCE</div></div><div class="tl-date">~12,500 BCE</div></div>
+    <div class="tl-row rh"><div class="tl-bar"></div><div><div class="tl-civ">Mesopotamia</div><div class="tl-det">Pathway A · Zagros corridor symbolic anchor network; Ain Ghazal as Stage II marker</div></div><div class="tl-date">~8,000 BCE</div></div>
+    <div class="tl-row rh"><div class="tl-bar"></div><div><div class="tl-civ">East Asia</div><div class="tl-det">Pathway B · Jade and lacquerware networks as primary cross-regional symbolic transmission</div></div><div class="tl-date">~6,000 BCE</div></div>
+    <div class="tl-row rh"><div class="tl-bar"></div><div><div class="tl-civ">Indus Valley</div><div class="tl-det">Pathway C · Mehrgarh as earliest precondition site (~7,000 BCE); full saturation at Mohenjo-daro</div></div><div class="tl-date">~5,500 BCE</div></div>
+    <div class="tl-row rh"><div class="tl-bar"></div><div><div class="tl-civ">Mesoamerica</div><div class="tl-det">Pathway D · Olmec precursor ceremonial network; San Lorenzo as first confirmed Stage III site</div></div><div class="tl-date">~4,000 BCE</div></div>
+  </div>
+
+  <div class="neg-cases">
+    <div class="neg-hd">Negative cases — where Stage III did not emerge at scale</div>
+    <div class="neg-grid">
+      <div class="neg-item">
+        <div class="neg-civ">Australia</div>
+        <div class="neg-reason">Extraordinary Stage I–II symbolic depth by any global measure — among the oldest continuous symbolic traditions on Earth. But the system was calibrated for equilibrium, not expansion. The threshold crossing was deliberately avoided. This is not a failure case. It is a different category of outcome entirely: a civilization-scale symbolic system that chose stability over growth.</div>
+      </div>
+      <div class="neg-item">
+        <div class="neg-civ">Sub-Saharan Africa</div>
+        <div class="neg-reason">Stage II symbolic depth is well-documented across the region. Stage III institutional emergence consolidated only in isolated cases — Great Zimbabwe (~1100 CE), Axum (~100 CE) — not across the broader region in the DSSM primary period. The symbolic infrastructure was present. The threshold conditions for widespread institutional calcification were not.</div>
+      </div>
+      <div class="neg-item">
+        <div class="neg-civ">Late Neolithic Europe</div>
+        <div class="neg-reason">Stage II achieved across wide areas. Stage III partially documented in specific clusters: Varna (~4,500 BCE), Baden culture, Cucuteni-Trypillia. The Vinča mark system — active 5,400–4,500 BCE — came within striking distance of writing. The system stabilized without crossing the full Stage III threshold. Europe's symbolic complexity was real. Its institutionalization was partial and delayed.</div>
+      </div>
+    </div>
+  </div>
+
   <div class="chart rev">
     <div class="chart-title">Symbolic saturation depth — relative BCE scale</div>
     <div class="bar-row"><span class="bar-lbl">Egypt</span><div class="bar-track"><div class="bar-fill" style="--w:100%"></div></div><span class="bar-val">~12,500 BCE</span></div>
@@ -573,15 +678,47 @@ footer a:hover{color:var(--gold2);}
 <!-- METHODOLOGY -->
 <section class="section rev" id="method">
   <div class="sec-hd"><span class="sec-n">04</span><h2 class="sec-t">Field Companion Protocol</h2></div>
+  <p class="fcp-intro">The Field Companion Protocol (FCP) is the DSSM's diagnostic instrument — a structured scoring tool for determining whether a society has achieved symbolic saturation. It was developed because intuitive judgment is insufficient: the same material evidence has been interpreted radically differently across a century of scholarship. The FCP imposes a fixed observational framework that can be applied consistently across sites, periods, and material substrates — and whose conclusions can be checked, challenged, and replicated.</p>
+  <p class="fcp-intro">Six observables are scored across two independent axes: <strong>Evidence Strength (E)</strong> — how well-attested the observable is in the record — and <strong>Symbolic Specificity (S)</strong> — how distinctly symbolic, rather than merely functional, the evidence is. Each axis is scored 0 to 2. The final score per observable is the minimum of E and S. A strong evidentiary base cannot compensate for functional ambiguity. And symbolic specificity cannot compensate for weak evidence. Both must hold.</p>
   <div class="fcp-grid">
-    <div class="crit"><div class="c-ico">🏛</div><div class="c-name">Mnemonic Architectures</div><div class="c-desc">Spaces structured to encode and transmit social or cosmological knowledge across generations.</div></div>
-    <div class="crit"><div class="c-ico">⬡</div><div class="c-name">Symbolic Stabilization</div><div class="c-desc">Evidence of recurring symbolic forms persisting across time, media, and context.</div></div>
-    <div class="crit"><div class="c-ico">◎</div><div class="c-name">Externalized Cognition</div><div class="c-desc">Material evidence of memory distributed into objects, landscapes, and bodies.</div></div>
-    <div class="crit"><div class="c-ico">⚖</div><div class="c-name">Symbolic Regulation</div><div class="c-desc">Symbolic systems used to govern behavior, allocate resources, or enforce social norms.</div></div>
-    <div class="crit"><div class="c-ico">◈</div><div class="c-name">Distributed Authority</div><div class="c-desc">Symbolic power distributed across roles, spaces, or objects rather than concentrated in a single actor.</div></div>
-    <div class="crit"><div class="c-ico">◇</div><div class="c-name">Portable Symbolic Anchors</div><div class="c-desc">Transportable objects carrying symbolic load — enabling mobile transmission of the system.</div></div>
+    <div class="crit">
+      <div class="c-ico">🏛</div>
+      <div class="c-name">Mnemonic Architectures</div>
+      <div class="c-desc">Spaces engineered not just for shelter or function but for symbolic transmission — structured to encode and deliver social, cosmological, or procedural knowledge across generations without written instruction. The space itself is the text. The building teaches what no individual could remember alone.</div>
+    </div>
+    <div class="crit">
+      <div class="c-ico">⬡</div>
+      <div class="c-name">Symbolic Stabilization</div>
+      <div class="c-desc">The same symbolic forms — marks, proportions, orientations, object types — recurring across time, media, and geographic context without direct causal pressure. Convergence this consistent cannot be accidental. It indicates an active transmission mechanism: someone is teaching this, and the teaching is working across centuries.</div>
+    </div>
+    <div class="crit">
+      <div class="c-ico">◎</div>
+      <div class="c-name">Externalized Cognition</div>
+      <div class="c-desc">Material evidence that individual biological memory has been supplemented by external storage — objects that carry cognitive load, landscapes that structure behavior, bodies that encode protocol. The external system outlasts any individual who created it. This is the point where culture becomes genuinely cumulative rather than generational.</div>
+    </div>
+    <div class="crit">
+      <div class="c-ico">⚖</div>
+      <div class="c-name">Symbolic Regulation</div>
+      <div class="c-desc">Symbolic systems deployed not just to represent the world but to govern it — to allocate resources, assign roles, enforce behavioral norms, and define the boundary between legitimate and illegitimate action. The earliest form of law is not a written code. It is a symbolic system that makes certain behaviors unthinkable.</div>
+    </div>
+    <div class="crit">
+      <div class="c-ico">◈</div>
+      <div class="c-name">Distributed Authority</div>
+      <div class="c-desc">Symbolic power distributed across roles, spaces, and objects rather than concentrated in a single actor. This is structurally critical: distributed authority is far more durable than concentrated authority. It survives the death of any individual, the failure of any institution. Civilizations built on concentrated symbolic power collapse when the center does. Distributed systems do not.</div>
+    </div>
+    <div class="crit">
+      <div class="c-ico">◇</div>
+      <div class="c-name">Portable Symbolic Anchors</div>
+      <div class="c-desc">Transportable objects carrying significant symbolic load — figurines, marked stones, standardized vessels, ritual objects — that enable mobile populations to carry a coherent symbolic system across geography. The jade bead that travels 2,000 kilometers is not jewelry. It is infrastructure. It holds the network together at a distance that no monument can reach.</div>
+    </div>
   </div>
-  <div class="fcp-note">Each observable scored 0–2 across two independent axes: <span>Evidence Strength (E)</span> and <span>Symbolic Specificity (S)</span>. Saturation requires ≥ 7/8 with no criterion at zero. <span>Final score = min(E, S).</span> Neither axis can inflate a weak result in the other.</div>
+  <div class="fcp-threshold">
+    <div>
+      <div class="fcp-t-label">Saturation threshold</div>
+      <div class="fcp-t-num">≥ 7 / 8</div>
+    </div>
+    <div class="fcp-t-text">Saturation requires a total FCP score of at least 7 out of 8 across all six observables, with no single criterion scoring zero. A zero on any observable is disqualifying — it signals a structural gap in the symbolic system itself, not a gap in the archaeological record. A zero means the system has not crossed the threshold, regardless of how strongly the other five score. Saturation is all-or-nothing at the margins.</div>
+  </div>
 </section>
 
 <div class="rule"></div>
