@@ -329,13 +329,16 @@ nav{
 .paper-row::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--gold);transform:scaleY(0);transform-origin:center;transition:transform .35s cubic-bezier(.16,1,.3,1);}
 .paper-row:hover{background:rgba(201,168,76,.03);}
 .paper-row:hover::before{transform:scaleY(1);}
-.paper-num{font-family:'DM Mono',monospace;font-size:.52rem;color:var(--mid);opacity:.4;letter-spacing:.06em;padding-left:.5rem;}
-.paper-title{font-size:.9rem;color:rgba(240,234,216,.88);line-height:1.35;transition:color .22s;}
+.paper-num{font-family:'DM Mono',monospace;font-size:.52rem;color:var(--mid);opacity:.4;letter-spacing:.06em;padding-left:.5rem;padding-top:.15rem;}
+.paper-body{display:flex;flex-direction:column;gap:.28rem;}
+.paper-title{font-size:.92rem;color:rgba(240,234,216,.9);line-height:1.3;transition:color .22s;}
 .paper-row:hover .paper-title{color:var(--gold2);}
-.paper-tag{font-family:'DM Mono',monospace;font-size:.48rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mid);opacity:.5;white-space:nowrap;}
-.paper-dl{font-size:.75rem;color:var(--gold);opacity:0;transform:translateX(-5px);transition:opacity .22s,transform .22s;}
+.paper-desc{font-size:.78rem;color:var(--mid);line-height:1.5;opacity:.75;}
+.paper-tag{font-family:'DM Mono',monospace;font-size:.48rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mid);opacity:.45;white-space:nowrap;align-self:flex-start;padding-top:.2rem;}
+.paper-dl{font-size:.8rem;color:var(--gold);opacity:0;transform:translateX(-5px);transition:opacity .22s,transform .22s;align-self:flex-start;padding-top:.15rem;}
 .paper-row:hover .paper-dl{opacity:.8;transform:translateX(0);}
-@media(max-width:600px){.paper-row{grid-template-columns:2rem 1fr auto;}.paper-tag{display:none;}}
+@media(max-width:700px){.paper-row{grid-template-columns:2rem 1fr auto;}.paper-tag{display:none;}}
+@media(max-width:480px){.paper-desc{display:none;}}
 
 /* ── FOOTER ── */
 footer{
@@ -803,74 +806,72 @@ document.querySelectorAll('.chart').forEach(el=>bObs.observe(el));
 // ══ PAPERS ══
 const PAPERS=[
   // Foundation
-  {title:'DSSM: Core Framework',cat:'foundation',file:'1 DSSM Core Revised v9 fixed.docx'},
-  {title:'Cognitive Preconditions for the Deep Symbolic Systems Model',cat:'foundation',file:'2 Cognitive Preconditions for the Deep Symbolic Systems Model.docx'},
-  {title:'The DSSM: Canonical Model for Macro-Regions',cat:'foundation',file:'8 The Deep Symbolic Systems Model cannonical model for macro regions.docx'},
-  {title:'DSSM for Beginners',cat:'foundation',file:'17 DSSM for Beginners.docx'},
-  {title:'DSSM Toolkit',cat:'foundation',file:'20 DSSM toolkit.docx'},
-  {title:'DSSM Toolkit v1.1',cat:'foundation',file:'20_DSSM_Toolkit_v1.1.docx'},
-  {title:'Global Synthesis: Deep Symbolic Stabilization Across Early Civilizations',cat:'foundation',file:'9 Deep Symbolic Stabilization Across Early Civilizations GLOBAL SYNTHESIS .docx'},
+  {title:'DSSM: Core Framework',desc:'The complete theoretical architecture. How repeated behavior becomes symbolic structure — and symbolic structure becomes civilization.',cat:'foundation',file:'1 DSSM Core Revised v9 fixed.docx'},
+  {title:'Cognitive Preconditions for the Deep Symbolic Systems Model',desc:'Before the first symbol was carved, the brain had to be ready. This traces the biological prerequisites — 1.7 million years in the making.',cat:'foundation',file:'2 Cognitive Preconditions for the Deep Symbolic Systems Model.docx'},
+  {title:'The DSSM: Canonical Model for Macro-Regions',desc:'One model. Five macro-regions. The same underlying logic operating across entirely different material conditions.',cat:'foundation',file:'8 The Deep Symbolic Systems Model cannonical model for macro regions.docx'},
+  {title:'DSSM for Beginners',desc:'Everything you were taught about civilization\'s origins is backwards. This explains why — and what actually happened.',cat:'foundation',file:'17 DSSM for Beginners.docx'},
+  {title:'DSSM Toolkit',desc:'The operational framework: how to apply the DSSM to any civilization, any period, any material substrate.',cat:'foundation',file:'20 DSSM toolkit.docx'},
+  {title:'DSSM Toolkit v1.1',desc:'Updated methodology with refined FCP scoring criteria and expanded observable categories.',cat:'foundation',file:'20_DSSM_Toolkit_v1.1.docx'},
+  {title:'Global Synthesis: Deep Symbolic Stabilization Across Early Civilizations',desc:'The argument in its broadest form: five civilizations, one grammar, the same pattern, every time.',cat:'foundation',file:'9 Deep Symbolic Stabilization Across Early Civilizations GLOBAL SYNTHESIS .docx'},
   // Civilizations
-  {title:'Deep Symbolic Stabilization Along the Nile',cat:'civilizations',file:'3 Deep Symbolic Stabilization Along the Nile.docx'},
-  {title:'Deep Symbolic Stabilization Along the Tigris and Euphrates',cat:'civilizations',file:'4 Deep Symbolic Stabilization Along the Tigris and Euphrates.docx'},
-  {title:'Deep Symbolic Stabilization in East Asia',cat:'civilizations',file:'5 Deep Symbolic Stabilization in East Asia.docx'},
-  {title:'Deep Symbolic Stabilization in Prehistoric Mesoamerica',cat:'civilizations',file:'6 Deep Symbolic Stabilization in Prehistoric Mesoamerica.docx'},
-  {title:'Deep Symbolic Stabilization in the Indus Valley',cat:'civilizations',file:'7 Deep Symbolic Stabilization in the Indus Valley Region.docx'},
-  {title:'Symbolic Continuity Without Monumentality: Sri Lanka',cat:'civilizations',file:'10 Symbolic Continuity Without Monumentality, a sri lanka based dssm case study.docx'},
-  {title:'Cognitive Preconditions of Early Egyptian Civilisation',cat:'civilizations',file:'12 Cognitive preconditions of early Egyptian civilisation IWNW .docx'},
-  {title:'Deep Symbolic Stabilization in Sri Lanka',cat:'civilizations',file:'29 Deep Symbolic Stabilization in Sri Lanka  .docx'},
-  {title:'Mehrgarh Culture and the Origins of Deep Symbolic Stabilization',cat:'civilizations',file:'30 Mehrgarh Culture and the Origins of Deep Symbolic Stabilization.docx'},
-  {title:'Cognitive Foundations of Early Mesopotamian Civilization',cat:'civilizations',file:'31 Cognitive Foundations of Early Mesopotamian Civilization.docx'},
-  {title:'Vinča Culture and the Origins of Deep Symbolic Stabilization',cat:'civilizations',file:'32 Vinca Culture and the Origins of Deep Symbolic Stabilization.docx'},
-  {title:'Vinča Symbols and Early Symbolic Transmission',cat:'civilizations',file:'33 Vinca Symbols and Early Symbolic Transmission.docx'},
-  {title:'Cognitive Foundations of Early Indus Valley Civilization',cat:'civilizations',file:'34 Cognitive Foundations of Early Indus Valley Civilization.docx'},
-  {title:'Vinča Symbols, Distributed Symbolic Stabilization, and the Contingent Emergence of Writing',cat:'civilizations',file:'37 Vinča Symbols, Distributed Symbolic Stabilization, and the Contingent Emergence of Writing  .docx'},
+  {title:'Deep Symbolic Stabilization Along the Nile',desc:'Egypt didn\'t begin with pharaohs. It began with people returning to the same place, for the same reasons, for thousands of years before anyone thought to carve their name in stone.',cat:'civilizations',file:'3 Deep Symbolic Stabilization Along the Nile.docx'},
+  {title:'Deep Symbolic Stabilization Along the Tigris and Euphrates',desc:'Mesopotamia is the most studied civilization in history. We still fundamentally misunderstand how it worked — because we keep starting the story too late.',cat:'civilizations',file:'4 Deep Symbolic Stabilization Along the Tigris and Euphrates.docx'},
+  {title:'Deep Symbolic Stabilization in East Asia',desc:'Portable objects, craft traditions, mobile symbolic transmission. How East Asia built institutional complexity without stone anchors.',cat:'civilizations',file:'5 Deep Symbolic Stabilization in East Asia.docx'},
+  {title:'Deep Symbolic Stabilization in Prehistoric Mesoamerica',desc:'Mesoamerica\'s symbolic infrastructure was built through a web of shared ritual long before any pyramid rose. Distributed networks, not centralized monuments.',cat:'civilizations',file:'6 Deep Symbolic Stabilization in Prehistoric Mesoamerica.docx'},
+  {title:'Deep Symbolic Stabilization in the Indus Valley',desc:'No deciphered script. No identified ruler. Yet perfectly standardized infrastructure across 1.5 million square kilometers. How?',cat:'civilizations',file:'7 Deep Symbolic Stabilization in the Indus Valley Region.docx'},
+  {title:'Symbolic Continuity Without Monumentality: Sri Lanka',desc:'What happens when a society achieves full symbolic stabilization without ever building a monument? Sri Lanka answers that question.',cat:'civilizations',file:'10 Symbolic Continuity Without Monumentality, a sri lanka based dssm case study.docx'},
+  {title:'Cognitive Preconditions of Early Egyptian Civilisation',desc:'Tracing the neural and behavioral groundwork that made Egypt possible — beginning not at Giza, but at Nabta Playa, 7,000 BCE.',cat:'civilizations',file:'12 Cognitive preconditions of early Egyptian civilisation IWNW .docx'},
+  {title:'Deep Symbolic Stabilization in Sri Lanka (Extended)',desc:'A second, extended analysis of Sri Lanka\'s distinctive pathway — and what it reveals about the DSSM\'s universality.',cat:'civilizations',file:'29 Deep Symbolic Stabilization in Sri Lanka  .docx'},
+  {title:'Mehrgarh Culture and the Origins of Deep Symbolic Stabilization',desc:'Before the Indus Valley Civilization, there was Mehrgarh — the oldest confirmed agricultural settlement in South Asia, and a critical DSSM precondition site.',cat:'civilizations',file:'30 Mehrgarh Culture and the Origins of Deep Symbolic Stabilization.docx'},
+  {title:'Cognitive Foundations of Early Mesopotamian Civilization',desc:'Cuneiform didn\'t create Mesopotamia. It recorded a civilization already thousands of years old. This paper traces what came before.',cat:'civilizations',file:'31 Cognitive Foundations of Early Mesopotamian Civilization.docx'},
+  {title:'Vinča Culture and the Origins of Deep Symbolic Stabilization',desc:'Europe\'s first symbolic system, 5,400 BCE. Marks that look like writing but predate it by millennia. What were they actually doing?',cat:'civilizations',file:'32 Vinca Culture and the Origins of Deep Symbolic Stabilization.docx'},
+  {title:'Vinča Symbols and Early Symbolic Transmission',desc:'A deep analysis of the Vinča mark system — what it was, how it spread, and why it didn\'t become writing.',cat:'civilizations',file:'33 Vinca Symbols and Early Symbolic Transmission.docx'},
+  {title:'Cognitive Foundations of Early Indus Valley Civilization',desc:'The Indus Valley remains the great unsolved puzzle of early civilization. This applies the DSSM to what the archaeology actually shows.',cat:'civilizations',file:'34 Cognitive Foundations of Early Indus Valley Civilization.docx'},
+  {title:'Vinča Symbols, Distributed Symbolic Stabilization, and the Contingent Emergence of Writing',desc:'Writing is not inevitable. This paper proves it — using the civilization that almost got there first.',cat:'civilizations',file:'37 Vinča Symbols, Distributed Symbolic Stabilization, and the Contingent Emergence of Writing  .docx'},
   // Archaeology
-  {title:'DSSM Analysis: Bruniquel Cave',cat:'archaeology',file:'23 DSSM Analysis Report Bruniquel Cave.docx'},
-  {title:'DSSM Analysis: Omo Kibish',cat:'archaeology',file:'24 DSSM Analysis Report Omo Kibish.docx'},
-  {title:'DSSM Analysis: Blombos Cave',cat:'archaeology',file:'25 DSSM Analysis Report blombos cave .docx'},
-  {title:'DSSM Analysis: Sulawesi Cave Art (≥67.8 ka)',cat:'archaeology',file:'35 DSSM Analysis Report- Sulawesi Cave Art Anchor Assemblage (≥67.8 ka).docx'},
-  {title:'Indonesia\'s Deep-Time Cave Art: A DSSM Stress Test',cat:'archaeology',file:'36 Indonesia\'s Deep-Time Cave Art as a DSSM Stress Test.docx'},
-  {title:'From Bruniquel to Blombos',cat:'archaeology',file:'26 From Bruniquel to Blombos.docx'},
-  {title:'From Bruniquel to Blombos: European Societies',cat:'archaeology',file:'26 From Bruniquel to Blombos european societies draft.docx'},
+  {title:'DSSM Analysis: Bruniquel Cave',desc:'176,000 years ago, Neanderthals built a ring of stalagmites 336 meters underground. This is the field report on what they were doing.',cat:'archaeology',file:'23 DSSM Analysis Report Bruniquel Cave.docx'},
+  {title:'DSSM Analysis: Omo Kibish',desc:'195,000 BCE. The oldest known anatomically modern humans. Applying the DSSM to the earliest possible symbolic substrate.',cat:'archaeology',file:'24 DSSM Analysis Report Omo Kibish.docx'},
+  {title:'DSSM Analysis: Blombos Cave',desc:'Blombos Cave contains the oldest known abstract markings — 75,000 BCE. A full DSSM stress test on the evidence.',cat:'archaeology',file:'25 DSSM Analysis Report blombos cave .docx'},
+  {title:'DSSM Analysis: Sulawesi Cave Art (≥67.8 ka)',desc:'Cave paintings 67,800 years old on Sulawesi. Older than anything in Europe — and deeply troubling for every established theory of symbolic origins.',cat:'archaeology',file:'35 DSSM Analysis Report- Sulawesi Cave Art Anchor Assemblage (≥67.8 ka).docx'},
+  {title:'Indonesia\'s Deep-Time Cave Art: A DSSM Stress Test',desc:'If symbolic behavior began in Southeast Asia 70,000 years ago, everything we thought we knew about the timeline needs to be rewritten.',cat:'archaeology',file:'36 Indonesia\'s Deep-Time Cave Art as a DSSM Stress Test.docx'},
+  {title:'From Bruniquel to Blombos',desc:'Connecting two of the most contested symbolic sites in deep prehistory into a single DSSM narrative spanning 100,000 years.',cat:'archaeology',file:'26 From Bruniquel to Blombos.docx'},
+  {title:'From Bruniquel to Blombos: European Societies',desc:'How European prehistoric societies fit — and where they diverge — from the global symbolic stabilization timeline.',cat:'archaeology',file:'26 From Bruniquel to Blombos european societies draft.docx'},
   // Theory
-  {title:'Neural Evolution and Symbolic Stabilization',cat:'theory',file:'11 Neural Evolution and Symbolic Stabilization.docx'},
-  {title:'Technology as Fossilized Ritual',cat:'theory',file:'13 Technology as Fossilized Ritual.docx'},
-  {title:'From Fossilized Ritual to Fossilized Power',cat:'theory',file:'14 From Fossilized Ritual to Fossilized Power.docx'},
-  {title:'From Symbols to Protocols',cat:'theory',file:'15 From Symbols to Protocols.docx'},
-  {title:'From Fossilized Ritual to Industrial Protocols',cat:'theory',file:'16 From Fossilized Ritual to Industrial Protocols.docx'},
-  {title:'War Is Not Inevitable: It is a Breakdown',cat:'theory',file:'18 War Is Not Inevitable. It is a Breakdown .docx'},
-  {title:'Cognitive Continuities Across Human and AI DSSMs',cat:'theory',file:'19 Cognitive Continuities Across Human and AI DSSMs.docx'},
-  {title:'The NEG II Woman–Goose Figurine',cat:'theory',file:'21 The NEG II Woman–Goose Figurine .docx'},
-  {title:'From Petals to Patterns',cat:'theory',file:'22 From Petals to Patterns.docx'},
-  {title:'Before Writing',cat:'theory',file:'27 BEFORE WRITING.docx'},
-  {title:'Dawn of Writing',cat:'theory',file:'28 dawn of writing .docx'},
-  {title:'From Ritual to Protocol Power',cat:'theory',file:'38 From Ritual to Protocol Power.docx'},
-  {title:'The World as Fossilized Power',cat:'theory',file:'40 The World as Fossilized Power.docx'},
-  {title:'Civilization is Rehearsed',cat:'theory',file:'41 civilization is rehearsed.docx'},
-  {title:'When the Substrate Breaks',cat:'theory',file:'44 _when_the_substrate_breaks.docx'},
-  {title:'Heritage-Based Alignment',cat:'theory',file:'54 Heritage-Based Alignment.docx'},
-  {title:'Memory Made Stone',cat:'theory',file:'56 MEMORY MADE STONE .docx'},
-  {title:'Symbolic Depth Without Vessel',cat:'theory',file:'53 Symbolic_Depth_Without_Vessel_Vondoom_2026_1.docx'},
-  {title:'Manufactured Consent Architecture',cat:'theory',file:'58_manufactured_consent_architecture.docx'},
-  {title:'Sky as Shared Referent',cat:'theory',file:'59 Sky_as_Shared_Referent_Vondoom_v3_FINAL.docx'},
-  {title:'Building Eternity: Ramesses II',cat:'theory',file:'57 Building_Eternity_Ramesses_II_Vondoom_6.docx'},
-  {title:'The Great Pyramid of Khufu',cat:'theory',file:'61 The_Great_Pyramid_of_Khufu_Vondoom_2026_4.docx'},
-  {title:'The Eternal Mother',cat:'theory',file:'60 eternal_mother_complete.docx'},
-  {title:'Civilization is Rehearsed (Final)',cat:'theory',file:'55 civilization_is_Rehearshed FINAL.docx'},
+  {title:'Neural Evolution and Symbolic Stabilization',desc:'The brain didn\'t evolve to build civilizations. Civilization is a side effect of neural systems that evolved to do something much simpler — and much older.',cat:'theory',file:'11 Neural Evolution and Symbolic Stabilization.docx'},
+  {title:'Technology as Fossilized Ritual',desc:'Every tool you\'ve ever used was a ritual before it was a technology. The smartphone in your pocket is a compressed sequence of gestures going back to the first shaped stone.',cat:'theory',file:'13 Technology as Fossilized Ritual.docx'},
+  {title:'From Fossilized Ritual to Fossilized Power',desc:'How rituals become technologies, and technologies become control systems. The full trajectory from the sacred to the structural.',cat:'theory',file:'14 From Fossilized Ritual to Fossilized Power.docx'},
+  {title:'From Symbols to Protocols',desc:'The moment a shared symbol becomes an enforced rule — that\'s where civilization begins. This traces the exact transition.',cat:'theory',file:'15 From Symbols to Protocols.docx'},
+  {title:'From Fossilized Ritual to Industrial Protocols',desc:'The industrial revolution didn\'t invent standardization. It inherited 50,000 years of symbolic compression and called it efficiency.',cat:'theory',file:'16 From Fossilized Ritual to Industrial Protocols.docx'},
+  {title:'War Is Not Inevitable: It Is a Breakdown',desc:'War is not a feature of human nature. It is what happens when symbolic stabilization fails. A DSSM analysis of conflict as system collapse.',cat:'theory',file:'18 War Is Not Inevitable. It is a Breakdown .docx'},
+  {title:'Cognitive Continuities Across Human and AI DSSMs',desc:'The most advanced AI systems on Earth are running the same cognitive sequence as a Neolithic potter. Different substrate. Identical process.',cat:'theory',file:'19 Cognitive Continuities Across Human and AI DSSMs.docx'},
+  {title:'The NEG II Woman–Goose Figurine',desc:'A 27,000-year-old figurine from the Gravettian. What was it for? A DSSM close reading of one of the most enigmatic objects in prehistory.',cat:'theory',file:'21 The NEG II Woman–Goose Figurine .docx'},
+  {title:'From Petals to Patterns',desc:'How botanical symmetry became a cross-cultural symbolic universal — and what that tells us about the deep structure of human pattern recognition.',cat:'theory',file:'22 From Petals to Patterns.docx'},
+  {title:'Before Writing',desc:'Pre-script civilization was not waiting to be completed by writing. It was already complete. Writing was the receipt, not the invention.',cat:'theory',file:'27 BEFORE WRITING.docx'},
+  {title:'Dawn of Writing',desc:'The first writing systems appeared not because humans became smarter — but because symbolic load finally exceeded what human memory could carry alone.',cat:'theory',file:'28 dawn of writing .docx'},
+  {title:'From Ritual to Protocol Power',desc:'How authority is built: not through force, but through the gradual calcification of repeated symbolic practice into enforceable structure.',cat:'theory',file:'38 From Ritual to Protocol Power.docx'},
+  {title:'The World as Fossilized Power',desc:'Every institution, every law, every norm is a fossilized power relation. A geological mapping of symbolic authority.',cat:'theory',file:'40 The World as Fossilized Power.docx'},
+  {title:'Civilization Is Rehearsed',desc:'Civilization is not built. It is rehearsed — repeated until the behavior becomes the structure, and the structure becomes the world.',cat:'theory',file:'41 civilization is rehearsed.docx'},
+  {title:'When the Substrate Breaks',desc:'What happens when the material basis of symbolic stabilization collapses? A theory of civilizational fragility.',cat:'theory',file:'44 _when_the_substrate_breaks.docx'},
+  {title:'Symbolic Depth Without Vessel',desc:'Can a symbolic system achieve full stabilization without any physical substrate? The theoretical limits of cognitive offloading.',cat:'theory',file:'53 Symbolic_Depth_Without_Vessel_Vondoom_2026_1.docx'},
+  {title:'Heritage-Based Alignment',desc:'Applying the DSSM to the AI alignment problem: how do you align an intelligence with values that took 2 million years to stabilize?',cat:'theory',file:'54 Heritage-Based Alignment.docx'},
+  {title:'Civilization Is Rehearsed (Final)',desc:'The definitive version of the rehearsal argument — fully developed, with extended case studies and theoretical implications.',cat:'theory',file:'55 civilization_is_Rehearshed FINAL.docx'},
+  {title:'Memory Made Stone',desc:'Monumental architecture is not about power or religion. It is about memory — the externalization of cognitive load into permanent material form.',cat:'theory',file:'56 MEMORY MADE STONE .docx'},
+  {title:'Building Eternity: Ramesses II',desc:'The greatest self-promotion campaign in human history — and a DSSM analysis of how one man turned personal power into symbolic architecture.',cat:'theory',file:'57 Building_Eternity_Ramesses_II_Vondoom_6.docx'},
+  {title:'Manufactured Consent Architecture',desc:'How symbolic systems are engineered to produce consent — and how that engineering is invisible to those living inside it.',cat:'theory',file:'58_manufactured_consent_architecture.docx'},
+  {title:'Sky as Shared Referent',desc:'The sky was humanity\'s first shared symbolic system — a display everyone could see, no one could own, and that structured time, space, and authority for millennia.',cat:'theory',file:'59 Sky_as_Shared_Referent_Vondoom_v3_FINAL.docx'},
+  {title:'The Eternal Mother',desc:'The oldest recurring symbolic figure in human prehistory. Across 30,000 years of figurines, the same form keeps appearing. Why?',cat:'theory',file:'60 eternal_mother_complete.docx'},
+  {title:'The Great Pyramid of Khufu',desc:'The pyramid is not a mystery. It is a receipt — for 2,500 years of symbolic stabilization that preceded it. A full DSSM field analysis.',cat:'theory',file:'61 The_Great_Pyramid_of_Khufu_Vondoom_2026_4.docx'},
   // Extended
-  {title:'Netjeru',cat:'extended',file:'42 netjeru_paper.docx'},
-  {title:'Netjeru: Cycle I',cat:'extended',file:'43 netjeru_cycle1_paper43.docx'},
-  {title:'The Council: Gulf',cat:'extended',file:'45_council_gulf.docx'},
-  {title:'Eye of Horus: Rewritten',cat:'extended',file:'46 FINAL Eye_of_Horus_Rewritten.docx'},
-  {title:'Netjeru v6',cat:'extended',file:'47 NETJERU_v6.docx'},
-  {title:'The Council',cat:'extended',file:'48 THE_COUNCIL.docx'},
-  {title:'The Council: Validation Paper',cat:'extended',file:'49 Council_Validation_Paper.docx'},
-  {title:'Netjeru: Validation Paper',cat:'extended',file:'50 NETJERU_Validation_Paper.docx'},
-  {title:'Rehearsed Sacred',cat:'extended',file:'51_rehearsed_sacred_final.docx'},
-  {title:'Taş Tepeler',cat:'extended',file:'52 TasTepeler v2.docx'},
-  {title:'Eye of Horus (rewritten)',cat:'extended',file:'46 FINAL Eye_of_Horus_Rewritten.docx'},
-  {title:'Symbolic Depth Without Vessel',cat:'extended',file:'53 Symbolic_Depth_Without_Vessel_Vondoom_2026_1.docx'},
+  {title:'Netjeru',desc:'The Egyptian gods as symbolic stabilization infrastructure. What the Netjeru actually were — and why the system worked for 3,000 years.',cat:'extended',file:'42 netjeru_paper.docx'},
+  {title:'Netjeru: Cycle I',desc:'The first cycle of the Netjeru papers — mapping the Egyptian divine system as a distributed symbolic protocol.',cat:'extended',file:'43 netjeru_cycle1_paper43.docx'},
+  {title:'The Council: Gulf',desc:'A speculative reconstruction of pre-Islamic symbolic governance in the Arabian Gulf — before states, before writing, before kings.',cat:'extended',file:'45_council_gulf.docx'},
+  {title:'Eye of Horus: Rewritten',desc:'The Eye of Horus as a DSSM case study — how a single symbolic form achieves 3,000 years of continuous cultural stabilization.',cat:'extended',file:'46 FINAL Eye_of_Horus_Rewritten.docx'},
+  {title:'Netjeru v6',desc:'The sixth and most complete iteration of the Netjeru analysis — the full argument for the Egyptian divine system as symbolic protocol.',cat:'extended',file:'47 NETJERU_v6.docx'},
+  {title:'The Council',desc:'Pre-state governance as symbolic council. How early human groups made collective decisions before institutions existed.',cat:'extended',file:'48 THE_COUNCIL.docx'},
+  {title:'The Council: Validation Paper',desc:'Empirical validation of the Council framework across multiple prehistoric and early historic sites worldwide.',cat:'extended',file:'49 Council_Validation_Paper.docx'},
+  {title:'Netjeru: Validation Paper',desc:'Applying rigorous DSSM scoring to the Egyptian divine system — does it meet full symbolic saturation criteria?',cat:'extended',file:'50 NETJERU_Validation_Paper.docx'},
+  {title:'Rehearsed Sacred',desc:'The sacred is not transcendent. It is rehearsed. A DSSM analysis of religious behavior as symbolic stabilization at scale.',cat:'extended',file:'51_rehearsed_sacred_final.docx'},
+  {title:'Taş Tepeler',desc:'Contemporaneous with Göbekli Tepe and equally revolutionary — the Taş Tepeler complex and what it means for the DSSM timeline.',cat:'extended',file:'52 TasTepeler v2.docx'},
 ];
 
 const CAT_LABELS={foundation:'Foundation',civilizations:'Civilizations',archaeology:'Archaeology',theory:'Theory',extended:'Extended'};
@@ -881,7 +882,10 @@ function renderPapers(filter){
   list.innerHTML=data.map((p,i)=>`
     <a class="paper-row" href="papers/${encodeURIComponent(p.file)}" target="_blank">
       <span class="paper-num">${String(i+1).padStart(2,'0')}</span>
-      <span class="paper-title">${p.title}</span>
+      <span class="paper-body">
+        <span class="paper-title">${p.title}</span>
+        <span class="paper-desc">${p.desc}</span>
+      </span>
       <span class="paper-tag">${CAT_LABELS[p.cat]||p.cat}</span>
       <span class="paper-dl">↗</span>
     </a>
