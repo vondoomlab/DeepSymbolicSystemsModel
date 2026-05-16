@@ -384,15 +384,52 @@ nav{
 .neg-reason{font-size:.76rem;color:rgba(240,234,216,.45);line-height:1.65;}
 
 /* ── METHOD EXPANDED ── */
-.fcp-intro{font-size:.93rem;color:rgba(240,234,216,.72);line-height:1.85;max-width:760px;margin-bottom:1.4rem;}
-.fcp-intro strong{color:rgba(232,201,106,.85);font-weight:400;}
-.fcp-intro+.fcp-intro{margin-bottom:2.8rem;}
+.fcp-intro{font-size:.93rem;color:rgba(240,234,216,.72);line-height:1.85;max-width:760px;margin-bottom:2.4rem;}
+/* ── FCP AXES ── */
+.fcp-axes{border:1px solid var(--border);background:var(--card);margin-bottom:2rem;position:relative;overflow:hidden;}
+.fcp-axes::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+.fcp-ax-intro{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.08em;color:var(--mid);padding:1.2rem 1.6rem;border-bottom:1px solid var(--border);}
+.fcp-ax-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);}
+@media(max-width:640px){.fcp-ax-grid{grid-template-columns:1fr;}}
+.fcp-ax-col{background:var(--black);padding:1.5rem 1.6rem;}
+.fcp-ax-head{font-family:'DM Mono',monospace;font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.7rem;}
+.fcp-ax-desc{font-size:.78rem;color:rgba(240,234,216,.55);line-height:1.65;margin-bottom:1.1rem;}
+.fcp-ax-scale{display:flex;flex-direction:column;gap:.5rem;}
+.fcp-ax-score{display:flex;align-items:baseline;gap:.8rem;font-size:.74rem;color:rgba(240,234,216,.6);line-height:1.5;}
+.fcp-ax-n{font-family:'DM Mono',monospace;font-size:.9rem;color:var(--gold);font-weight:300;flex-shrink:0;width:1rem;text-align:center;}
+.fcp-ax-rule{font-size:.76rem;color:rgba(240,234,216,.5);padding:1rem 1.6rem;line-height:1.7;border-top:1px solid var(--border);}
+.fcp-ax-rule span{color:var(--gold);}
+/* ── EC SPLIT ── */
+.ec-split{border:1px solid var(--border2);background:var(--card);margin-bottom:2rem;position:relative;overflow:hidden;}
+.ec-split::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold2),transparent);}
+.ec-split-hd{padding:1.1rem 1.6rem;border-bottom:1px solid var(--border);display:flex;flex-direction:column;gap:.2rem;}
+.ec-split-label{font-family:'DM Mono',monospace;font-size:.54rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);}
+.ec-split-why{font-size:.74rem;color:rgba(240,234,216,.45);font-style:italic;}
+.ec-split-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);}
+@media(max-width:640px){.ec-split-grid{grid-template-columns:1fr;}}
+.ec-split-col{background:var(--black);padding:1.4rem 1.6rem;}
+.ec-split-name{font-family:'DM Mono',monospace;font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold2);margin-bottom:.6rem;}
+.ec-split-desc{font-size:.78rem;color:rgba(240,234,216,.6);line-height:1.65;margin-bottom:.8rem;}
+.ec-split-regions{font-family:'DM Mono',monospace;font-size:.48rem;letter-spacing:.06em;color:var(--gold);opacity:.4;}
+.ec-split-note{font-size:.76rem;color:rgba(240,234,216,.5);padding:1.1rem 1.6rem;border-top:1px solid var(--border);line-height:1.7;}
+/* ── THRESHOLD ── */
 .fcp-threshold{display:flex;align-items:flex-start;gap:2rem;padding:1.8rem 2rem;border:1px solid var(--border);background:var(--card);margin-top:1.4rem;position:relative;overflow:hidden;}
 .fcp-threshold::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
 .fcp-t-num{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:900;line-height:1;flex-shrink:0;background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .fcp-t-label{font-family:'DM Mono',monospace;font-size:.48rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);opacity:.5;margin-bottom:.55rem;}
 .fcp-t-text{font-size:.82rem;color:rgba(240,234,216,.65);line-height:1.72;}
 @media(max-width:600px){.fcp-threshold{flex-direction:column;gap:1rem;}}
+/* ── CAPITAL FLAG ── */
+.cap-flag{border:1px solid var(--border);background:var(--card);margin-top:1.4rem;position:relative;overflow:hidden;}
+.cap-flag::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--border2),transparent);}
+.cap-flag-hd{font-family:'DM Mono',monospace;font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mid);opacity:.6;padding:1rem 1.6rem;border-bottom:1px solid var(--border);}
+.cap-flag-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);}
+@media(max-width:580px){.cap-flag-grid{grid-template-columns:1fr;}}
+.cap-flag-item{background:var(--black);padding:1.3rem 1.4rem;display:flex;flex-direction:column;gap:.35rem;}
+.cap-flag-letter{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;color:var(--gold);opacity:.55;line-height:1;}
+.cap-flag-name{font-family:'DM Mono',monospace;font-size:.52rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);opacity:.7;}
+.cap-flag-desc{font-size:.74rem;color:rgba(240,234,216,.48);line-height:1.6;}
+.cap-flag-note{font-size:.73rem;color:rgba(240,234,216,.4);padding:.9rem 1.4rem;border-top:1px solid var(--border);line-height:1.65;font-style:italic;}
 
 /* ── FRAMEWORK VIZ ── */
 .frame-viz{width:100%;max-width:440px;padding:2rem 2rem 1.6rem;border:1px solid var(--border);background:var(--card);position:relative;overflow:hidden;}
@@ -704,46 +741,114 @@ footer a:hover{color:var(--gold2);}
 <!-- METHODOLOGY -->
 <section class="section rev" id="method">
   <div class="sec-hd"><span class="sec-n">04</span><h2 class="sec-t">Field Companion Protocol</h2></div>
-  <p class="fcp-intro">The Field Companion Protocol (FCP) is the DSSM's diagnostic instrument — a structured scoring tool for determining whether a society has achieved symbolic saturation. It was developed because intuitive judgment is insufficient: the same material evidence has been interpreted radically differently across a century of scholarship. The FCP imposes a fixed observational framework that can be applied consistently across sites, periods, and material substrates — and whose conclusions can be checked, challenged, and replicated.</p>
-  <p class="fcp-intro">Six observables are scored across two independent axes: <strong>Evidence Strength (E)</strong> — how well-attested the observable is in the record — and <strong>Symbolic Specificity (S)</strong> — how distinctly symbolic, rather than merely functional, the evidence is. Each axis is scored 0 to 2. The final score per observable is the minimum of E and S. A strong evidentiary base cannot compensate for functional ambiguity. And symbolic specificity cannot compensate for weak evidence. Both must hold.</p>
+  <p class="fcp-intro">The Field Companion Protocol (FCP) is the DSSM's diagnostic instrument — a structured scoring tool for determining whether a society has achieved symbolic saturation. It exists because intuitive judgment produces inconsistent results: the same material evidence has been interpreted radically differently across a century of scholarship. The FCP imposes a fixed observational framework applicable across sites, periods, and material substrates — and whose conclusions can be audited, challenged, and replicated by any researcher with access to primary evidence.</p>
+
+  <div class="fcp-axes">
+    <div class="fcp-ax-intro">Six observables · two axes each · final score per observable = min(E, S) · total out of 12 · saturation requires ≥ 7 with no criterion at zero</div>
+    <div class="fcp-ax-grid">
+      <div class="fcp-ax-col">
+        <div class="fcp-ax-head">E — Evidence Strength</div>
+        <div class="fcp-ax-desc">How well-attested the observable is in the primary record — excavation reports, artifact inventories, published analyses. Score E conservatively for oral or performative systems, which leave indirect material traces at best; the E score then reflects preservation bias, not the absence of the system. A strong E cannot rescue a weak S.</div>
+        <div class="fcp-ax-scale">
+          <div class="fcp-ax-score"><span class="fcp-ax-n">0</span><span>No archaeological or textual evidence exists</span></div>
+          <div class="fcp-ax-score"><span class="fcp-ax-n">1</span><span>Some evidence — sparse, ambiguous, or poorly preserved</span></div>
+          <div class="fcp-ax-score"><span class="fcp-ax-n">2</span><span>Multiple independent, well-documented lines of evidence</span></div>
+        </div>
+      </div>
+      <div class="fcp-ax-col">
+        <div class="fcp-ax-head">S — Symbolic Specificity</div>
+        <div class="fcp-ax-desc">How distinctly symbolic — rather than merely functional — the evidence is. Consistent practice alone does not confirm symbolic specificity: behavioral consistency can emerge from functional pressure without any symbolic system behind it. Symbolic specificity requires demonstrated social meaning, intentionality, or transmission across contexts. A strong S cannot rescue a weak E.</div>
+        <div class="fcp-ax-scale">
+          <div class="fcp-ax-score"><span class="fcp-ax-n">0</span><span>No symbolic character — purely functional or absent</span></div>
+          <div class="fcp-ax-score"><span class="fcp-ax-n">1</span><span>Symbolic character plausible but not clearly demonstrated</span></div>
+          <div class="fcp-ax-score"><span class="fcp-ax-n">2</span><span>Clearly symbolic — repeated, intentional, socially meaningful</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="fcp-ax-rule">Final score per observable = <span>min(E, S)</span>. Score E and S separately — never average them first. A criterion where evidence is strong but symbolic character is weak scores identically to one where symbolic character is clear but evidence is thin. <span>Neither axis can inflate a weak result in the other.</span></div>
+  </div>
+
+  <div class="ec-split">
+    <div class="ec-split-hd">
+      <span class="ec-split-label">EC Sub-criteria — Externalized Cognition only</span>
+      <span class="ec-split-why">Applied when writing and material record-keeping need to be separated analytically. All other five observables use a single E and S score directly.</span>
+    </div>
+    <div class="ec-split-grid">
+      <div class="ec-split-col">
+        <div class="ec-split-name">EC-1 · Material Record Systems</div>
+        <div class="ec-split-desc">Administrative records, tally systems, counting devices, standardized notches, controlled storage — any system that offloads cognitive load into durable material form, regardless of whether writing is present. Always applicable. Score this before EC-2.</div>
+        <div class="ec-split-regions">Indus Valley · pre-writing Mesopotamia · Çatalhöyük · Neolithic Europe · pre-contact Pacific</div>
+      </div>
+      <div class="ec-split-col">
+        <div class="ec-split-name">EC-2 · Symbolic Encoding Systems</div>
+        <div class="ec-split-desc">Writing, script, canonical notation — any encoding system where symbols carry semantic content independent of the inscribed object. Undeciphered scripts: E = 1 maximum until function is confirmed. Do not assume EC-2 = 2 for an undeciphered system.</div>
+        <div class="ec-split-regions">Rapa Nui (Rongorongo) · Indus script · Proto-Elamite · Linear A · early cuneiform</div>
+      </div>
+    </div>
+    <div class="ec-split-note">Why the split matters: a pre-literate society with documented material record-keeping should not be penalised for the absence of a technology it did not need. Without the sub-criteria, the Indus Valley — which has systematic cognitive offloading across 1.5 million km² but an undeciphered script — risks being scored lower than its material record warrants. EC-1 and EC-2 are scored separately (0–2 each). <strong style="color:rgba(232,201,106,.7);font-weight:400;">Final EC = min(EC-1, EC-2).</strong> Record both sub-scores alongside the final EC in any published scoring sheet.</div>
+  </div>
+
   <div class="fcp-grid">
     <div class="crit">
       <div class="c-ico">🏛</div>
       <div class="c-name">Mnemonic Architectures</div>
-      <div class="c-desc">Spaces engineered not just for shelter or function but for symbolic transmission — structured to encode and deliver social, cosmological, or procedural knowledge across generations without written instruction. The space itself is the text. The building teaches what no individual could remember alone.</div>
+      <div class="c-desc">Spaces engineered not just for function but for symbolic transmission across generations without written instruction. Repeated spatial layouts, standardized tool morphologies, persistent feature reuse. The space itself is the text — encoding social, cosmological, or procedural knowledge into the built environment.</div>
     </div>
     <div class="crit">
       <div class="c-ico">⬡</div>
       <div class="c-name">Symbolic Stabilization</div>
-      <div class="c-desc">The same symbolic forms — marks, proportions, orientations, object types — recurring across time, media, and geographic context without direct causal pressure. Convergence this consistent cannot be accidental. It indicates an active transmission mechanism: someone is teaching this, and the teaching is working across centuries.</div>
+      <div class="c-desc">The same symbolic forms — marks, proportions, orientations, artifact types — recurring across time, media, and geographic context without direct causal pressure. Measure via artifact typology and coefficient of variation across strata. Convergence this consistent indicates an active transmission mechanism operating across centuries.</div>
     </div>
     <div class="crit">
       <div class="c-ico">◎</div>
       <div class="c-name">Externalized Cognition</div>
-      <div class="c-desc">Material evidence that individual biological memory has been supplemented by external storage — objects that carry cognitive load, landscapes that structure behavior, bodies that encode protocol. The external system outlasts any individual who created it. This is the point where culture becomes genuinely cumulative rather than generational.</div>
+      <div class="c-desc">Material evidence that biological memory has been supplemented by external storage. Scored via EC-1 (material records) and EC-2 (symbolic encoding) when writing and record-keeping need to be separated. The external system outlasts any individual — this is the point where culture becomes genuinely cumulative.</div>
     </div>
     <div class="crit">
       <div class="c-ico">⚖</div>
       <div class="c-name">Symbolic Regulation</div>
-      <div class="c-desc">Symbolic systems deployed not just to represent the world but to govern it — to allocate resources, assign roles, enforce behavioral norms, and define the boundary between legitimate and illegitimate action. The earliest form of law is not a written code. It is a symbolic system that makes certain behaviors unthinkable.</div>
+      <div class="c-desc">Symbolic systems deployed to govern behavior — to allocate resources, assign roles, enforce norms. Critical: do not score S = 2 from consistency alone. Consistent practice can emerge without top-down control. Regulation requires evidence of suprahousehold enforcement — otherwise score Symbolic Regulation = 0.</div>
     </div>
     <div class="crit">
       <div class="c-ico">◈</div>
       <div class="c-name">Distributed Authority</div>
-      <div class="c-desc">Symbolic power distributed across roles, spaces, and objects rather than concentrated in a single actor. This is structurally critical: distributed authority is far more durable than concentrated authority. It survives the death of any individual, the failure of any institution. Civilizations built on concentrated symbolic power collapse when the center does. Distributed systems do not.</div>
+      <div class="c-desc">Symbolic power distributed across roles, spaces, and objects rather than concentrated in a single actor. Distributed authority is structurally more durable: it survives the death of any individual, the failure of any institution. Detect via recurrent symbolic practices mapped across multiple sites — redundancy in placement, orientation, artifact type.</div>
     </div>
     <div class="crit">
       <div class="c-ico">◇</div>
       <div class="c-name">Portable Symbolic Anchors</div>
-      <div class="c-desc">Transportable objects carrying significant symbolic load — figurines, marked stones, standardized vessels, ritual objects — that enable mobile populations to carry a coherent symbolic system across geography. The jade bead that travels 2,000 kilometers is not jewelry. It is infrastructure. It holds the network together at a distance that no monument can reach.</div>
+      <div class="c-desc">Standardized portable objects — figurines, marked stones, ritual tools, jade — carrying symbolic load across geography. Trace distribution across sites and periods. An object appearing in the same standardized form across 2,000 kilometers is not decoration. It is infrastructure: the network held together at a distance no monument can reach.</div>
     </div>
   </div>
+
   <div class="fcp-threshold">
     <div>
       <div class="fcp-t-label">Saturation threshold</div>
-      <div class="fcp-t-num">≥ 7 / 8</div>
+      <div class="fcp-t-num">≥ 7 / 12</div>
     </div>
-    <div class="fcp-t-text">Saturation requires a total FCP score of at least 7 out of 8 across all six observables, with no single criterion scoring zero. A zero on any observable is disqualifying — it signals a structural gap in the symbolic system itself, not a gap in the archaeological record. A zero means the system has not crossed the threshold, regardless of how strongly the other five score. Saturation is all-or-nothing at the margins.</div>
+    <div class="fcp-t-text">Saturation requires a total FCP score of at least 7 out of 12 across all six observables, with no single criterion scoring zero. A zero on any observable is disqualifying regardless of total — it signals a structural absence in the symbolic system, not a gap in the archaeological record. A system scoring 11/12 with one zero is not saturated. A system scoring 7/12 with no zeros is. The no-zero condition is the more important of the two rules.</div>
+  </div>
+
+  <div class="cap-flag">
+    <div class="cap-flag-hd">Capital Source Flag — supplementary interpretive field, does not affect FCP total</div>
+    <div class="cap-flag-grid">
+      <div class="cap-flag-item">
+        <span class="cap-flag-letter">B</span>
+        <span class="cap-flag-name">Builder</span>
+        <span class="cap-flag-desc">Constructed the symbolic system from new — new institutions, canonical forms, spatial programmes originating within the period. e.g. Djoser (Step Pyramid complex), Akhenaten (Aten programme)</span>
+      </div>
+      <div class="cap-flag-item">
+        <span class="cap-flag-letter">M</span>
+        <span class="cap-flag-name">Maintainer</span>
+        <span class="cap-flag-desc">Actively managed and extended an inherited system, making substantial contributions within its established framework. e.g. Ramesses II — saturated an inherited system through density and simultaneity</span>
+      </div>
+      <div class="cap-flag-item">
+        <span class="cap-flag-letter">I</span>
+        <span class="cap-flag-name">Inheritor</span>
+        <span class="cap-flag-desc">Operated within an inherited symbolic system without making structural contributions — deployed, not generated. e.g. Cleopatra VII — deployed a 2,500-year-old symbolic system without altering it</span>
+      </div>
+    </div>
+    <div class="cap-flag-note">Akhenaten and Cleopatra VII may score identically on the FCP. The flag surfaces the structural difference: Builder vs. Inheritor. Same score — different historical meaning. Record as a supplementary field alongside the 12-point total, never as a replacement for it.</div>
   </div>
 </section>
 
@@ -754,8 +859,7 @@ footer a:hover{color:var(--gold2);}
   <div class="sec-hd"><span class="sec-n">05</span><h2 class="sec-t">The Papers</h2></div>
   <p style="color:var(--mid);font-size:.95rem;max-width:520px;margin-bottom:2.8rem;line-height:1.85;">62 papers spanning cognitive archaeology, symbolic systems theory, and civilizational analysis. Click any to download.</p>
   <div class="papers-tabs" id="papers-tabs">
-    <button class="papers-tab active" data-filter="all">All &nbsp;<span style="opacity:.4">62</span></button>
-    <button class="papers-tab" data-filter="foundation">Foundation &nbsp;<span style="opacity:.4">7</span></button>
+    <button class="papers-tab active" data-filter="foundation">Foundation &nbsp;<span style="opacity:.4">7</span></button>
     <button class="papers-tab" data-filter="civilizations">Civilizations &nbsp;<span style="opacity:.4">14</span></button>
     <button class="papers-tab" data-filter="archaeology">Archaeology &nbsp;<span style="opacity:.4">7</span></button>
     <button class="papers-tab" data-filter="theory">Theory &nbsp;<span style="opacity:.4">22</span></button>
@@ -1060,7 +1164,7 @@ function renderPapers(filter){
     </a>
   `).join('');
 }
-renderPapers('all');
+renderPapers('foundation');
 
 document.getElementById('papers-tabs').addEventListener('click',e=>{
   const tab=e.target.closest('.papers-tab');
