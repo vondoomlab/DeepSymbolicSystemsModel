@@ -184,17 +184,9 @@ nav{
 .sec-t{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,4.2vw,3rem);font-weight:700;line-height:1.1;}
 
 /* ── INTRO ── */
-.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
-@media(max-width:860px){.intro-grid{grid-template-columns:1fr;gap:3rem;}}
-.intro-p{font-size:1.05rem;color:rgba(240,234,216,.72);line-height:1.85;margin-bottom:1.2rem;}
+.intro-lead{max-width:720px;}
+.intro-p{font-size:1.05rem;color:rgba(240,234,216,.68);line-height:1.9;margin-bottom:1.3rem;}
 .intro-p:last-child{margin-bottom:0;}
-.intro-claims{display:flex;flex-direction:column;gap:0;border:1px solid var(--border);}
-.intro-claim{display:flex;gap:1.4rem;padding:1.6rem 1.6rem;border-bottom:1px solid var(--border);transition:background .25s;}
-.intro-claim:last-child{border-bottom:none;}
-.intro-claim:hover{background:rgba(201,168,76,.03);}
-.ic-mark{font-family:'DM Mono',monospace;font-size:.54rem;color:var(--gold);opacity:.5;letter-spacing:.12em;flex-shrink:0;padding-top:.22rem;}
-.ic-head{font-family:'Playfair Display',serif;font-size:.98rem;font-weight:700;color:var(--white);margin-bottom:.4rem;line-height:1.3;}
-.ic-body{font-size:.8rem;color:rgba(240,234,216,.5);line-height:1.65;}
 
 /* ── THESIS ── */
 .thesis{display:grid;grid-template-columns:1fr 2fr;gap:5rem;align-items:start;}
@@ -517,35 +509,10 @@ footer a:hover{color:var(--gold2);}
 
 <!-- INTRO -->
 <section class="section rev" id="intro">
-  <div class="intro-grid">
-    <div class="intro-lead">
-      <p class="intro-p">The standard story of civilization goes: agriculture → cities → writing → civilization. The DSSM argues this is the story told backwards.</p>
-      <p class="intro-p">Writing and monuments did not create civilization. They recorded one that already existed — built over thousands of years through something far less visible: the repetition of embodied practice until behavior became structure, and structure became the world.</p>
-      <p class="intro-p">This is a framework. It applies to Egypt, Mesopotamia, East Asia, the Indus Valley, Mesoamerica — and to every symbolic system being built right now, including artificial intelligence.</p>
-    </div>
-    <div class="intro-claims">
-      <div class="intro-claim">
-        <div class="ic-mark">01</div>
-        <div class="ic-text">
-          <div class="ic-head">Civilization begins in the body, not in stone.</div>
-          <div class="ic-body">The first symbolic infrastructure is gestural, spatial, and ritual — built by repetition before any object is made to hold it.</div>
-        </div>
-      </div>
-      <div class="intro-claim">
-        <div class="ic-mark">02</div>
-        <div class="ic-text">
-          <div class="ic-head">Monuments and writing are receipts, not origins.</div>
-          <div class="ic-body">By the time a culture builds a pyramid or inscribes a tablet, it has already been civilized for millennia. The visible record is the last thing to arrive.</div>
-        </div>
-      </div>
-      <div class="intro-claim">
-        <div class="ic-mark">03</div>
-        <div class="ic-text">
-          <div class="ic-head">The same four-stage sequence appears everywhere.</div>
-          <div class="ic-body">Embodied familiarity → cognitive offloading → institutional emergence → monumental externalization. Every civilization. Every era. Different material. Identical structure.</div>
-        </div>
-      </div>
-    </div>
+  <div class="intro-lead">
+    <p class="intro-p">The standard story of civilization goes: agriculture → cities → writing → civilization. The DSSM argues this is the story told backwards.</p>
+    <p class="intro-p">Writing and monuments did not create civilization. They recorded one that already existed — built over thousands of years through something far less visible: the repetition of embodied practice until behavior became structure, and structure became the world.</p>
+    <p class="intro-p">This is a framework for understanding how that happens. It applies to Egypt, Mesopotamia, East Asia, the Indus Valley, Mesoamerica — and to every symbolic system being built right now, including artificial intelligence.</p>
   </div>
 </section>
 
