@@ -241,15 +241,31 @@ nav{
 .tl-date{font-family:'DM Mono',monospace;font-size:.66rem;color:var(--gold);text-align:right;white-space:nowrap;}
 
 /* ── CHART ── */
-.chart{margin-top:3rem;padding:2rem 2rem 1.5rem;border:1px solid var(--border);background:var(--card);position:relative;overflow:hidden;}
+.chart{margin-top:3rem;padding:2rem 2rem 1.5rem;border:1px solid var(--border);background:var(--card);position:relative;overflow:visible;}
 .chart::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
 .chart-title{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mid);margin-bottom:2rem;}
-.bar-row{display:flex;align-items:center;gap:1.2rem;margin-bottom:1.2rem;}
+.bar-row{display:flex;align-items:center;gap:1.2rem;margin-bottom:1.2rem;position:relative;cursor:default;}
 .bar-lbl{font-family:'Playfair Display',serif;font-size:.82rem;min-width:112px;text-align:right;}
 .bar-track{flex:1;height:5px;background:rgba(255,255,255,.04);position:relative;overflow:hidden;}
 .bar-fill{height:100%;background:linear-gradient(90deg,var(--rust),var(--gold),var(--gold2));transform:scaleX(0);transform-origin:left;transition:transform 1.4s cubic-bezier(.16,1,.3,1);}
 .bar-row.go .bar-fill{transform:scaleX(1);}
 .bar-val{font-family:'DM Mono',monospace;font-size:.58rem;color:var(--mid);min-width:72px;}
+.bar-tip{
+  position:absolute;bottom:calc(100% + 10px);left:112px;
+  width:310px;padding:1rem 1.2rem;
+  background:#13100c;border:1px solid var(--border2);
+  font-size:.75rem;color:rgba(240,234,216,.72);line-height:1.7;
+  pointer-events:none;opacity:0;transform:translateY(4px);
+  transition:opacity .18s,transform .18s;z-index:300;
+}
+.bar-tip::after{
+  content:'';position:absolute;top:100%;left:2.2rem;
+  border:5px solid transparent;border-top-color:var(--border2);
+}
+.bar-tip-path{font-family:'DM Mono',monospace;font-size:.48rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);opacity:.7;display:block;margin-bottom:.45rem;}
+.bar-row:hover .bar-tip{opacity:1;transform:translateY(0);}
+.bar-row:hover .bar-lbl{color:var(--gold);}
+.bar-row:hover .bar-val{color:var(--gold2);}
 
 /* ── FCP ── */
 .fcp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-bottom:1.4rem;}
@@ -634,12 +650,52 @@ footer a:hover{color:var(--gold2);}
   </div>
 
   <div class="chart rev">
-    <div class="chart-title">Symbolic saturation depth — relative BCE scale</div>
-    <div class="bar-row"><span class="bar-lbl">Egypt</span><div class="bar-track"><div class="bar-fill" style="--w:100%"></div></div><span class="bar-val">~12,500 BCE</span></div>
-    <div class="bar-row"><span class="bar-lbl">Mesopotamia</span><div class="bar-track"><div class="bar-fill" style="--w:64%"></div></div><span class="bar-val">~8,000 BCE</span></div>
-    <div class="bar-row"><span class="bar-lbl">East Asia</span><div class="bar-track"><div class="bar-fill" style="--w:48%"></div></div><span class="bar-val">~6,000 BCE</span></div>
-    <div class="bar-row"><span class="bar-lbl">Indus Valley</span><div class="bar-track"><div class="bar-fill" style="--w:44%"></div></div><span class="bar-val">~5,500 BCE</span></div>
-    <div class="bar-row"><span class="bar-lbl">Mesoamerica</span><div class="bar-track"><div class="bar-fill" style="--w:32%"></div></div><span class="bar-val">~4,000 BCE</span></div>
+    <div class="chart-title">Symbolic saturation depth — relative BCE scale · hover to read</div>
+    <div class="bar-row">
+      <span class="bar-lbl">Egypt</span>
+      <div class="bar-track"><div class="bar-fill" style="--w:100%"></div></div>
+      <span class="bar-val">~12,500 BCE</span>
+      <div class="bar-tip">
+        <span class="bar-tip-path">Pathway A · Axial-River / Stone-Anchor</span>
+        The deepest saturation record of any civilization in the model. The Nile corridor enabled fixed symbolic anchoring across millennia — spatial permanence doing the work that writing would later do. Stage III was crossed long before the first dynasty was named. Nabta Playa (~7,500 BCE) is the earliest confirmed saturation site.
+      </div>
+    </div>
+    <div class="bar-row">
+      <span class="bar-lbl">Mesopotamia</span>
+      <div class="bar-track"><div class="bar-fill" style="--w:64%"></div></div>
+      <span class="bar-val">~8,000 BCE</span>
+      <div class="bar-tip">
+        <span class="bar-tip-path">Pathway A · Axial-River / Stone-Anchor</span>
+        The Zagros corridor produced a dense network of symbolic anchor sites that accumulated saturation depth across 4,000 years before the first city was built. Ain Ghazal is the key Stage II marker. Cuneiform did not create Mesopotamia — it recorded a civilization already ancient.
+      </div>
+    </div>
+    <div class="bar-row">
+      <span class="bar-lbl">East Asia</span>
+      <div class="bar-track"><div class="bar-fill" style="--w:48%"></div></div>
+      <span class="bar-val">~6,000 BCE</span>
+      <div class="bar-tip">
+        <span class="bar-tip-path">Pathway B · Portable / Craft-based</span>
+        No monumental anchor. Instead, jade networks, lacquerware traditions, and portable symbolic objects carried the symbolic load across vast distances. The same forms appear across 2,000 kilometers without any central authority enforcing them. The object is the institution.
+      </div>
+    </div>
+    <div class="bar-row">
+      <span class="bar-lbl">Indus Valley</span>
+      <div class="bar-track"><div class="bar-fill" style="--w:44%"></div></div>
+      <span class="bar-val">~5,500 BCE</span>
+      <div class="bar-tip">
+        <span class="bar-tip-path">Pathway C · Infrastructural Embedding</span>
+        Mehrgarh (~7,000 BCE) is the earliest precondition site. Full saturation is confirmed at Mohenjo-daro and Harappa. No deciphered script. No identified ruler. Yet perfectly standardized brick dimensions, drainage systems, and weights across 1.5 million square kilometers. The infrastructure is the symbolic system.
+      </div>
+    </div>
+    <div class="bar-row">
+      <span class="bar-lbl">Mesoamerica</span>
+      <div class="bar-track"><div class="bar-fill" style="--w:32%"></div></div>
+      <span class="bar-val">~4,000 BCE</span>
+      <div class="bar-tip">
+        <span class="bar-tip-path">Pathway D · Distributed / Network</span>
+        Saturation through a web of shared ceremonial practice distributed across sites — no single anchoring center, no dominant monument. The Olmec precursor network is the earliest confirmed Stage II structure. San Lorenzo is the first confirmed Stage III site. The network itself is the civilization.
+      </div>
+    </div>
   </div>
 </section>
 
