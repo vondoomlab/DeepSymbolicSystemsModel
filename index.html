@@ -297,22 +297,38 @@ nav{
 .cl-arr{font-family:'DM Mono',monospace;font-size:.62rem;color:var(--gold);opacity:0;transform:translateX(-6px);transition:opacity .3s,transform .3s;margin-top:.15rem;}
 .cl:hover .cl-arr{opacity:1;transform:translateX(0);}
 
-/* ── INSTAGRAM CARD ── */
-.ig-wrap{margin-top:1px;}
+/* ── SOCIAL CARDS ── */
+.ig-wrap{margin-top:1px;display:flex;flex-direction:column;}
 .ig-card{
   display:flex;align-items:center;gap:1.2rem;padding:1.5rem 1.8rem;
-  border:1px solid var(--border);background:var(--black);
+  border:1px solid var(--border);border-top:none;background:var(--black);
   transition:background .3s,border-color .3s;position:relative;overflow:hidden;
 }
-.ig-card::before{content:'';position:absolute;inset:0;background:linear-gradient(120deg,rgba(131,58,180,.06),rgba(253,29,29,.04),rgba(252,176,69,.04));opacity:0;transition:opacity .35s;}
-.ig-card:hover{background:var(--card);border-color:rgba(131,58,180,.35);}
+.ig-card:first-child{border-top:1px solid var(--border);}
+.ig-card::before{content:'';position:absolute;inset:0;opacity:0;transition:opacity .35s;}
+.ig-card:hover{background:var(--card);}
 .ig-card:hover::before{opacity:1;}
-.ig-logo{width:38px;height:38px;flex-shrink:0;background:linear-gradient(135deg,#833ab4,#fd1d1d 50%,#fcb045);border-radius:10px;display:flex;align-items:center;justify-content:center;}
+/* Instagram */
+.ig-card--ig::before{background:linear-gradient(120deg,rgba(131,58,180,.06),rgba(253,29,29,.04),rgba(252,176,69,.04));}
+.ig-card--ig:hover{border-color:rgba(131,58,180,.35);}
+.ig-card--ig:hover .ig-name{color:#e2a0ff;}
+.ig-arr--ig{color:rgba(200,130,255,.7);}
+/* YouTube */
+.ig-card--yt::before{background:linear-gradient(120deg,rgba(255,0,0,.06),rgba(255,80,0,.03));}
+.ig-card--yt:hover{border-color:rgba(255,0,0,.3);}
+.ig-card--yt:hover .ig-name{color:#ff8080;}
+.ig-arr--yt{color:rgba(255,80,80,.7);}
+/* Spotify */
+.ig-card--sp::before{background:linear-gradient(120deg,rgba(29,185,84,.06),rgba(29,185,84,.03));}
+.ig-card--sp:hover{border-color:rgba(29,185,84,.3);}
+.ig-card--sp:hover .ig-name{color:#6dffaa;}
+.ig-arr--sp{color:rgba(29,185,84,.7);}
+
+.ig-logo{width:38px;height:38px;flex-shrink:0;border-radius:10px;display:flex;align-items:center;justify-content:center;}
 .ig-logo svg{width:21px;height:21px;}
 .ig-inf{flex:1;}
 .ig-lbl{font-family:'DM Mono',monospace;font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mid);margin-bottom:.2rem;}
 .ig-name{font-size:1rem;color:var(--white);display:flex;align-items:center;gap:.4rem;transition:color .3s;}
-.ig-card:hover .ig-name{color:#e2a0ff;}
 .vbadge{
   display:inline-flex;align-items:center;justify-content:center;
   width:17px;height:17px;background:#3897f0;border-radius:50%;flex-shrink:0;
@@ -321,7 +337,7 @@ nav{
 }
 @keyframes vPulse{0%,100%{box-shadow:0 0 5px rgba(56,151,240,.4);}50%{box-shadow:0 0 16px rgba(56,151,240,.9),0 0 32px rgba(56,151,240,.3);}}
 .vbadge svg{width:9px;height:9px;}
-.ig-arr{font-family:'DM Mono',monospace;font-size:.62rem;color:rgba(200,130,255,.7);opacity:0;transform:translateX(-6px);transition:opacity .3s,transform .3s;}
+.ig-arr{font-family:'DM Mono',monospace;font-size:.62rem;opacity:0;transform:translateX(-6px);transition:opacity .3s,transform .3s;}
 .ig-card:hover .ig-arr{opacity:1;transform:translateX(0);}
 
 /* ── RIPPLE ── */
@@ -892,8 +908,8 @@ footer a:hover{color:var(--gold2);}
     <a class="cl rh" href="mailto:Anthony.vondoom@outlook.com"><span class="cl-lbl">Contact</span><span class="cl-name">Email</span><span class="cl-arr">→ Anthony.vondoom@outlook.com</span></a>
   </div>
   <div class="ig-wrap">
-    <a class="ig-card rh" href="https://instagram.com/anthony_vondoom" target="_blank" rel="noopener">
-      <div class="ig-logo">
+    <a class="ig-card ig-card--ig rh" href="https://instagram.com/anthony_vondoom" target="_blank" rel="noopener">
+      <div class="ig-logo" style="background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);">
         <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="white" stroke="none"/></svg>
       </div>
       <div class="ig-inf">
@@ -905,7 +921,27 @@ footer a:hover{color:var(--gold2);}
           </span>
         </div>
       </div>
-      <span class="ig-arr">→ Follow</span>
+      <span class="ig-arr ig-arr--ig">→ Follow</span>
+    </a>
+    <a class="ig-card ig-card--yt rh" href="https://www.youtube.com/@buriedsignal2026" target="_blank" rel="noopener">
+      <div class="ig-logo" style="background:#FF0000;">
+        <svg viewBox="0 0 24 24" fill="white"><path d="M10 8l6 4-6 4V8z"/></svg>
+      </div>
+      <div class="ig-inf">
+        <div class="ig-lbl">YouTube</div>
+        <div class="ig-name">Buried Signal</div>
+      </div>
+      <span class="ig-arr ig-arr--yt">→ Watch</span>
+    </a>
+    <a class="ig-card ig-card--sp rh" href="https://open.spotify.com/show/6MkmQuhX1FNZTEni9GhfxQ?si=5df685edb71e4a1c" target="_blank" rel="noopener">
+      <div class="ig-logo" style="background:#1DB954;">
+        <svg viewBox="0 0 24 24" fill="white"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424a.623.623 0 01-.857.207c-2.348-1.435-5.304-1.76-8.785-.964a.623.623 0 01-.277-1.215c3.809-.87 7.076-.496 9.712 1.115a.623.623 0 01.207.857zm1.223-2.722a.78.78 0 01-1.072.257c-2.687-1.652-6.785-2.13-9.965-1.166a.78.78 0 01-.45-1.493c3.632-1.098 8.147-.567 11.23 1.33a.78.78 0 01.257 1.072zm.105-2.835C14.692 8.95 9.375 8.775 6.297 9.71a.937.937 0 11-.543-1.793c3.563-1.08 9.484-.87 13.22 1.37a.937.937 0 01-.96 1.58z"/></svg>
+      </div>
+      <div class="ig-inf">
+        <div class="ig-lbl">Podcast · Spotify</div>
+        <div class="ig-name">Buried Signal</div>
+      </div>
+      <span class="ig-arr ig-arr--sp">→ Listen</span>
     </a>
   </div>
 </section>
