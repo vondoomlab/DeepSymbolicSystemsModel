@@ -8,7 +8,7 @@
 <meta name="keywords" content="Deep Symbolic Systems Model, DSSM, Anthony Vondoom, cognitive archaeology, symbolic systems, civilization, ritual, monumentality"/>
 <meta name="author" content="Anthony Vondoom"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Egyptian+Hieroglyphs&family=Noto+Sans+Cuneiform&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
 :root{
   --black:#040302;
@@ -584,168 +584,131 @@ footer a:hover{color:var(--gold2);}
 <div class="ancient-bg" aria-hidden="true">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
 <defs>
-  <!-- Egyptian: Ankh -->
-  <symbol id="gh-ankh" viewBox="0 0 40 58">
-    <ellipse cx="20" cy="13" rx="10" ry="11" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/>
-    <line x1="20" y1="24" x2="20" y2="56" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/>
-    <line x1="6" y1="36" x2="34" y2="36" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/>
+  <!-- Indus Valley: Fish sign (most common documented sign in corpus) -->
+  <symbol id="iv-fish" viewBox="0 0 52 26">
+    <path d="M6,13 Q18,2 32,13 Q18,24 6,13Z" fill="none" stroke="currentColor" stroke-width="2.2"/>
+    <path d="M32,13 L48,5 M32,13 L48,21 M32,13 L50,13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="14" cy="10" r="1.8" fill="currentColor"/>
   </symbol>
-  <!-- Egyptian: Eye of Horus -->
-  <symbol id="gh-eye" viewBox="0 0 72 42">
-    <path d="M4,21 Q20,5 36,21 Q20,37 4,21Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
-    <path d="M36,21 Q52,5 68,21 Q52,37 36,21Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
-    <circle cx="36" cy="21" r="6" fill="none" stroke="currentColor" stroke-width="2.5"/>
-    <circle cx="36" cy="21" r="2.5" fill="currentColor"/>
+  <!-- Indus Valley: Jar / storage vessel sign -->
+  <symbol id="iv-jar" viewBox="0 0 34 46">
+    <line x1="9" y1="3" x2="25" y2="3" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M9,3 Q2,12 2,24 Q2,40 17,43 Q32,40 32,24 Q32,12 25,3" fill="none" stroke="currentColor" stroke-width="2.2"/>
   </symbol>
-  <!-- Egyptian: Water (N hieroglyph) -->
-  <symbol id="gh-water" viewBox="0 0 56 34">
-    <path d="M2,8 Q11,3 20,8 Q29,13 38,8 Q47,3 54,8" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-    <path d="M2,18 Q11,13 20,18 Q29,23 38,18 Q47,13 54,18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-    <path d="M2,28 Q11,23 20,28 Q29,33 38,28 Q47,23 54,28" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Indus Valley: Three linked circles (compound sign) -->
+  <symbol id="iv-3c" viewBox="0 0 72 28">
+    <circle cx="14" cy="14" r="12" fill="none" stroke="currentColor" stroke-width="2.2"/>
+    <circle cx="36" cy="14" r="12" fill="none" stroke="currentColor" stroke-width="2.2"/>
+    <circle cx="58" cy="14" r="12" fill="none" stroke="currentColor" stroke-width="2.2"/>
   </symbol>
-  <!-- Egyptian: Bird (Horus hawk) -->
-  <symbol id="gh-bird" viewBox="0 0 62 48">
-    <circle cx="50" cy="10" r="5" fill="none" stroke="currentColor" stroke-width="2.2"/>
-    <path d="M50,15 Q46,26 36,32 Q22,38 8,43" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-    <path d="M50,15 Q57,19 54,27 Q49,32 40,30" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-    <path d="M36,32 Q26,42 20,45" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-    <line x1="44" y1="9" x2="52" y2="4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <!-- Indus Valley: Anthropomorphic standing figure -->
+  <symbol id="iv-man" viewBox="0 0 30 52">
+    <circle cx="15" cy="7" r="5.5" fill="none" stroke="currentColor" stroke-width="2.2"/>
+    <line x1="15" y1="13" x2="15" y2="34" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+    <line x1="4"  y1="20" x2="26" y2="20" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+    <line x1="15" y1="34" x2="5"  y2="50" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+    <line x1="15" y1="34" x2="25" y2="50" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
   </symbol>
-  <!-- Egyptian: Djed pillar -->
-  <symbol id="gh-djed" viewBox="0 0 36 58">
-    <rect x="12" y="2" width="12" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="2.2"/>
-    <line x1="4" y1="19" x2="32" y2="19" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/>
-    <line x1="4" y1="28" x2="32" y2="28" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/>
-    <line x1="4" y1="37" x2="32" y2="37" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/>
-    <path d="M7,45 Q18,41 29,45 L32,56 Q18,52 4,56Z" fill="none" stroke="currentColor" stroke-width="2.2"/>
-  </symbol>
-  <!-- Egyptian: Sun with rays -->
-  <symbol id="gh-sun" viewBox="0 0 46 46">
-    <circle cx="23" cy="23" r="8" fill="none" stroke="currentColor" stroke-width="2.5"/>
-    <line x1="23" y1="3" x2="23" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-    <line x1="23" y1="34" x2="23" y2="43" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-    <line x1="3" y1="23" x2="12" y2="23" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-    <line x1="34" y1="23" x2="43" y2="23" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-    <line x1="9" y1="9" x2="15.5" y2="15.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-    <line x1="30.5" y1="30.5" x2="37" y2="37" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-    <line x1="37" y1="9" x2="30.5" y2="15.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-    <line x1="9" y1="37" x2="15.5" y2="30.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-  </symbol>
-  <!-- Cuneiform: horizontal nail -->
-  <symbol id="cu-h" viewBox="0 0 46 14">
-    <polygon points="2,7 16,2 44,7 16,12" fill="currentColor"/>
-  </symbol>
-  <!-- Cuneiform: vertical nail -->
-  <symbol id="cu-v" viewBox="0 0 14 46">
-    <polygon points="7,2 2,16 7,44 12,16" fill="currentColor"/>
-  </symbol>
-  <!-- Cuneiform: compound word sign -->
-  <symbol id="cu-word" viewBox="0 0 52 48">
-    <polygon points="2,11 15,5 46,11 15,17" fill="currentColor"/>
-    <polygon points="2,25 15,19 46,25 15,31" fill="currentColor"/>
-    <polygon points="25,2 29,2 25,44 21,44" fill="currentColor"/>
-  </symbol>
-  <!-- Cuneiform: city/gate compound -->
-  <symbol id="cu-gate" viewBox="0 0 56 52">
-    <polygon points="2,13 13,7 52,13 13,19" fill="currentColor"/>
-    <polygon points="2,28 13,22 52,28 13,34" fill="currentColor"/>
-    <polygon points="27,2 31,2 27,50 23,50" fill="currentColor"/>
-    <polygon points="40,2 44,2 40,34 36,34" fill="currentColor"/>
-  </symbol>
-  <!-- Vinča: X mark -->
-  <symbol id="vi-x" viewBox="0 0 32 32">
-    <line x1="3" y1="3" x2="29" y2="29" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
-    <line x1="29" y1="3" x2="3" y2="29" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
-  </symbol>
-  <!-- Vinča: comb -->
-  <symbol id="vi-comb" viewBox="0 0 48 30">
-    <line x1="2" y1="7" x2="46" y2="7" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-    <line x1="9"  y1="7" x2="9"  y2="28" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-    <line x1="19" y1="7" x2="19" y2="28" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-    <line x1="29" y1="7" x2="29" y2="28" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-    <line x1="39" y1="7" x2="39" y2="28" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-  </symbol>
-  <!-- Vinča: zigzag -->
-  <symbol id="vi-zz" viewBox="0 0 58 24">
-    <polyline points="2,19 14,5 26,19 38,5 50,19 62,5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  </symbol>
-  <!-- Vinča: double chevron -->
-  <symbol id="vi-vv" viewBox="0 0 40 36">
-    <polyline points="3,6 20,30 37,6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-    <polyline points="9,6 20,23 31,6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  </symbol>
-  <!-- Vinča: branch / tree mark -->
-  <symbol id="vi-branch" viewBox="0 0 32 42">
-    <line x1="16" y1="2" x2="16" y2="40" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-    <line x1="16" y1="12" x2="5"  y2="22" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-    <line x1="16" y1="12" x2="27" y2="22" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-    <line x1="16" y1="26" x2="6"  y2="34" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-    <line x1="16" y1="26" x2="26" y2="34" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-  </symbol>
-  <!-- Vinča: triple vertical lines -->
-  <symbol id="vi-triple" viewBox="0 0 34 37">
-    <line x1="7"  y1="3" x2="7"  y2="34" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-    <line x1="17" y1="3" x2="17" y2="34" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-    <line x1="27" y1="3" x2="27" y2="34" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-  </symbol>
-  <!-- Vinča: circle cross -->
-  <symbol id="vi-circ" viewBox="0 0 42 42">
-    <circle cx="21" cy="21" r="18" fill="none" stroke="currentColor" stroke-width="2.5"/>
-    <line x1="21" y1="3"  x2="21" y2="39" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-    <line x1="3"  y1="21" x2="39" y2="21" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Indus Valley: Peepal leaf sign -->
+  <symbol id="iv-leaf" viewBox="0 0 36 48">
+    <path d="M18,4 Q34,14 34,26 Q34,44 18,46 Q2,44 2,26 Q2,14 18,4Z" fill="none" stroke="currentColor" stroke-width="2.2"/>
+    <line x1="18" y1="6" x2="18" y2="44" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="18" y1="18" x2="8"  y2="28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="18" y1="18" x2="28" y2="28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
   </symbol>
 </defs>
 
-<!-- ── TOP ROW ── -->
-<g opacity=".58" transform="translate(62,58) rotate(-8)"><use href="#gh-ankh" width="38" height="55"/></g>
-<g opacity=".40" transform="translate(286,44) rotate(5)"><use href="#gh-water" width="58" height="35"/></g>
-<g opacity=".48" transform="translate(505,68) rotate(-12)"><use href="#cu-h" width="50" height="15"/></g>
-<g opacity=".36" transform="translate(722,52) rotate(7)"><use href="#vi-vv" width="44" height="38"/></g>
-<g opacity=".44" transform="translate(948,38) rotate(-5)"><use href="#gh-sun" width="50" height="50"/></g>
-<g opacity=".38" transform="translate(1168,62) rotate(10)"><use href="#vi-comb" width="52" height="31"/></g>
-<g opacity=".52" transform="translate(1388,46) rotate(-7)"><use href="#cu-word" width="54" height="50"/></g>
-<g opacity=".42" transform="translate(1524,78) rotate(4)"><use href="#vi-x" width="35" height="35"/></g>
+<!-- ═══ TOP ROW ═══ -->
+<!-- Ankh 𓋹 -->
+<text x="72"   y="98"  font-size="62" font-family="'Noto Sans Egyptian Hieroglyphs', serif" fill="currentColor" opacity=".62" transform="rotate(-7,72,98)">𓋹</text>
+<!-- Cuneiform AN 𒀭 (sky/divine) -->
+<text x="268"  y="88"  font-size="54" font-family="'Noto Sans Cuneiform', monospace" fill="currentColor" opacity=".52" transform="rotate(5,268,88)">𒀭</text>
+<!-- Eye of Horus 𓂀 -->
+<text x="472"  y="92"  font-size="56" font-family="'Noto Sans Egyptian Hieroglyphs', serif" fill="currentColor" opacity=".58" transform="rotate(-11,472,92)">𓂀</text>
+<!-- Indus fish -->
+<g opacity=".50" transform="translate(680,52) rotate(6)"><use href="#iv-fish" width="58" height="28"/></g>
+<!-- Ra sun disk 𓇳 -->
+<text x="898"  y="96"  font-size="60" font-family="'Noto Sans Egyptian Hieroglyphs', serif" fill="currentColor" opacity=".56" transform="rotate(-5,898,96)">𓇳</text>
+<!-- Cuneiform UD 𒌓 (sun/day) -->
+<text x="1098" y="84"  font-size="50" font-family="'Noto Sans Cuneiform', monospace" fill="currentColor" opacity=".50" transform="rotate(9,1098,84)">𒌓</text>
+<!-- Indus 3 circles -->
+<g opacity=".46" transform="translate(1296,50) rotate(-4)"><use href="#iv-3c" width="76" height="30"/></g>
+<!-- Owl 𓅓 -->
+<text x="1518" y="96"  font-size="58" font-family="'Noto Sans Egyptian Hieroglyphs', serif" fill="currentColor" opacity=".55" transform="rotate(10,1518,96)">𓅓</text>
 
-<!-- ── UPPER-MIDDLE ROW ── -->
-<g opacity=".36" transform="translate(128,196) rotate(12)"><use href="#vi-zz" width="62" height="25"/></g>
-<g opacity=".54" transform="translate(318,216) rotate(-6)"><use href="#gh-eye" width="74" height="44"/></g>
-<g opacity=".42" transform="translate(554,192) rotate(8)"><use href="#cu-gate" width="60" height="55"/></g>
-<g opacity=".46" transform="translate(796,208) rotate(-14)"><use href="#gh-djed" width="40" height="60"/></g>
-<g opacity=".34" transform="translate(1016,198) rotate(6)"><use href="#vi-branch" width="35" height="46"/></g>
-<g opacity=".48" transform="translate(1242,212) rotate(-10)"><use href="#gh-bird" width="68" height="50"/></g>
-<g opacity=".38" transform="translate(1472,192) rotate(7)"><use href="#vi-triple" width="36" height="40"/></g>
+<!-- ═══ UPPER-MIDDLE ROW ═══ -->
+<!-- Cuneiform A 𒀀 (water) -->
+<text x="128"  y="248" font-size="52" font-family="'Noto Sans Cuneiform', monospace" fill="currentColor" opacity=".48" transform="rotate(12,128,248)">𒀀</text>
+<!-- Cobra / Wadjet 𓆙 -->
+<text x="328"  y="238" font-size="58" font-family="'Noto Sans Egyptian Hieroglyphs', serif" fill="currentColor" opacity=".55" transform="rotate(-7,328,238)">𓆙</text>
+<!-- Indus jar -->
+<g opacity=".50" transform="translate(540,192) rotate(7)"><use href="#iv-jar" width="40" height="55"/></g>
+<!-- Cuneiform LUGAL 𒈗 (king) -->
+<text x="762"  y="252" font-size="48" font-family="'Noto Sans Cuneiform', monospace" fill="currentColor" opacity=".45" transform="rotate(-13,762,252)">𒈗</text>
+<!-- Scarab / Khepri 𓆣 -->
+<text x="978"  y="236" font-size="62" font-family="'Noto Sans Egyptian Hieroglyphs', serif" fill="currentColor" opacity=".54" transform="rotate(8,978,236)">𓆣</text>
+<!-- Indus man figure -->
+<g opacity=".46" transform="translate(1208,196) rotate(-9)"><use href="#iv-man" width="35" height="58"/></g>
+<!-- Cuneiform EN 𒂗 (lord) -->
+<text x="1432" y="242" font-size="50" font-family="'Noto Sans Cuneiform', monospace" fill="currentColor" opacity=".48" transform="rotate(5,1432,242)">𒂗</text>
+<!-- Water hieroglyph 𓈖 -->
+<text x="66"   y="282" font-size="48" font-family="'Noto Sans Egyptian Hieroglyphs', serif" fill="currentColor" opacity=".42" transform="rotate(-6,66,282)">𓈖</text>
 
-<!-- ── MIDDLE ROW ── -->
-<g opacity=".30" transform="translate(52,376) rotate(-6)"><use href="#cu-v" width="15" height="50"/></g>
-<g opacity=".42" transform="translate(218,368) rotate(15)"><use href="#vi-circ" width="46" height="46"/></g>
-<g opacity=".36" transform="translate(468,392) rotate(-8)"><use href="#gh-water" width="56" height="34"/></g>
-<g opacity=".26" transform="translate(698,357) rotate(5)"><use href="#cu-word" width="50" height="45"/></g>
-<g opacity=".30" transform="translate(918,388) rotate(-10)"><use href="#vi-comb" width="48" height="30"/></g>
-<g opacity=".40" transform="translate(1142,367) rotate(8)"><use href="#gh-ankh" width="38" height="54"/></g>
-<g opacity=".33" transform="translate(1372,382) rotate(-5)"><use href="#vi-zz" width="60" height="23"/></g>
-<g opacity=".28" transform="translate(1538,362) rotate(12)"><use href="#cu-h" width="47" height="15"/></g>
+<!-- ═══ MIDDLE ROW ═══ -->
+<!-- Lion 𓃭 -->
+<text x="52"   y="418" font-size="54" font-family="'Noto Sans Egyptian Hieroglyphs', serif" fill="currentColor" opacity=".38" transform="rotate(-8,52,418)">𓃭</text>
+<!-- Sanskrit OM ॐ -->
+<text x="218"  y="428" font-size="58" font-family="serif"            fill="currentColor" opacity=".42" transform="rotate(10,218,428)">ॐ</text>
+<!-- Cuneiform KUR 𒆳 (mountain) -->
+<text x="452"  y="406" font-size="48" font-family="'Noto Sans Cuneiform', monospace" fill="currentColor" opacity=".36" transform="rotate(-12,452,406)">𒆳</text>
+<!-- Indus 3 circles -->
+<g opacity=".34" transform="translate(652,372) rotate(5)"><use href="#iv-3c" width="72" height="28"/></g>
+<!-- Ankh again 𓋹 -->
+<text x="876"  y="416" font-size="44" font-family="'Noto Sans Egyptian Hieroglyphs', serif" fill="currentColor" opacity=".32" transform="rotate(-8,876,416)">𓋹</text>
+<!-- Cuneiform GI 𒄀 (reed) -->
+<text x="1082" y="402" font-size="50" font-family="'Noto Sans Cuneiform', monospace" fill="currentColor" opacity=".36" transform="rotate(10,1082,402)">𒄀</text>
+<!-- Eye 𓂀 -->
+<text x="1308" y="420" font-size="48" font-family="'Noto Sans Egyptian Hieroglyphs', serif" fill="currentColor" opacity=".38" transform="rotate(-6,1308,420)">𓂀</text>
+<!-- Indus fish -->
+<g opacity=".34" transform="translate(1512,376) rotate(8)"><use href="#iv-fish" width="55" height="26"/></g>
 
-<!-- ── LOWER-MIDDLE ROW ── -->
-<g opacity=".28" transform="translate(98,528) rotate(8)"><use href="#gh-bird" width="60" height="45"/></g>
-<g opacity=".36" transform="translate(356,546) rotate(-12)"><use href="#vi-x" width="38" height="38"/></g>
-<g opacity=".26" transform="translate(586,518) rotate(6)"><use href="#cu-gate" width="57" height="52"/></g>
-<g opacity=".20" transform="translate(836,542) rotate(-8)"><use href="#gh-sun" width="48" height="48"/></g>
-<g opacity=".28" transform="translate(1052,526) rotate(11)"><use href="#vi-vv" width="42" height="37"/></g>
-<g opacity=".24" transform="translate(1302,548) rotate(-6)"><use href="#gh-djed" width="38" height="56"/></g>
-<g opacity=".30" transform="translate(1514,524) rotate(8)"><use href="#vi-branch" width="32" height="42"/></g>
+<!-- ═══ LOWER-MIDDLE ROW ═══ -->
+<!-- Cuneiform UD 𒌓 -->
+<text x="98"   y="564" font-size="46" font-family="'Noto Sans Cuneiform', monospace" fill="currentColor" opacity=".30" transform="rotate(8,98,564)">𒌓</text>
+<!-- Indus jar -->
+<g opacity=".32" transform="translate(298,518) rotate(-10)"><use href="#iv-jar" width="36" height="50"/></g>
+<!-- Ra sun disk 𓇳 -->
+<text x="506"  y="560" font-size="50" font-family="'Noto Sans Egyptian Hieroglyphs', serif" fill="currentColor" opacity=".28" transform="rotate(6,506,560)">𓇳</text>
+<!-- Cuneiform EN 𒂗 -->
+<text x="728"  y="545" font-size="47" font-family="'Noto Sans Cuneiform', monospace" fill="currentColor" opacity=".26" transform="rotate(-8,728,545)">𒂗</text>
+<!-- Owl 𓅓 -->
+<text x="948"  y="568" font-size="48" font-family="'Noto Sans Egyptian Hieroglyphs', serif" fill="currentColor" opacity=".30" transform="rotate(12,948,568)">𓅓</text>
+<!-- Indus man -->
+<g opacity=".28" transform="translate(1172,518) rotate(-6)"><use href="#iv-man" width="32" height="54"/></g>
+<!-- Scarab 𓆣 -->
+<text x="1382" y="558" font-size="52" font-family="'Noto Sans Egyptian Hieroglyphs', serif" fill="currentColor" opacity=".28" transform="rotate(8,1382,558)">𓆣</text>
+<!-- Cuneiform LUGAL 𒈗 -->
+<text x="1544" y="542" font-size="44" font-family="'Noto Sans Cuneiform', monospace" fill="currentColor" opacity=".26" transform="rotate(-5,1544,542)">𒈗</text>
 
-<!-- ── BOTTOM ROW (mask fades these) ── -->
-<g opacity=".20" transform="translate(176,696) rotate(-5)"><use href="#vi-triple" width="35" height="38"/></g>
-<g opacity=".26" transform="translate(444,718) rotate(10)"><use href="#cu-h" width="48" height="15"/></g>
-<g opacity=".18" transform="translate(692,692) rotate(-8)"><use href="#vi-circ" width="44" height="44"/></g>
-<g opacity=".16" transform="translate(952,714) rotate(5)"><use href="#gh-water" width="54" height="33"/></g>
-<g opacity=".20" transform="translate(1192,698) rotate(-12)"><use href="#vi-comb" width="46" height="28"/></g>
-<g opacity=".15" transform="translate(1442,716) rotate(7)"><use href="#cu-word" width="48" height="43"/></g>
-
-<!-- ── SANSKRIT OM ── -->
-<text x="158" y="438" font-size="52" font-family="serif" opacity=".38" fill="currentColor" transform="rotate(-5,158,438)">ॐ</text>
-<text x="1368" y="275" font-size="40" font-family="serif" opacity=".30" fill="currentColor" transform="rotate(8,1368,275)">ॐ</text>
-<text x="742" y="806" font-size="44" font-family="serif" opacity=".16" fill="currentColor" transform="rotate(-3,742,806)">ॐ</text>
+<!-- ═══ BOTTOM ROW (mask fades) ═══ -->
+<!-- Cobra 𓆙 -->
+<text x="176"  y="722" font-size="48" font-family="'Noto Sans Egyptian Hieroglyphs', serif" fill="currentColor" opacity=".22" transform="rotate(-6,176,722)">𓆙</text>
+<!-- Sanskrit OM ॐ -->
+<text x="432"  y="732" font-size="54" font-family="serif"            fill="currentColor" opacity=".20" transform="rotate(9,432,732)">ॐ</text>
+<!-- Indus 3 circles -->
+<g opacity=".18" transform="translate(668,696) rotate(-4)"><use href="#iv-3c" width="68" height="27"/></g>
+<!-- Water 𓈖 -->
+<text x="908"  y="724" font-size="46" font-family="'Noto Sans Egyptian Hieroglyphs', serif" fill="currentColor" opacity=".18" transform="rotate(5,908,724)">𓈖</text>
+<!-- Cuneiform KUR 𒆳 -->
+<text x="1142" y="714" font-size="46" font-family="'Noto Sans Cuneiform', monospace" fill="currentColor" opacity=".20" transform="rotate(-8,1142,714)">𒆳</text>
+<!-- Lion 𓃭 -->
+<text x="1382" y="728" font-size="50" font-family="'Noto Sans Egyptian Hieroglyphs', serif" fill="currentColor" opacity=".18" transform="rotate(10,1382,728)">𓃭</text>
+<!-- Indus leaf -->
+<g opacity=".15" transform="translate(1545,690) rotate(-5)"><use href="#iv-leaf" width="38" height="50"/></g>
+<!-- Indus leaf (upper right area, new) -->
+<g opacity=".44" transform="translate(1558,180) rotate(12)"><use href="#iv-leaf" width="42" height="55"/></g>
+<!-- Sanskrit OM bottom-centre (new) -->
+<text x="748"  y="812" font-size="46" font-family="serif"            fill="currentColor" opacity=".14" transform="rotate(-3,748,812)">ॐ</text>
 
 </svg>
 </div>
