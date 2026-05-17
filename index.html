@@ -92,8 +92,8 @@ nav{
 /* ── HERO ── */
 .hero{
   min-height:100vh;display:grid;grid-template-columns:1fr 1fr;
-  align-items:center;gap:4rem;padding:9rem 3rem 5rem;
-  max-width:1300px;margin:0 auto;
+  align-items:center;gap:6rem;padding:9rem 4rem 5rem;
+  max-width:1440px;margin:0 auto;
 }
 @media(max-width:820px){.hero{grid-template-columns:1fr;padding:5rem 1.5rem 4rem;gap:3rem;}}
 
@@ -467,26 +467,26 @@ nav{
 .cap-flag-note{font-size:.73rem;color:rgba(240,234,216,.62);padding:.9rem 1.4rem;border-top:1px solid var(--border);line-height:1.65;font-style:italic;}
 
 /* ── FRAMEWORK VIZ ── */
-.frame-viz{width:100%;max-width:440px;padding:2rem 2rem 1.6rem;border:1px solid var(--border);background:var(--card);position:relative;overflow:hidden;}
+.frame-viz{width:100%;max-width:580px;padding:2.4rem 2.4rem 2rem;border:1px solid var(--border);background:var(--card);position:relative;overflow:hidden;}
 .frame-viz::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
 .fv-header{margin-bottom:1.8rem;padding-bottom:1.2rem;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:baseline;}
-.fv-label{font-family:'DM Mono',monospace;font-size:.52rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);}
-.fv-sub{font-family:'DM Mono',monospace;font-size:.46rem;letter-spacing:.1em;color:var(--mid);opacity:.75;}
-.fv-stages{position:relative;padding-left:3rem;}
-.fv-spine{position:absolute;left:1.05rem;top:.5rem;bottom:.5rem;width:1px;background:linear-gradient(to bottom,var(--gold) 0%,rgba(201,168,76,.6) 35%,rgba(201,168,76,.35) 65%,var(--rust) 100%);}
-.fv-row{position:relative;padding:.95rem 0 .95rem 1rem;border-bottom:1px solid rgba(201,168,76,.06);}
+.fv-label{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);}
+.fv-sub{font-family:'DM Mono',monospace;font-size:.52rem;letter-spacing:.1em;color:var(--mid);opacity:.75;}
+.fv-stages{position:relative;padding-left:3.4rem;}
+.fv-spine{position:absolute;left:1.15rem;top:.5rem;bottom:.5rem;width:1px;background:linear-gradient(to bottom,var(--gold) 0%,rgba(201,168,76,.6) 35%,rgba(201,168,76,.35) 65%,var(--rust) 100%);}
+.fv-row{position:relative;padding:1.1rem 0 1.1rem 1.2rem;border-bottom:1px solid rgba(201,168,76,.06);}
 .fv-row:last-child{border-bottom:none;}
-.fv-node{position:absolute;left:-1.65rem;top:.9rem;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:.58rem;border:1px solid;background:var(--card);letter-spacing:0;}
+.fv-node{position:absolute;left:-1.8rem;top:1rem;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:.62rem;border:1px solid;background:var(--card);letter-spacing:0;}
 .fv-node--iv{border-color:var(--gold);color:var(--gold);box-shadow:0 0 12px rgba(201,168,76,.15);}
 .fv-node--iii{border-color:rgba(201,168,76,.7);color:rgba(201,168,76,.7);}
 .fv-node--ii{border-color:rgba(201,168,76,.55);color:rgba(201,168,76,.55);}
 .fv-node--i{border-color:var(--rust);color:var(--rust);}
-.fv-name{font-size:.84rem;color:var(--white);margin-bottom:.2rem;line-height:1.25;}
-.fv-detail{font-size:.7rem;color:rgba(240,234,216,.68);line-height:1.5;margin-bottom:.25rem;}
-.fv-marker{font-family:'DM Mono',monospace;font-size:.49rem;letter-spacing:.1em;color:var(--gold);opacity:.58;}
-.fv-footer{display:flex;justify-content:space-between;align-items:center;margin-top:1.4rem;padding-top:1rem;border-top:1px solid var(--border);}
-.fv-depth{font-family:'DM Mono',monospace;font-size:.48rem;letter-spacing:.14em;color:var(--rust);opacity:.75;}
-.fv-cite{font-family:'DM Mono',monospace;font-size:.44rem;letter-spacing:.08em;color:var(--mid);opacity:.65;}
+.fv-name{font-size:.96rem;color:var(--white);margin-bottom:.25rem;line-height:1.25;}
+.fv-detail{font-size:.78rem;color:rgba(240,234,216,.68);line-height:1.5;margin-bottom:.3rem;}
+.fv-marker{font-family:'DM Mono',monospace;font-size:.54rem;letter-spacing:.1em;color:var(--gold);opacity:.58;}
+.fv-footer{display:flex;justify-content:space-between;align-items:center;margin-top:1.6rem;padding-top:1.1rem;border-top:1px solid var(--border);}
+.fv-depth{font-family:'DM Mono',monospace;font-size:.52rem;letter-spacing:.14em;color:var(--rust);opacity:.75;}
+.fv-cite{font-family:'DM Mono',monospace;font-size:.48rem;letter-spacing:.08em;color:var(--mid);opacity:.65;}
 /* ── FV ROW HOVER INFO ── */
 .fv-info{max-height:0;overflow:hidden;opacity:0;transition:max-height .38s ease,opacity .24s ease,margin-top .3s ease;margin-top:0;}
 .fv-row:hover .fv-info{max-height:110px;opacity:1;margin-top:.65rem;}
@@ -582,26 +582,22 @@ footer a:hover{color:var(--gold2);}
 <div class="hero-wrap">
 <!-- ANCIENT SYMBOL BACKGROUND -->
 <div class="ancient-bg" aria-hidden="true">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
 <defs>
-  <!-- Indus Valley: Fish sign (most common documented sign in corpus) -->
   <symbol id="iv-fish" viewBox="0 0 52 26">
     <path d="M6,13 Q18,2 32,13 Q18,24 6,13Z" fill="none" stroke="currentColor" stroke-width="2.2"/>
     <path d="M32,13 L48,5 M32,13 L48,21 M32,13 L50,13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
     <circle cx="14" cy="10" r="1.8" fill="currentColor"/>
   </symbol>
-  <!-- Indus Valley: Jar / storage vessel sign -->
   <symbol id="iv-jar" viewBox="0 0 34 46">
     <line x1="9" y1="3" x2="25" y2="3" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
     <path d="M9,3 Q2,12 2,24 Q2,40 17,43 Q32,40 32,24 Q32,12 25,3" fill="none" stroke="currentColor" stroke-width="2.2"/>
   </symbol>
-  <!-- Indus Valley: Three linked circles (compound sign) -->
   <symbol id="iv-3c" viewBox="0 0 72 28">
     <circle cx="14" cy="14" r="12" fill="none" stroke="currentColor" stroke-width="2.2"/>
     <circle cx="36" cy="14" r="12" fill="none" stroke="currentColor" stroke-width="2.2"/>
     <circle cx="58" cy="14" r="12" fill="none" stroke="currentColor" stroke-width="2.2"/>
   </symbol>
-  <!-- Indus Valley: Anthropomorphic standing figure -->
   <symbol id="iv-man" viewBox="0 0 30 52">
     <circle cx="15" cy="7" r="5.5" fill="none" stroke="currentColor" stroke-width="2.2"/>
     <line x1="15" y1="13" x2="15" y2="34" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
@@ -609,106 +605,83 @@ footer a:hover{color:var(--gold2);}
     <line x1="15" y1="34" x2="5"  y2="50" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
     <line x1="15" y1="34" x2="25" y2="50" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
   </symbol>
-  <!-- Indus Valley: Peepal leaf sign -->
   <symbol id="iv-leaf" viewBox="0 0 36 48">
     <path d="M18,4 Q34,14 34,26 Q34,44 18,46 Q2,44 2,26 Q2,14 18,4Z" fill="none" stroke="currentColor" stroke-width="2.2"/>
-    <line x1="18" y1="6" x2="18" y2="44" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="18" y1="6"  x2="18" y2="44" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
     <line x1="18" y1="18" x2="8"  y2="28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
     <line x1="18" y1="18" x2="28" y2="28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
   </symbol>
 </defs>
 
-<!-- ═══ TOP ROW ═══ -->
-<!-- Ankh 𓋹 -->
-<text x="72"   y="98"  font-size="62" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".62" transform="rotate(-7,72,98)">𓋹</text>
-<!-- Cuneiform AN 𒀭 (sky/divine) -->
-<text x="268"  y="88"  font-size="54" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="currentColor" opacity=".52" transform="rotate(5,268,88)">𒀭</text>
-<!-- Eye of Horus 𓂀 -->
-<text x="472"  y="92"  font-size="56" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".58" transform="rotate(-11,472,92)">𓂀</text>
-<!-- Indus fish -->
-<g opacity=".50" transform="translate(680,52) rotate(6)"><use href="#iv-fish" width="58" height="28"/></g>
-<!-- Ra sun disk 𓇳 -->
-<text x="898"  y="96"  font-size="60" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".56" transform="rotate(-5,898,96)">𓇳</text>
-<!-- Cuneiform UD 𒌓 (sun/day) -->
-<text x="1098" y="84"  font-size="50" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="currentColor" opacity=".50" transform="rotate(9,1098,84)">𒌓</text>
-<!-- Indus 3 circles -->
-<g opacity=".46" transform="translate(1296,50) rotate(-4)"><use href="#iv-3c" width="76" height="30"/></g>
-<!-- Owl 𓅓 -->
-<text x="1518" y="96"  font-size="58" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".55" transform="rotate(10,1518,96)">𓅓</text>
+<!-- ═══ ROW 1  y≈88 ═══ -->
+<text x="68"   y="92"  font-size="60" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".62" transform="rotate(-7,68,92)">𓋹</text>
+<text x="268"  y="82"  font-size="52" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="currentColor" opacity=".54" transform="rotate(5,268,82)">𒀭</text>
+<text x="468"  y="90"  font-size="56" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".58" transform="rotate(-10,468,90)">𓂀</text>
+<g opacity=".50" transform="translate(672,50) rotate(6)"><use href="#iv-fish" width="58" height="28"/></g>
+<text x="888"  y="94"  font-size="58" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".56" transform="rotate(-5,888,94)">𓇳</text>
+<text x="1090" y="82"  font-size="50" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="currentColor" opacity=".50" transform="rotate(9,1090,82)">𒌓</text>
+<g opacity=".46" transform="translate(1288,46) rotate(-4)"><use href="#iv-3c" width="76" height="30"/></g>
+<text x="1510" y="92"  font-size="56" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".55" transform="rotate(10,1510,92)">𓅓</text>
 
-<!-- ═══ UPPER-MIDDLE ROW ═══ -->
-<!-- Cuneiform A 𒀀 (water) -->
-<text x="128"  y="248" font-size="52" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="currentColor" opacity=".48" transform="rotate(12,128,248)">𒀀</text>
-<!-- Cobra / Wadjet 𓆙 -->
-<text x="328"  y="238" font-size="58" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".55" transform="rotate(-7,328,238)">𓆙</text>
-<!-- Indus jar -->
-<g opacity=".50" transform="translate(540,192) rotate(7)"><use href="#iv-jar" width="40" height="55"/></g>
-<!-- Cuneiform LUGAL 𒈗 (king) -->
-<text x="762"  y="252" font-size="48" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="currentColor" opacity=".45" transform="rotate(-13,762,252)">𒈗</text>
-<!-- Scarab / Khepri 𓆣 -->
-<text x="978"  y="236" font-size="62" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".54" transform="rotate(8,978,236)">𓆣</text>
-<!-- Indus man figure -->
-<g opacity=".46" transform="translate(1208,196) rotate(-9)"><use href="#iv-man" width="35" height="58"/></g>
-<!-- Cuneiform EN 𒂗 (lord) -->
-<text x="1432" y="242" font-size="50" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="currentColor" opacity=".48" transform="rotate(5,1432,242)">𒂗</text>
-<!-- Water hieroglyph 𓈖 -->
-<text x="66"   y="282" font-size="48" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".42" transform="rotate(-6,66,282)">𓈖</text>
+<!-- ═══ ROW 2  y≈226 ═══ -->
+<text x="52"   y="238" font-size="50" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="currentColor" opacity=".48" transform="rotate(-8,52,238)">𒀀</text>
+<text x="236"  y="244" font-size="56" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".55" transform="rotate(7,236,244)">𓆙</text>
+<g opacity=".50" transform="translate(440,196) rotate(-6)"><use href="#iv-jar" width="40" height="55"/></g>
+<text x="642"  y="250" font-size="48" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="currentColor" opacity=".45" transform="rotate(13,642,250)">𒈗</text>
+<text x="848"  y="236" font-size="60" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".52" transform="rotate(-8,848,236)">𓆣</text>
+<g opacity=".48" transform="translate(1058,194) rotate(9)"><use href="#iv-man" width="35" height="58"/></g>
+<text x="1268" y="248" font-size="50" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="currentColor" opacity=".46" transform="rotate(-5,1268,248)">𒂗</text>
+<text x="1494" y="234" font-size="48" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".44" transform="rotate(7,1494,234)">𓈖</text>
 
-<!-- ═══ MIDDLE ROW ═══ -->
-<!-- Lion 𓃭 -->
-<text x="52"   y="418" font-size="54" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".38" transform="rotate(-8,52,418)">𓃭</text>
-<!-- Sanskrit OM ॐ -->
-<text x="218"  y="428" font-size="58" font-family="serif"            fill="currentColor" opacity=".42" transform="rotate(10,218,428)">ॐ</text>
-<!-- Cuneiform KUR 𒆳 (mountain) -->
-<text x="452"  y="406" font-size="48" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="currentColor" opacity=".36" transform="rotate(-12,452,406)">𒆳</text>
-<!-- Indus 3 circles -->
-<g opacity=".34" transform="translate(652,372) rotate(5)"><use href="#iv-3c" width="72" height="28"/></g>
-<!-- Ankh again 𓋹 -->
-<text x="876"  y="416" font-size="44" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".32" transform="rotate(-8,876,416)">𓋹</text>
-<!-- Cuneiform GI 𒄀 (reed) -->
-<text x="1082" y="402" font-size="50" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="currentColor" opacity=".36" transform="rotate(10,1082,402)">𒄀</text>
-<!-- Eye 𓂀 -->
-<text x="1308" y="420" font-size="48" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".38" transform="rotate(-6,1308,420)">𓂀</text>
-<!-- Indus fish -->
-<g opacity=".34" transform="translate(1512,376) rotate(8)"><use href="#iv-fish" width="55" height="26"/></g>
+<!-- ═══ ROW 3  y≈364 ═══ -->
+<text x="78"   y="374" font-size="54" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".44" transform="rotate(9,78,374)">𓃭</text>
+<text x="264"  y="382" font-size="56" font-family="serif"           fill="currentColor" opacity=".46" transform="rotate(-11,264,382)">ॐ</text>
+<text x="468"  y="368" font-size="48" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="currentColor" opacity=".40" transform="rotate(7,468,368)">𒆳</text>
+<g opacity=".38" transform="translate(660,340) rotate(-5)"><use href="#iv-3c" width="72" height="28"/></g>
+<text x="870"  y="376" font-size="46" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".36" transform="rotate(-9,870,376)">𓋹</text>
+<text x="1066" y="366" font-size="50" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="currentColor" opacity=".40" transform="rotate(10,1066,366)">𒄀</text>
+<g opacity=".44" transform="translate(1270,334) rotate(6)"><use href="#iv-leaf" width="42" height="56"/></g>
+<text x="1506" y="374" font-size="52" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".42" transform="rotate(-6,1506,374)">𓂀</text>
 
-<!-- ═══ LOWER-MIDDLE ROW ═══ -->
-<!-- Cuneiform UD 𒌓 -->
-<text x="98"   y="564" font-size="46" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="currentColor" opacity=".30" transform="rotate(8,98,564)">𒌓</text>
-<!-- Indus jar -->
-<g opacity=".32" transform="translate(298,518) rotate(-10)"><use href="#iv-jar" width="36" height="50"/></g>
-<!-- Ra sun disk 𓇳 -->
-<text x="506"  y="560" font-size="50" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".28" transform="rotate(6,506,560)">𓇳</text>
-<!-- Cuneiform EN 𒂗 -->
-<text x="728"  y="545" font-size="47" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="currentColor" opacity=".26" transform="rotate(-8,728,545)">𒂗</text>
-<!-- Owl 𓅓 -->
-<text x="948"  y="568" font-size="48" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".30" transform="rotate(12,948,568)">𓅓</text>
-<!-- Indus man -->
-<g opacity=".28" transform="translate(1172,518) rotate(-6)"><use href="#iv-man" width="32" height="54"/></g>
-<!-- Scarab 𓆣 -->
-<text x="1382" y="558" font-size="52" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".28" transform="rotate(8,1382,558)">𓆣</text>
-<!-- Cuneiform LUGAL 𒈗 -->
-<text x="1544" y="542" font-size="44" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="currentColor" opacity=".26" transform="rotate(-5,1544,542)">𒈗</text>
+<!-- ═══ ROW 4  y≈502 ═══ -->
+<text x="52"   y="514" font-size="48" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="currentColor" opacity=".36" transform="rotate(-6,52,514)">𒌓</text>
+<g opacity=".38" transform="translate(234,468) rotate(10)"><use href="#iv-jar" width="38" height="52"/></g>
+<text x="436"  y="510" font-size="52" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".34" transform="rotate(-7,436,510)">𓇳</text>
+<text x="636"  y="516" font-size="48" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="currentColor" opacity=".32" transform="rotate(8,636,516)">𒂗</text>
+<text x="844"  y="506" font-size="50" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".30" transform="rotate(-10,844,506)">𓅓</text>
+<g opacity=".34" transform="translate(1048,468) rotate(-7)"><use href="#iv-fish" width="56" height="26"/></g>
+<text x="1256" y="514" font-size="52" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".32" transform="rotate(7,1256,514)">𓆣</text>
+<text x="1480" y="508" font-size="46" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="currentColor" opacity=".30" transform="rotate(-5,1480,508)">𒈗</text>
 
-<!-- ═══ BOTTOM ROW (mask fades) ═══ -->
-<!-- Cobra 𓆙 -->
-<text x="176"  y="722" font-size="48" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".22" transform="rotate(-6,176,722)">𓆙</text>
-<!-- Sanskrit OM ॐ -->
-<text x="432"  y="732" font-size="54" font-family="serif"            fill="currentColor" opacity=".20" transform="rotate(9,432,732)">ॐ</text>
-<!-- Indus 3 circles -->
-<g opacity=".18" transform="translate(668,696) rotate(-4)"><use href="#iv-3c" width="68" height="27"/></g>
-<!-- Water 𓈖 -->
-<text x="908"  y="724" font-size="46" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".18" transform="rotate(5,908,724)">𓈖</text>
-<!-- Cuneiform KUR 𒆳 -->
-<text x="1142" y="714" font-size="46" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="currentColor" opacity=".20" transform="rotate(-8,1142,714)">𒆳</text>
-<!-- Lion 𓃭 -->
-<text x="1382" y="728" font-size="50" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".18" transform="rotate(10,1382,728)">𓃭</text>
-<!-- Indus leaf -->
-<g opacity=".15" transform="translate(1545,690) rotate(-5)"><use href="#iv-leaf" width="38" height="50"/></g>
-<!-- Indus leaf (upper right area, new) -->
-<g opacity=".44" transform="translate(1558,180) rotate(12)"><use href="#iv-leaf" width="42" height="55"/></g>
-<!-- Sanskrit OM bottom-centre (new) -->
-<text x="748"  y="812" font-size="46" font-family="serif"            fill="currentColor" opacity=".14" transform="rotate(-3,748,812)">ॐ</text>
+<!-- ═══ ROW 5  y≈640 ═══ -->
+<text x="78"   y="650" font-size="50" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".28" transform="rotate(8,78,650)">𓆙</text>
+<text x="268"  y="658" font-size="52" font-family="serif"           fill="currentColor" opacity=".30" transform="rotate(-9,268,658)">ॐ</text>
+<text x="464"  y="644" font-size="46" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="currentColor" opacity=".26" transform="rotate(6,464,644)">𒆳</text>
+<g opacity=".28" transform="translate(654,610) rotate(-8)"><use href="#iv-man" width="34" height="56"/></g>
+<text x="856"  y="652" font-size="48" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".24" transform="rotate(-5,856,652)">𓃭</text>
+<g opacity=".26" transform="translate(1048,612) rotate(9)"><use href="#iv-3c" width="70" height="28"/></g>
+<text x="1254" y="646" font-size="50" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".28" transform="rotate(-7,1254,646)">𓈖</text>
+<text x="1480" y="654" font-size="46" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="currentColor" opacity=".24" transform="rotate(5,1480,654)">𒄀</text>
+
+<!-- ═══ ROW 6  y≈778  (mask softening) ═══ -->
+<text x="68"   y="786" font-size="46" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="currentColor" opacity=".20" transform="rotate(-5,68,786)">𒀭</text>
+<g opacity=".20" transform="translate(240,748) rotate(8)"><use href="#iv-leaf" width="38" height="50"/></g>
+<text x="436"  y="782" font-size="48" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".18" transform="rotate(-10,436,782)">𓋹</text>
+<text x="630"  y="790" font-size="44" font-family="serif"           fill="currentColor" opacity=".20" transform="rotate(7,630,790)">ॐ</text>
+<g opacity=".18" transform="translate(820,752) rotate(-5)"><use href="#iv-fish" width="54" height="26"/></g>
+<text x="1040" y="784" font-size="48" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".18" transform="rotate(8,1040,784)">𓇳</text>
+<text x="1244" y="778" font-size="44" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="currentColor" opacity=".16" transform="rotate(-6,1244,778)">𒌓</text>
+<g opacity=".16" transform="translate(1446,748) rotate(6)"><use href="#iv-jar" width="36" height="48"/></g>
+
+<!-- ═══ ROW 7  y≈916  (nearly masked out) ═══ -->
+<text x="128"  y="922" font-size="44" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".13" transform="rotate(6,128,922)">𓂀</text>
+<text x="348"  y="916" font-size="42" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="currentColor" opacity=".12" transform="rotate(-8,348,916)">𒂗</text>
+<g opacity=".11" transform="translate(534,886) rotate(5)"><use href="#iv-3c" width="68" height="27"/></g>
+<text x="730"  y="920" font-size="46" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".12" transform="rotate(-5,730,920)">𓆣</text>
+<text x="944"  y="912" font-size="42" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="currentColor" opacity=".11" transform="rotate(9,944,912)">𒆳</text>
+<text x="1136" y="920" font-size="46" font-family="serif"           fill="currentColor" opacity=".11" transform="rotate(-7,1136,920)">ॐ</text>
+<g opacity=".10" transform="translate(1330,884) rotate(6)"><use href="#iv-man" width="30" height="50"/></g>
+<text x="1524" y="916" font-size="44" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".10" transform="rotate(-5,1524,916)">𓈖</text>
 
 </svg>
 </div>
