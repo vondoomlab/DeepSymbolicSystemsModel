@@ -72,6 +72,19 @@ nav{
 .nav-yt:hover{color:#ff6060!important;}
 .nav-sp{color:rgba(29,185,84,.75)!important;}
 .nav-sp:hover{color:#1DB954!important;}
+/* ── LANG SELECTOR ── */
+.lang-sel{position:relative;}
+.lang-btn{font-family:'DM Mono',monospace;font-size:.56rem;letter-spacing:.18em;color:rgba(240,234,216,.45);cursor:pointer;background:none;border:none;display:flex;align-items:center;gap:.35rem;padding:0;transition:color .2s;}
+.lang-btn:hover,.lang-sel.open .lang-btn{color:rgba(240,234,216,.82);}
+.lang-btn-code{color:var(--gold);opacity:.8;}
+.lang-btn svg{opacity:.45;transition:transform .2s,opacity .2s;}
+.lang-sel.open .lang-btn svg{transform:rotate(180deg);opacity:.85;}
+.lang-drop{position:absolute;top:calc(100% + .9rem);left:0;background:rgba(10,8,5,.97);border:1px solid var(--border);min-width:136px;padding:.3rem 0;opacity:0;transform:translateY(-5px);pointer-events:none;transition:opacity .18s,transform .18s;z-index:400;}
+.lang-sel.open .lang-drop{opacity:1;transform:translateY(0);pointer-events:auto;}
+.lang-opt{font-family:'DM Mono',monospace;font-size:.52rem;letter-spacing:.1em;color:rgba(240,234,216,.52);padding:.4rem .85rem;cursor:pointer;transition:color .15s,background .15s;display:flex;align-items:center;gap:.55rem;}
+.lang-opt:hover{color:rgba(240,234,216,.88);background:rgba(201,168,76,.05);}
+.lang-opt.active{color:var(--gold);}
+.lang-opt-code{width:1.5rem;flex-shrink:0;opacity:.75;}
 @media(max-width:700px){nav{padding:1.2rem 1.4rem;}.nav-links{gap:1rem;font-size:.52rem;}}
 
 /* ── HERO ── */
@@ -472,6 +485,12 @@ nav{
 .fv-footer{display:flex;justify-content:space-between;align-items:center;margin-top:1.4rem;padding-top:1rem;border-top:1px solid var(--border);}
 .fv-depth{font-family:'DM Mono',monospace;font-size:.48rem;letter-spacing:.14em;color:var(--rust);opacity:.75;}
 .fv-cite{font-family:'DM Mono',monospace;font-size:.44rem;letter-spacing:.08em;color:var(--mid);opacity:.65;}
+/* ── FV ROW HOVER INFO ── */
+.fv-info{max-height:0;overflow:hidden;opacity:0;transition:max-height .38s ease,opacity .24s ease,margin-top .3s ease;margin-top:0;}
+.fv-row:hover .fv-info{max-height:110px;opacity:1;margin-top:.65rem;}
+.fv-info-line{display:flex;gap:.6rem;margin-bottom:.26rem;align-items:baseline;}
+.fv-info-lbl{font-family:'DM Mono',monospace;font-size:.44rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);flex-shrink:0;width:2.6rem;padding-top:.06rem;}
+.fv-info-val{font-size:.62rem;color:rgba(240,234,216,.75);line-height:1.5;}
 
 /* ── BRIDGE ── */
 .bridge{margin-top:2.8rem;padding-top:1.3rem;border-top:1px solid rgba(201,168,76,.09);display:flex;justify-content:flex-end;}
@@ -505,14 +524,28 @@ footer a:hover{color:var(--gold2);}
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo"></div>
+  <div class="nav-logo">
+    <div class="lang-sel" id="langSel">
+      <button class="lang-btn" id="langBtn" aria-label="Select language">
+        <span class="lang-btn-code" id="langCode">EN</span>
+        <svg width="8" height="8" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,3.5 5,6.5 8,3.5"/></svg>
+      </button>
+      <div class="lang-drop" id="langDrop">
+        <div class="lang-opt active" data-lang="en"><span class="lang-opt-code">EN</span>English</div>
+        <div class="lang-opt" data-lang="es"><span class="lang-opt-code">ES</span>Español</div>
+        <div class="lang-opt" data-lang="it"><span class="lang-opt-code">IT</span>Italiano</div>
+        <div class="lang-opt" data-lang="fr"><span class="lang-opt-code">FR</span>Français</div>
+        <div class="lang-opt" data-lang="de"><span class="lang-opt-code">DE</span>Deutsch</div>
+      </div>
+    </div>
+  </div>
   <div class="nav-links">
-    <a href="#framework">Framework</a>
-    <a href="#stages">Stages</a>
-    <a href="#timelines">Timelines</a>
-    <a href="#method">Method</a>
-    <a href="#papers">Papers</a>
-    <a href="#corpus">Corpus</a>
+    <a href="#framework" data-i18n="nav.framework">Framework</a>
+    <a href="#stages" data-i18n="nav.stages">Stages</a>
+    <a href="#timelines" data-i18n="nav.timelines">Timelines</a>
+    <a href="#method" data-i18n="nav.method">Method</a>
+    <a href="#papers" data-i18n="nav.papers">Papers</a>
+    <a href="#corpus" data-i18n="nav.corpus">Corpus</a>
     <a href="https://instagram.com/anthony_vondoom" target="_blank" rel="noopener" class="nav-ig rh" title="Instagram">
       <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
     </a>
@@ -529,49 +562,69 @@ footer a:hover{color:var(--gold2);}
 <div class="hero-wrap">
 <div class="hero">
   <div>
-    <div class="hero-kicker">A Framework in Cognitive Archaeology</div>
+    <div class="hero-kicker" data-i18n="hero.kicker">A Framework in Cognitive Archaeology</div>
     <h1 class="hero-title">The Deep<br/><em>Symbolic</em><br/>Systems<br/>Model</h1>
-    <p class="hero-sub">The civilizations at the foundation of the historical record followed the same underlying sequence — long before any pyramid was built, any law was written, or any god was named. The DSSM is the framework that maps that sequence.</p>
+    <p class="hero-sub" data-i18n="hero.sub">The civilizations at the foundation of the historical record followed the same underlying sequence — long before any pyramid was built, any law was written, or any god was named. The DSSM is the framework that maps that sequence.</p>
     <div class="cta-row">
-      <a class="btn-primary rh" href="#framework"><span>Explore the framework <span class="arr">→</span></span></a>
-      <a class="btn-ghost rh" href="#corpus"><span>Read the corpus <span class="arr">→</span></span></a>
+      <a class="btn-primary rh" href="#framework"><span><span data-i18n="hero.cta1">Explore the framework</span> <span class="arr">→</span></span></a>
+      <a class="btn-ghost rh" href="#corpus"><span><span data-i18n="hero.cta2">Read the corpus</span> <span class="arr">→</span></span></a>
     </div>
   </div>
   <div class="hero-right">
     <div class="frame-viz">
       <div class="fv-header">
-        <span class="fv-label">The Sequence</span>
-        <span class="fv-sub">across the examined record</span>
+        <span class="fv-label" data-i18n="fv.label">The Sequence</span>
+        <span class="fv-sub" data-i18n="fv.sub">across the examined record</span>
       </div>
       <div class="fv-stages">
         <div class="fv-spine"></div>
         <div class="fv-row">
           <div class="fv-node fv-node--iv">IV</div>
-          <div class="fv-name">Monumental Externalization</div>
-          <div class="fv-detail">Writing · Architecture · Codified Law</div>
-          <div class="fv-marker">Late-stage output — the receipt, not the origin</div>
+          <div class="fv-name" data-i18n="fv.4.name">Monumental Externalization</div>
+          <div class="fv-detail" data-i18n="fv.4.detail">Writing · Architecture · Codified Law</div>
+          <div class="fv-marker" data-i18n="fv.4.marker">Late-stage output — the receipt, not the origin</div>
+          <div class="fv-info">
+            <div class="fv-info-line"><span class="fv-info-lbl" data-i18n="fvi.where">Where</span><span class="fv-info-val">Egypt (Giza, ~2560 BCE) · Mesopotamia (Ur III, ~2100 BCE) · Indus Valley (Mohenjo-daro, ~2600 BCE)</span></div>
+            <div class="fv-info-line"><span class="fv-info-lbl" data-i18n="fvi.when">When</span><span class="fv-info-val">1,000–3,000 years after Stage I symbolic saturation</span></div>
+            <div class="fv-info-line"><span class="fv-info-lbl" data-i18n="fvi.how">How</span><span class="fv-info-val">Pre-existing symbolic systems encoded into permanent, public form — the monument announces what repetition already built</span></div>
+          </div>
         </div>
         <div class="fv-row">
           <div class="fv-node fv-node--iii">III</div>
-          <div class="fv-name">Institutional Emergence</div>
-          <div class="fv-detail">Repeated practice becomes enforced protocol</div>
-          <div class="fv-marker">~500-individual threshold</div>
+          <div class="fv-name" data-i18n="fv.3.name">Institutional Emergence</div>
+          <div class="fv-detail" data-i18n="fv.3.detail">Repeated practice becomes enforced protocol</div>
+          <div class="fv-marker" data-i18n="fv.3.marker">~500-individual threshold</div>
+          <div class="fv-info">
+            <div class="fv-info-line"><span class="fv-info-lbl" data-i18n="fvi.where">Where</span><span class="fv-info-val">Göbekli Tepe (Turkey, ~9600 BCE) · Uruk (Mesopotamia, ~4000 BCE) · Çatalhöyük (Anatolia, ~7500 BCE)</span></div>
+            <div class="fv-info-line"><span class="fv-info-lbl" data-i18n="fvi.when">When</span><span class="fv-info-val">At the ~500-individual community threshold</span></div>
+            <div class="fv-info-line"><span class="fv-info-lbl" data-i18n="fvi.how">How</span><span class="fv-info-val">Voluntary repetition calcifies into enforced protocol — symbolic roles fix; deviation becomes transgression</span></div>
+          </div>
         </div>
         <div class="fv-row">
           <div class="fv-node fv-node--ii">II</div>
-          <div class="fv-name">Cognitive Offloading</div>
-          <div class="fv-detail">Memory distributes into objects, spaces, bodies</div>
-          <div class="fv-marker">Mnemonic architecture · distributed memory</div>
+          <div class="fv-name" data-i18n="fv.2.name">Cognitive Offloading</div>
+          <div class="fv-detail" data-i18n="fv.2.detail">Memory distributes into objects, spaces, bodies</div>
+          <div class="fv-marker" data-i18n="fv.2.marker">Mnemonic architecture · distributed memory</div>
+          <div class="fv-info">
+            <div class="fv-info-line"><span class="fv-info-lbl" data-i18n="fvi.where">Where</span><span class="fv-info-val">Blombos Cave (S. Africa, ~75k BCE) · Lascaux (France, ~17k BCE) · Shigir Idol (Russia, ~12.5k BCE)</span></div>
+            <div class="fv-info-line"><span class="fv-info-lbl" data-i18n="fvi.when">When</span><span class="fv-info-val">Detectable from ~100,000 BCE across the archaeological record</span></div>
+            <div class="fv-info-line"><span class="fv-info-lbl" data-i18n="fvi.how">How</span><span class="fv-info-val">Memory distributes into carved objects, marked surfaces, spatial arrangements — the environment becomes a mnemonic system</span></div>
+          </div>
         </div>
         <div class="fv-row">
           <div class="fv-node fv-node--i">I</div>
-          <div class="fv-name">Embodied Familiarity</div>
-          <div class="fv-detail">Repetition becomes structure — before language, before stone</div>
-          <div class="fv-marker">Origin substrate · 1.5 million years of record</div>
+          <div class="fv-name" data-i18n="fv.1.name">Embodied Familiarity</div>
+          <div class="fv-detail" data-i18n="fv.1.detail">Repetition becomes structure — before language, before stone</div>
+          <div class="fv-marker" data-i18n="fv.1.marker">Origin substrate · 1.5 million years of record</div>
+          <div class="fv-info">
+            <div class="fv-info-line"><span class="fv-info-lbl" data-i18n="fvi.where">Where</span><span class="fv-info-val">Omo Kibish (Ethiopia, ~195k BCE) · Bruniquel Cave (France, ~176k BCE) · Wonderwerk Cave (S. Africa, ~1M BCE)</span></div>
+            <div class="fv-info-line"><span class="fv-info-lbl" data-i18n="fvi.when">When</span><span class="fv-info-val">Continuous record from ~1.5 million years ago</span></div>
+            <div class="fv-info-line"><span class="fv-info-lbl" data-i18n="fvi.how">How</span><span class="fv-info-val">Same gesture, same site, same season — structural bias forms long before any symbolic intent</span></div>
+          </div>
         </div>
       </div>
       <div class="fv-footer">
-        <span class="fv-depth">↓ symbolic depth</span>
+        <span class="fv-depth" data-i18n="fv.depth">↓ symbolic depth</span>
         <span class="fv-cite">Deep Symbolic Systems Model</span>
       </div>
     </div>
@@ -584,10 +637,10 @@ footer a:hover{color:var(--gold2);}
 
 <!-- STATS -->
 <div class="stats rev">
-  <div class="stat"><span class="stat-num" data-c="62">0</span><span class="stat-label">Papers published</span></div>
-  <div class="stat"><span class="stat-num" data-c="5">0</span><span class="stat-label">Civilizations mapped</span></div>
-  <div class="stat"><span class="stat-num">1.5M</span><span class="stat-label">Years of symbolic record</span></div>
-  <div class="stat"><span class="stat-num" data-c="6">0</span><span class="stat-label">FCP observables</span></div>
+  <div class="stat"><span class="stat-num" data-c="62">0</span><span class="stat-label" data-i18n="stat.papers">Papers published</span></div>
+  <div class="stat"><span class="stat-num" data-c="5">0</span><span class="stat-label" data-i18n="stat.civs">Civilizations mapped</span></div>
+  <div class="stat"><span class="stat-num">1.5M</span><span class="stat-label" data-i18n="stat.years">Years of symbolic record</span></div>
+  <div class="stat"><span class="stat-num" data-c="6">0</span><span class="stat-label" data-i18n="stat.fcp">FCP observables</span></div>
 </div>
 
 <div class="rule"></div>
@@ -606,7 +659,7 @@ footer a:hover{color:var(--gold2);}
 
 <!-- FRAMEWORK -->
 <section class="section rev" id="framework">
-  <div class="sec-hd"><span class="sec-n">01</span><h2 class="sec-t">The Thesis</h2></div>
+  <div class="sec-hd"><span class="sec-n">01</span><h2 class="sec-t" data-i18n="sec.thesis">The Thesis</h2></div>
   <div class="thesis">
     <div class="thesis-pull">"Monumentality and writing are late-stage externalizations of pre-existing symbolic load — not origins."</div>
     <div class="thesis-body">
@@ -623,38 +676,38 @@ footer a:hover{color:var(--gold2);}
 
 <!-- STAGES -->
 <section class="section rev" id="stages">
-  <div class="sec-hd"><span class="sec-n">02</span><h2 class="sec-t">Four Stages</h2></div>
-  <p class="stages-intro">The DSSM identifies four sequential stages through which any symbolic system must pass before producing the forms we recognize as civilization — writing, monuments, law. Every civilization the framework has examined shows this sequence. The sequence itself is the argument.</p>
+  <div class="sec-hd"><span class="sec-n">02</span><h2 class="sec-t" data-i18n="sec.stages">Four Stages</h2></div>
+  <p class="stages-intro" data-i18n="stages.intro">The DSSM identifies four sequential stages through which any symbolic system must pass before producing the forms we recognize as civilization — writing, monuments, law. Every civilization the framework has examined shows this sequence. The sequence itself is the argument.</p>
   <div class="stages">
     <div class="stage rh">
       <div class="stage-glow"></div>
       <div class="s-num">01</div>
-      <div class="s-name">Embodied Symbolic Familiarity</div>
-      <div class="s-desc">It begins not with art or religion, but with repetition. The same gesture at the same threshold. The same body orientation at the same ritual moment. The same sequence of acts, season after season, generation after generation — until the behavior stops being voluntary and becomes structural. The environment begins to encode behavior before anyone decides to build anything.</div>
+      <div class="s-name" data-i18n="s1.name">Embodied Symbolic Familiarity</div>
+      <div class="s-desc" data-i18n="s1.desc">It begins not with art or religion, but with repetition. The same gesture at the same threshold. The same body orientation at the same ritual moment. The same sequence of acts, season after season, generation after generation — until the behavior stops being voluntary and becomes structural. The environment begins to encode behavior before anyone decides to build anything.</div>
       <div class="s-evidence">ochre deposits, burial orientation patterns, spatial clustering of activity, wear traces on surfaces, body-relative positioning in site layouts</div>
       <div class="s-tag">Origin substrate</div>
     </div>
     <div class="stage rh">
       <div class="stage-glow"></div>
       <div class="s-num">02</div>
-      <div class="s-name">Cognitive Offloading</div>
-      <div class="s-desc">When what a community must remember exceeds what individual memory can reliably carry, memory begins to distribute into the environment. The pot holds the mark. The threshold holds the gesture. The body carries the tattoo. The world becomes a mnemonic architecture — not metaphorically, but functionally. Memory is no longer solely biological. It is also material. And material outlasts any individual.</div>
+      <div class="s-name" data-i18n="s2.name">Cognitive Offloading</div>
+      <div class="s-desc" data-i18n="s2.desc">When what a community must remember exceeds what individual memory can reliably carry, memory begins to distribute into the environment. The pot holds the mark. The threshold holds the gesture. The body carries the tattoo. The world becomes a mnemonic architecture — not metaphorically, but functionally. Memory is no longer solely biological. It is also material. And material outlasts any individual.</div>
       <div class="s-evidence">portable symbolic anchors (figurines, marked stones), craft repetition across generations, patterned spatial reuse, cross-media symbolic consistency</div>
       <div class="s-tag">Distributed memory</div>
     </div>
     <div class="stage rh">
       <div class="stage-glow"></div>
       <div class="s-num">03</div>
-      <div class="s-name">Institutional Emergence</div>
-      <div class="s-desc">At approximately 500 individuals, interpersonal trust networks become insufficient to maintain symbolic coherence. Shared practice alone can no longer hold the system together. What was voluntary repetition begins to calcify into enforced protocol. The first institutions appear — not governments, not laws, but symbolic enforcement mechanisms. This is the pivot point of the model: the moment the system stops being maintained by individuals and starts maintaining itself.</div>
+      <div class="s-name" data-i18n="s3.name">Institutional Emergence</div>
+      <div class="s-desc" data-i18n="s3.desc">At approximately 500 individuals, interpersonal trust networks become insufficient to maintain symbolic coherence. Shared practice alone can no longer hold the system together. What was voluntary repetition begins to calcify into enforced protocol. The first institutions appear — not governments, not laws, but symbolic enforcement mechanisms. This is the pivot point of the model: the moment the system stops being maintained by individuals and starts maintaining itself.</div>
       <div class="s-evidence">cross-site standardization, redistribution of symbolic goods, spatial role separation, evidence of punished deviation, specialist production</div>
       <div class="s-tag">Threshold ~500 individuals</div>
     </div>
     <div class="stage rh">
       <div class="stage-glow"></div>
       <div class="s-num">04</div>
-      <div class="s-name">Monumental Externalization</div>
-      <div class="s-desc">The pyramid arrives last, not first. By the time the first stone is cut, the symbolic system it celebrates has been running for centuries — sometimes millennia. In the DSSM model, writing, monumental architecture, and codified law function not as origins but as externalizations — they make pre-existing symbolic infrastructure legible to the civilization itself, and to archaeologists thousands of years later. The monument is a late-stage output.</div>
+      <div class="s-name" data-i18n="s4.name">Monumental Externalization</div>
+      <div class="s-desc" data-i18n="s4.desc">The pyramid arrives last, not first. By the time the first stone is cut, the symbolic system it celebrates has been running for centuries — sometimes millennia. In the DSSM model, writing, monumental architecture, and codified law function not as origins but as externalizations — they make pre-existing symbolic infrastructure legible to the civilization itself, and to archaeologists thousands of years later. The monument is a late-stage output.</div>
       <div class="s-evidence">monumental construction, writing systems, standardized weights and measures, bureaucratic records, codified law, named authority</div>
       <div class="s-tag">Late-stage output</div>
     </div>
@@ -666,7 +719,7 @@ footer a:hover{color:var(--gold2);}
 
 <!-- TIMELINES -->
 <section class="section rev" id="timelines">
-  <div class="sec-hd"><span class="sec-n">03</span><h2 class="sec-t">Saturation Timelines</h2></div>
+  <div class="sec-hd"><span class="sec-n">03</span><h2 class="sec-t" data-i18n="sec.timelines">Saturation Timelines</h2></div>
   <p class="tl-intro">These dates mark <em>symbolic saturation depth</em> — the earliest point at which the DSSM framework can confirm sufficient symbolic infrastructure to sustain the Stage III threshold crossing. They are not the start of each civilization's "history." They are when the archaeological record first shows the conditions that would produce, centuries or millennia later, what history books call a civilization. The monument comes last.</p>
   <p class="tl-intro" style="margin-bottom:2.4rem;">Each civilization reached saturation through a distinct material pathway — the same underlying logic, different physical substrates.</p>
 
@@ -774,7 +827,7 @@ footer a:hover{color:var(--gold2);}
 
 <!-- METHODOLOGY -->
 <section class="section rev" id="method">
-  <div class="sec-hd"><span class="sec-n">04</span><h2 class="sec-t">Field Companion Protocol</h2></div>
+  <div class="sec-hd"><span class="sec-n">04</span><h2 class="sec-t" data-i18n="sec.method">Field Companion Protocol</h2></div>
   <p class="fcp-intro">The Field Companion Protocol (FCP) is the DSSM's diagnostic instrument — a structured scoring tool for determining whether a society has achieved symbolic saturation. It exists because intuitive judgment produces inconsistent results: the same material evidence has been interpreted radically differently across a century of scholarship. The FCP imposes a fixed observational framework applicable across sites, periods, and material substrates — and whose conclusions can be audited, challenged, and replicated by any researcher with access to primary evidence.</p>
 
   <div class="fcp-axes">
@@ -891,7 +944,7 @@ footer a:hover{color:var(--gold2);}
 
 <!-- PAPERS -->
 <section class="section rev" id="papers">
-  <div class="sec-hd"><span class="sec-n">05</span><h2 class="sec-t">The Papers</h2></div>
+  <div class="sec-hd"><span class="sec-n">05</span><h2 class="sec-t" data-i18n="sec.papers">The Papers</h2></div>
   <p style="color:var(--mid);font-size:.95rem;max-width:520px;margin-bottom:2.8rem;line-height:1.85;">62 papers spanning cognitive archaeology, symbolic systems theory, and civilizational analysis. Click any to download.</p>
   <div class="papers-tabs" id="papers-tabs">
     <button class="papers-tab active" data-filter="foundation">Foundation &nbsp;<span style="opacity:.4">7</span></button>
@@ -907,7 +960,7 @@ footer a:hover{color:var(--gold2);}
 
 <!-- CORPUS -->
 <section class="section rev" id="corpus">
-  <div class="sec-hd"><span class="sec-n">06</span><h2 class="sec-t">The Corpus</h2></div>
+  <div class="sec-hd"><span class="sec-n">06</span><h2 class="sec-t" data-i18n="sec.corpus">The Corpus</h2></div>
   <p style="color:var(--mid);font-size:.95rem;max-width:520px;margin-bottom:.6rem;line-height:1.85;">50+ papers distributed across open-access repositories. All works disclose AI-assisted synthesis. All intellectual content, interpretations, and conclusions are solely those of the author.</p>
   <p style="font-family:'DM Mono',monospace;font-size:.6rem;color:var(--mid);letter-spacing:.08em;margin-bottom:2.5rem;">Author: Anthony Vondoom &nbsp;·&nbsp; Independent Researcher &nbsp;·&nbsp; ORCID: 0009-0003-4953-1427</p>
   <div class="corpus-links">
@@ -1226,6 +1279,138 @@ document.getElementById('papers-tabs').addEventListener('click',e=>{
   document.querySelectorAll('.papers-tab').forEach(t=>t.classList.remove('active'));
   tab.classList.add('active');
   renderPapers(tab.dataset.filter);
+});
+
+// ══ I18N ══
+const LANGS={
+  en:{
+    'nav.framework':'Framework','nav.stages':'Stages','nav.timelines':'Timelines','nav.method':'Method','nav.papers':'Papers','nav.corpus':'Corpus',
+    'hero.kicker':'A Framework in Cognitive Archaeology',
+    'hero.sub':'The civilizations at the foundation of the historical record followed the same underlying sequence — long before any pyramid was built, any law was written, or any god was named. The DSSM is the framework that maps that sequence.',
+    'hero.cta1':'Explore the framework','hero.cta2':'Read the corpus',
+    'fv.label':'The Sequence','fv.sub':'across the examined record','fv.depth':'↓ symbolic depth',
+    'fv.4.name':'Monumental Externalization','fv.4.detail':'Writing · Architecture · Codified Law','fv.4.marker':'Late-stage output — the receipt, not the origin',
+    'fv.3.name':'Institutional Emergence','fv.3.detail':'Repeated practice becomes enforced protocol','fv.3.marker':'~500-individual threshold',
+    'fv.2.name':'Cognitive Offloading','fv.2.detail':'Memory distributes into objects, spaces, bodies','fv.2.marker':'Mnemonic architecture · distributed memory',
+    'fv.1.name':'Embodied Familiarity','fv.1.detail':'Repetition becomes structure — before language, before stone','fv.1.marker':'Origin substrate · 1.5 million years of record',
+    'fvi.where':'Where','fvi.when':'When','fvi.how':'How',
+    'stat.papers':'Papers published','stat.civs':'Civilizations mapped','stat.years':'Years of symbolic record','stat.fcp':'FCP observables',
+    'sec.thesis':'The Thesis','sec.stages':'Four Stages','sec.timelines':'Saturation Timelines','sec.method':'Field Companion Protocol','sec.papers':'The Papers','sec.corpus':'The Corpus',
+    'stages.intro':'The DSSM identifies four sequential stages through which any symbolic system must pass before producing the forms we recognize as civilization — writing, monuments, law. Every civilization the framework has examined shows this sequence. The sequence itself is the argument.',
+    's1.name':'Embodied Symbolic Familiarity','s1.desc':'It begins not with art or religion, but with repetition. The same gesture at the same threshold. The same body orientation at the same ritual moment. The same sequence of acts, season after season, generation after generation — until the behavior stops being voluntary and becomes structural. The environment begins to encode behavior before anyone decides to build anything.',
+    's2.name':'Cognitive Offloading','s2.desc':'When what a community must remember exceeds what individual memory can reliably carry, memory begins to distribute into the environment. The pot holds the mark. The threshold holds the gesture. The body carries the tattoo. The world becomes a mnemonic architecture — not metaphorically, but functionally. Memory is no longer solely biological. It is also material. And material outlasts any individual.',
+    's3.name':'Institutional Emergence','s3.desc':'At approximately 500 individuals, interpersonal trust networks become insufficient to maintain symbolic coherence. Shared practice alone can no longer hold the system together. What was voluntary repetition begins to calcify into enforced protocol. The first institutions appear — not governments, not laws, but symbolic enforcement mechanisms. This is the pivot point of the model: the moment the system stops being maintained by individuals and starts maintaining itself.',
+    's4.name':'Monumental Externalization','s4.desc':'The pyramid arrives last, not first. By the time the first stone is cut, the symbolic system it celebrates has been running for centuries — sometimes millennia. In the DSSM model, writing, monumental architecture, and codified law function not as origins but as externalizations — they make pre-existing symbolic infrastructure legible to the civilization itself, and to archaeologists thousands of years later. The monument is a late-stage output.',
+  },
+  es:{
+    'nav.framework':'Marco','nav.stages':'Etapas','nav.timelines':'Cronologías','nav.method':'Método','nav.papers':'Artículos','nav.corpus':'Corpus',
+    'hero.kicker':'Un marco en arqueología cognitiva',
+    'hero.sub':'Las civilizaciones en los cimientos del registro histórico siguieron la misma secuencia subyacente — mucho antes de que se construyera ninguna pirámide, se escribiera ninguna ley, o se nombrara a ningún dios. El DSSM es el marco que traza esa secuencia.',
+    'hero.cta1':'Explorar el marco','hero.cta2':'Leer el corpus',
+    'fv.label':'La Secuencia','fv.sub':'en el registro examinado','fv.depth':'↓ profundidad simbólica',
+    'fv.4.name':'Externalización Monumental','fv.4.detail':'Escritura · Arquitectura · Derecho Codificado','fv.4.marker':'Producto de etapa tardía — el recibo, no el origen',
+    'fv.3.name':'Emergencia Institucional','fv.3.detail':'La práctica repetida se convierte en protocolo impuesto','fv.3.marker':'Umbral de ~500 individuos',
+    'fv.2.name':'Descarga Cognitiva','fv.2.detail':'La memoria se distribuye en objetos, espacios, cuerpos','fv.2.marker':'Arquitectura mnemónica · memoria distribuida',
+    'fv.1.name':'Familiaridad Incorporada','fv.1.detail':'La repetición se convierte en estructura — antes del lenguaje, antes de la piedra','fv.1.marker':'Sustrato de origen · 1,5 millones de años de registro',
+    'fvi.where':'Dónde','fvi.when':'Cuándo','fvi.how':'Cómo',
+    'stat.papers':'Artículos publicados','stat.civs':'Civilizaciones analizadas','stat.years':'Años de registro simbólico','stat.fcp':'Observables FCP',
+    'sec.thesis':'La Tesis','sec.stages':'Cuatro Etapas','sec.timelines':'Cronologías de Saturación','sec.method':'Protocolo de Campo','sec.papers':'Los Artículos','sec.corpus':'El Corpus',
+    'stages.intro':'El DSSM identifica cuatro etapas secuenciales por las que debe pasar cualquier sistema simbólico antes de producir las formas que reconocemos como civilización — escritura, monumentos, ley. Cada civilización examinada muestra esta secuencia. La secuencia en sí misma es el argumento.',
+    's1.name':'Familiaridad Simbólica Incorporada','s1.desc':'Comienza no con el arte o la religión, sino con la repetición. El mismo gesto en el mismo umbral. La misma orientación corporal en el mismo momento ritual. La misma secuencia de actos, estación tras estación, generación tras generación — hasta que el comportamiento deja de ser voluntario y se vuelve estructural. El entorno comienza a codificar el comportamiento antes de que nadie decida construir nada.',
+    's2.name':'Descarga Cognitiva','s2.desc':'Cuando lo que una comunidad debe recordar supera lo que la memoria individual puede llevar de forma fiable, la memoria comienza a distribuirse en el entorno. La vasija sostiene la marca. El umbral sostiene el gesto. El cuerpo lleva el tatuaje. El mundo se convierte en una arquitectura mnemónica — no metafóricamente, sino funcionalmente. La memoria ya no es solo biológica. Es también material. Y el material supera a cualquier individuo.',
+    's3.name':'Emergencia Institucional','s3.desc':'Aproximadamente en 500 individuos, las redes de confianza interpersonal se vuelven insuficientes para mantener la coherencia simbólica. La práctica compartida sola ya no puede mantener el sistema unido. Lo que era repetición voluntaria comienza a calcificarse en protocolo impuesto. Las primeras instituciones aparecen — no gobiernos, no leyes, sino mecanismos de refuerzo simbólico. Este es el punto de inflexión del modelo: el momento en que el sistema deja de ser mantenido por individuos y comienza a mantenerse a sí mismo.',
+    's4.name':'Externalización Monumental','s4.desc':'La pirámide llega última, no primera. Para cuando se corta la primera piedra, el sistema simbólico que celebra lleva siglos funcionando — a veces milenios. En el modelo DSSM, la escritura, la arquitectura monumental y el derecho codificado no funcionan como orígenes sino como externalizaciones — hacen legible la infraestructura simbólica preexistente para la propia civilización, y para los arqueólogos miles de años después.',
+  },
+  it:{
+    'nav.framework':'Struttura','nav.stages':'Fasi','nav.timelines':'Cronologie','nav.method':'Metodo','nav.papers':'Articoli','nav.corpus':'Corpus',
+    'hero.kicker':'Un quadro in archeologia cognitiva',
+    'hero.sub':'Le civiltà alle fondamenta del registro storico hanno seguito la stessa sequenza sottostante — molto prima che venisse costruita una piramide, scritta una legge, o nominato un dio. Il DSSM è il framework che mappa quella sequenza.',
+    'hero.cta1':'Esplora il framework','hero.cta2':'Leggi il corpus',
+    'fv.label':'La Sequenza','fv.sub':'nel registro esaminato','fv.depth':'↓ profondità simbolica',
+    'fv.4.name':'Esternalizzazione Monumentale','fv.4.detail':'Scrittura · Architettura · Diritto Codificato','fv.4.marker':'Output di fase tardiva — la ricevuta, non l\'origine',
+    'fv.3.name':'Emergenza Istituzionale','fv.3.detail':'La pratica ripetuta diventa protocollo imposto','fv.3.marker':'Soglia di ~500 individui',
+    'fv.2.name':'Scarico Cognitivo','fv.2.detail':'La memoria si distribuisce in oggetti, spazi, corpi','fv.2.marker':'Architettura mnemonica · memoria distribuita',
+    'fv.1.name':'Familiarità Incarnata','fv.1.detail':'La ripetizione diventa struttura — prima del linguaggio, prima della pietra','fv.1.marker':'Substrato di origine · 1,5 milioni di anni di registro',
+    'fvi.where':'Dove','fvi.when':'Quando','fvi.how':'Come',
+    'stat.papers':'Articoli pubblicati','stat.civs':'Civiltà analizzate','stat.years':'Anni di registro simbolico','stat.fcp':'Osservabili FCP',
+    'sec.thesis':'La Tesi','sec.stages':'Quattro Fasi','sec.timelines':'Cronologie di Saturazione','sec.method':'Protocollo di Campo','sec.papers':'Gli Articoli','sec.corpus':'Il Corpus',
+    'stages.intro':'Il DSSM identifica quattro fasi sequenziali attraverso le quali qualsiasi sistema simbolico deve passare prima di produrre le forme che riconosciamo come civiltà — scrittura, monumenti, legge. Ogni civiltà esaminata mostra questa sequenza. La sequenza stessa è l\'argomento.',
+    's1.name':'Familiarità Simbolica Incarnata','s1.desc':'Inizia non con l\'arte o la religione, ma con la ripetizione. Lo stesso gesto alla stessa soglia. Lo stesso orientamento del corpo nello stesso momento rituale. La stessa sequenza di atti, stagione dopo stagione, generazione dopo generazione — finché il comportamento smette di essere volontario e diventa strutturale. L\'ambiente inizia a codificare il comportamento prima che qualcuno decida di costruire qualsiasi cosa.',
+    's2.name':'Scarico Cognitivo','s2.desc':'Quando ciò che una comunità deve ricordare supera quello che la memoria individuale può portare in modo affidabile, la memoria inizia a distribuirsi nell\'ambiente. Il vaso regge il segno. La soglia regge il gesto. Il corpo porta il tatuaggio. Il mondo diventa un\'architettura mnemonica — non metaforicamente, ma funzionalmente. La memoria non è più solo biologica. È anche materiale. E il materiale sopravvive a qualsiasi individuo.',
+    's3.name':'Emergenza Istituzionale','s3.desc':'A circa 500 individui, le reti di fiducia interpersonale diventano insufficienti a mantenere la coerenza simbolica. La pratica condivisa da sola non può più tenere insieme il sistema. Quella che era ripetizione volontaria comincia a calcificarsi in protocollo imposto. Appaiono le prime istituzioni — non governi, non leggi, ma meccanismi di imposizione simbolica. Questo è il punto di svolta del modello: il momento in cui il sistema smette di essere mantenuto dagli individui e inizia a mantenersi da solo.',
+    's4.name':'Esternalizzazione Monumentale','s4.desc':'La piramide arriva ultima, non prima. Quando si taglia la prima pietra, il sistema simbolico che celebra è in funzione da secoli — a volte millenni. Nel modello DSSM, la scrittura, l\'architettura monumentale e il diritto codificato non funzionano come origini ma come esternalizzazioni — rendono leggibile l\'infrastruttura simbolica preesistente per la civiltà stessa, e per gli archeologi migliaia di anni dopo.',
+  },
+  fr:{
+    'nav.framework':'Cadre','nav.stages':'Étapes','nav.timelines':'Chronologies','nav.method':'Méthode','nav.papers':'Articles','nav.corpus':'Corpus',
+    'hero.kicker':'Un cadre en archéologie cognitive',
+    'hero.sub':'Les civilisations aux fondements du dossier historique ont suivi la même séquence sous-jacente — bien avant que la moindre pyramide soit construite, la moindre loi écrite, ou le moindre dieu nommé. Le DSSM est le cadre qui cartographie cette séquence.',
+    'hero.cta1':'Explorer le cadre','hero.cta2':'Lire le corpus',
+    'fv.label':'La Séquence','fv.sub':'dans le dossier examiné','fv.depth':'↓ profondeur symbolique',
+    'fv.4.name':'Externalisation Monumentale','fv.4.detail':'Écriture · Architecture · Droit Codifié','fv.4.marker':'Produit de phase tardive — le reçu, pas l\'origine',
+    'fv.3.name':'Émergence Institutionnelle','fv.3.detail':'La pratique répétée devient protocole imposé','fv.3.marker':'Seuil de ~500 individus',
+    'fv.2.name':'Délestage Cognitif','fv.2.detail':'La mémoire se distribue dans les objets, espaces, corps','fv.2.marker':'Architecture mnémonique · mémoire distribuée',
+    'fv.1.name':'Familiarité Incarnée','fv.1.detail':'La répétition devient structure — avant le langage, avant la pierre','fv.1.marker':'Substrat d\'origine · 1,5 million d\'années de dossier',
+    'fvi.where':'Où','fvi.when':'Quand','fvi.how':'Comment',
+    'stat.papers':'Articles publiés','stat.civs':'Civilisations analysées','stat.years':'Années de documentation symbolique','stat.fcp':'Observables FCP',
+    'sec.thesis':'La Thèse','sec.stages':'Quatre Étapes','sec.timelines':'Chronologies de Saturation','sec.method':'Protocole de Terrain','sec.papers':'Les Articles','sec.corpus':'Le Corpus',
+    'stages.intro':'Le DSSM identifie quatre étapes séquentielles que tout système symbolique doit traverser avant de produire les formes que nous reconnaissons comme civilisation — écriture, monuments, loi. Chaque civilisation examinée montre cette séquence. La séquence elle-même est l\'argument.',
+    's1.name':'Familiarité Symbolique Incarnée','s1.desc':'Tout commence non par l\'art ou la religion, mais par la répétition. Le même geste au même seuil. La même orientation corporelle au même moment rituel. La même séquence d\'actes, saison après saison, génération après génération — jusqu\'à ce que le comportement cesse d\'être volontaire et devienne structurel. L\'environnement commence à encoder le comportement avant que quiconque décide de construire quoi que ce soit.',
+    's2.name':'Délestage Cognitif','s2.desc':'Quand ce qu\'une communauté doit mémoriser dépasse ce que la mémoire individuelle peut porter de façon fiable, la mémoire commence à se distribuer dans l\'environnement. Le pot porte la marque. Le seuil porte le geste. Le corps porte le tatouage. Le monde devient une architecture mnémonique — non pas métaphoriquement, mais fonctionnellement. La mémoire n\'est plus seulement biologique. Elle est aussi matérielle. Et le matériel survit à tout individu.',
+    's3.name':'Émergence Institutionnelle','s3.desc':'À environ 500 individus, les réseaux de confiance interpersonnelle deviennent insuffisants pour maintenir la cohérence symbolique. La pratique partagée seule ne peut plus maintenir le système. Ce qui était répétition volontaire commence à se calcifier en protocole imposé. Les premières institutions apparaissent — non des gouvernements, non des lois, mais des mécanismes d\'application symbolique. C\'est le point de bascule du modèle : le moment où le système cesse d\'être maintenu par des individus et commence à se maintenir lui-même.',
+    's4.name':'Externalisation Monumentale','s4.desc':'La pyramide arrive en dernier, pas en premier. Au moment où la première pierre est taillée, le système symbolique qu\'elle célèbre fonctionne depuis des siècles — parfois des millénaires. Dans le modèle DSSM, l\'écriture, l\'architecture monumentale et le droit codifié ne fonctionnent pas comme des origines mais comme des externalisations — ils rendent lisible l\'infrastructure symbolique préexistante pour la civilisation elle-même, et pour les archéologues des milliers d\'années plus tard.',
+  },
+  de:{
+    'nav.framework':'Rahmen','nav.stages':'Phasen','nav.timelines':'Zeitlinien','nav.method':'Methode','nav.papers':'Artikel','nav.corpus':'Korpus',
+    'hero.kicker':'Ein Rahmen der kognitiven Archäologie',
+    'hero.sub':'Die Zivilisationen an der Grundlage des historischen Befundes folgten derselben zugrunde liegenden Abfolge — lange bevor eine Pyramide gebaut, ein Gesetz geschrieben oder ein Gott benannt wurde. Das DSSM ist das Rahmenwerk, das diese Abfolge kartiert.',
+    'hero.cta1':'Rahmen erkunden','hero.cta2':'Korpus lesen',
+    'fv.label':'Die Abfolge','fv.sub':'im untersuchten Befund','fv.depth':'↓ symbolische Tiefe',
+    'fv.4.name':'Monumentale Externalisierung','fv.4.detail':'Schrift · Architektur · Kodifiziertes Recht','fv.4.marker':'Spätphasen-Output — der Beleg, nicht der Ursprung',
+    'fv.3.name':'Institutionelle Entstehung','fv.3.detail':'Wiederholte Praxis wird zu erzwungenem Protokoll','fv.3.marker':'~500-Individuen-Schwelle',
+    'fv.2.name':'Kognitive Auslagerung','fv.2.detail':'Gedächtnis verteilt sich in Objekte, Räume, Körper','fv.2.marker':'Mnemonische Architektur · verteiltes Gedächtnis',
+    'fv.1.name':'Verkörperte Vertrautheit','fv.1.detail':'Wiederholung wird Struktur — vor der Sprache, vor dem Stein','fv.1.marker':'Ursprungssubstrat · 1,5 Millionen Jahre Befund',
+    'fvi.where':'Wo','fvi.when':'Wann','fvi.how':'Wie',
+    'stat.papers':'Veröffentlichte Artikel','stat.civs':'Kartierte Zivilisationen','stat.years':'Jahre symbolischen Befundes','stat.fcp':'FCP-Observablen',
+    'sec.thesis':'Die These','sec.stages':'Vier Phasen','sec.timelines':'Saturations-Zeitlinien','sec.method':'Feldbegleitprotokoll','sec.papers':'Die Artikel','sec.corpus':'Das Korpus',
+    'stages.intro':'Das DSSM identifiziert vier aufeinanderfolgende Phasen, die jedes Symbolsystem durchlaufen muss, bevor es die Formen hervorbringt, die wir als Zivilisation erkennen — Schrift, Monumente, Recht. Jede untersuchte Zivilisation zeigt diese Abfolge. Die Abfolge selbst ist das Argument.',
+    's1.name':'Verkörperte Symbolische Vertrautheit','s1.desc':'Es beginnt nicht mit Kunst oder Religion, sondern mit Wiederholung. Dieselbe Geste an derselben Schwelle. Dieselbe Körperhaltung im selben rituellen Moment. Dieselbe Abfolge von Handlungen, Jahreszeit für Jahreszeit, Generation für Generation — bis das Verhalten aufhört, freiwillig zu sein, und strukturell wird. Die Umgebung beginnt, Verhalten zu kodieren, bevor jemand beschließt, irgendetwas zu bauen.',
+    's2.name':'Kognitive Auslagerung','s2.desc':'Wenn das, was eine Gemeinschaft erinnern muss, das übersteigt, was das individuelle Gedächtnis zuverlässig tragen kann, beginnt das Gedächtnis, sich in die Umgebung zu verteilen. Der Topf hält das Zeichen. Die Schwelle hält die Geste. Der Körper trägt die Tätowierung. Die Welt wird zu einer mnemonischen Architektur — nicht metaphorisch, sondern funktional. Das Gedächtnis ist nicht mehr nur biologisch. Es ist auch materiell. Und Material überdauert jedes Individuum.',
+    's3.name':'Institutionelle Entstehung','s3.desc':'Bei etwa 500 Individuen werden interpersonale Vertrauensnetzwerke unzureichend, um symbolische Kohärenz aufrechtzuerhalten. Geteilte Praxis allein kann das System nicht mehr zusammenhalten. Was freiwillige Wiederholung war, beginnt, sich zu erzwungenem Protokoll zu verfestigen. Die ersten Institutionen entstehen — keine Regierungen, keine Gesetze, sondern symbolische Durchsetzungsmechanismen. Dies ist der Wendepunkt des Modells: der Moment, in dem das System aufhört, von Individuen aufrechterhalten zu werden, und beginnt, sich selbst aufrechtzuerhalten.',
+    's4.name':'Monumentale Externalisierung','s4.desc':'Die Pyramide kommt zuletzt, nicht zuerst. Zum Zeitpunkt des ersten Steinschlags läuft das symbolische System, das sie feiert, seit Jahrhunderten — manchmal Jahrtausenden. Im DSSM-Modell funktionieren Schrift, monumentale Architektur und kodifiziertes Recht nicht als Ursprünge, sondern als Externalisierungen — sie machen die vorhandene symbolische Infrastruktur für die Zivilisation selbst und für Archäologen Tausende von Jahren später lesbar.',
+  }
+};
+
+let currentLang='en';
+function applyLang(code){
+  const L=LANGS[code]||LANGS.en;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k=el.dataset.i18n;
+    if(L[k]!==undefined)el.textContent=L[k];
+  });
+  document.documentElement.lang=code;
+  currentLang=code;
+}
+
+// ── Lang selector UI ──
+const langSel=document.getElementById('langSel');
+const langBtn=document.getElementById('langBtn');
+const langCode=document.getElementById('langCode');
+const langDrop=document.getElementById('langDrop');
+
+langBtn.addEventListener('click',e=>{
+  e.stopPropagation();
+  langSel.classList.toggle('open');
+});
+document.addEventListener('click',()=>langSel.classList.remove('open'));
+langDrop.addEventListener('click',e=>{
+  const opt=e.target.closest('.lang-opt');
+  if(!opt)return;
+  const code=opt.dataset.lang;
+  document.querySelectorAll('.lang-opt').forEach(o=>o.classList.remove('active'));
+  opt.classList.add('active');
+  langCode.textContent=code.toUpperCase();
+  langSel.classList.remove('open');
+  applyLang(code);
 });
 </script>
 </body>
