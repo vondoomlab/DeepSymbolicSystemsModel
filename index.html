@@ -584,6 +584,18 @@ footer a:hover{color:var(--gold2);}
 <div class="ancient-bg" aria-hidden="true">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
 <defs>
+  <!-- animated gold shimmer gradient — synced to CSS goldShimmer (5s ease infinite) -->
+  <!-- sweep: bright spot travels left→right, matching .hero-title em behaviour -->
+  <linearGradient id="goldShim" gradientUnits="userSpaceOnUse" x1="-3200" y1="0" x2="1600" y2="0">
+    <stop offset="0%"   stop-color="#a07828"/>
+    <stop offset="25%"  stop-color="#c9a84c"/>
+    <stop offset="50%"  stop-color="#f0d060"/>
+    <stop offset="65%"  stop-color="#d4a83c"/>
+    <stop offset="80%"  stop-color="#c9a84c"/>
+    <stop offset="100%" stop-color="#a07828"/>
+    <animate attributeName="x1" from="-3200" to="3200" dur="5s" repeatCount="indefinite" calcMode="spline" keySplines="0.25 0.1 0.25 1"/>
+    <animate attributeName="x2" from="1600"  to="8000" dur="5s" repeatCount="indefinite" calcMode="spline" keySplines="0.25 0.1 0.25 1"/>
+  </linearGradient>
   <symbol id="iv-fish" viewBox="0 0 52 26">
     <path d="M6,13 Q18,2 32,13 Q18,24 6,13Z" fill="none" stroke="currentColor" stroke-width="2.2"/>
     <path d="M32,13 L48,5 M32,13 L48,21 M32,13 L50,13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -614,74 +626,74 @@ footer a:hover{color:var(--gold2);}
 </defs>
 
 <!-- ═══ ROW 1  y≈88 ═══ -->
-<text x="68"   y="92"  font-size="60" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".62" transform="rotate(-7,68,92)">𓋹</text>
-<text x="268"  y="82"  font-size="52" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="currentColor" opacity=".54" transform="rotate(5,268,82)">𒀭</text>
-<text x="468"  y="90"  font-size="56" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".58" transform="rotate(-10,468,90)">𓂀</text>
+<text x="68"   y="92"  font-size="60" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="url(#goldShim)" opacity=".62" transform="rotate(-7,68,92)">𓋹</text>
+<text x="268"  y="82"  font-size="52" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="url(#goldShim)" opacity=".54" transform="rotate(5,268,82)">𒀭</text>
+<text x="468"  y="90"  font-size="56" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="url(#goldShim)" opacity=".58" transform="rotate(-10,468,90)">𓂀</text>
 <g opacity=".50" transform="translate(672,50) rotate(6)"><use href="#iv-fish" width="58" height="28"/></g>
-<text x="888"  y="94"  font-size="58" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".56" transform="rotate(-5,888,94)">𓇳</text>
-<text x="1090" y="82"  font-size="50" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="currentColor" opacity=".50" transform="rotate(9,1090,82)">𒌓</text>
+<text x="888"  y="94"  font-size="58" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="url(#goldShim)" opacity=".56" transform="rotate(-5,888,94)">𓇳</text>
+<text x="1090" y="82"  font-size="50" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="url(#goldShim)" opacity=".50" transform="rotate(9,1090,82)">𒌓</text>
 <g opacity=".46" transform="translate(1288,46) rotate(-4)"><use href="#iv-3c" width="76" height="30"/></g>
-<text x="1510" y="92"  font-size="56" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".55" transform="rotate(10,1510,92)">𓅓</text>
+<text x="1510" y="92"  font-size="56" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="url(#goldShim)" opacity=".55" transform="rotate(10,1510,92)">𓅓</text>
 
 <!-- ═══ ROW 2  y≈226 ═══ -->
-<text x="52"   y="238" font-size="50" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="currentColor" opacity=".48" transform="rotate(-8,52,238)">𒀀</text>
-<text x="236"  y="244" font-size="56" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".55" transform="rotate(7,236,244)">𓆙</text>
+<text x="52"   y="238" font-size="50" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="url(#goldShim)" opacity=".48" transform="rotate(-8,52,238)">𒀀</text>
+<text x="236"  y="244" font-size="56" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="url(#goldShim)" opacity=".55" transform="rotate(7,236,244)">𓆙</text>
 <g opacity=".50" transform="translate(440,196) rotate(-6)"><use href="#iv-jar" width="40" height="55"/></g>
-<text x="642"  y="250" font-size="48" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="currentColor" opacity=".45" transform="rotate(13,642,250)">𒈗</text>
-<text x="848"  y="236" font-size="60" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".52" transform="rotate(-8,848,236)">𓆣</text>
+<text x="642"  y="250" font-size="48" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="url(#goldShim)" opacity=".45" transform="rotate(13,642,250)">𒈗</text>
+<text x="848"  y="236" font-size="60" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="url(#goldShim)" opacity=".52" transform="rotate(-8,848,236)">𓆣</text>
 <g opacity=".48" transform="translate(1058,194) rotate(9)"><use href="#iv-man" width="35" height="58"/></g>
-<text x="1268" y="248" font-size="50" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="currentColor" opacity=".46" transform="rotate(-5,1268,248)">𒂗</text>
-<text x="1494" y="234" font-size="48" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".44" transform="rotate(7,1494,234)">𓈖</text>
+<text x="1268" y="248" font-size="50" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="url(#goldShim)" opacity=".46" transform="rotate(-5,1268,248)">𒂗</text>
+<text x="1494" y="234" font-size="48" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="url(#goldShim)" opacity=".44" transform="rotate(7,1494,234)">𓈖</text>
 
 <!-- ═══ ROW 3  y≈364 ═══ -->
-<text x="78"   y="374" font-size="54" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".44" transform="rotate(9,78,374)">𓃭</text>
-<text x="264"  y="382" font-size="56" font-family="serif"           fill="currentColor" opacity=".46" transform="rotate(-11,264,382)">ॐ</text>
-<text x="468"  y="368" font-size="48" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="currentColor" opacity=".40" transform="rotate(7,468,368)">𒆳</text>
+<text x="78"   y="374" font-size="54" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="url(#goldShim)" opacity=".44" transform="rotate(9,78,374)">𓃭</text>
+<text x="264"  y="382" font-size="56" font-family="serif"           fill="url(#goldShim)" opacity=".46" transform="rotate(-11,264,382)">ॐ</text>
+<text x="468"  y="368" font-size="48" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="url(#goldShim)" opacity=".40" transform="rotate(7,468,368)">𒆳</text>
 <g opacity=".38" transform="translate(660,340) rotate(-5)"><use href="#iv-3c" width="72" height="28"/></g>
-<text x="870"  y="376" font-size="46" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".36" transform="rotate(-9,870,376)">𓋹</text>
-<text x="1066" y="366" font-size="50" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="currentColor" opacity=".40" transform="rotate(10,1066,366)">𒄀</text>
+<text x="870"  y="376" font-size="46" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="url(#goldShim)" opacity=".36" transform="rotate(-9,870,376)">𓋹</text>
+<text x="1066" y="366" font-size="50" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="url(#goldShim)" opacity=".40" transform="rotate(10,1066,366)">𒄀</text>
 <g opacity=".44" transform="translate(1270,334) rotate(6)"><use href="#iv-leaf" width="42" height="56"/></g>
-<text x="1506" y="374" font-size="52" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".42" transform="rotate(-6,1506,374)">𓂀</text>
+<text x="1506" y="374" font-size="52" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="url(#goldShim)" opacity=".42" transform="rotate(-6,1506,374)">𓂀</text>
 
 <!-- ═══ ROW 4  y≈502 ═══ -->
-<text x="52"   y="514" font-size="48" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="currentColor" opacity=".36" transform="rotate(-6,52,514)">𒌓</text>
+<text x="52"   y="514" font-size="48" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="url(#goldShim)" opacity=".36" transform="rotate(-6,52,514)">𒌓</text>
 <g opacity=".38" transform="translate(234,468) rotate(10)"><use href="#iv-jar" width="38" height="52"/></g>
-<text x="436"  y="510" font-size="52" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".34" transform="rotate(-7,436,510)">𓇳</text>
-<text x="636"  y="516" font-size="48" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="currentColor" opacity=".32" transform="rotate(8,636,516)">𒂗</text>
-<text x="844"  y="506" font-size="50" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".30" transform="rotate(-10,844,506)">𓅓</text>
+<text x="436"  y="510" font-size="52" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="url(#goldShim)" opacity=".34" transform="rotate(-7,436,510)">𓇳</text>
+<text x="636"  y="516" font-size="48" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="url(#goldShim)" opacity=".32" transform="rotate(8,636,516)">𒂗</text>
+<text x="844"  y="506" font-size="50" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="url(#goldShim)" opacity=".30" transform="rotate(-10,844,506)">𓅓</text>
 <g opacity=".34" transform="translate(1048,468) rotate(-7)"><use href="#iv-fish" width="56" height="26"/></g>
-<text x="1256" y="514" font-size="52" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".32" transform="rotate(7,1256,514)">𓆣</text>
-<text x="1480" y="508" font-size="46" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="currentColor" opacity=".30" transform="rotate(-5,1480,508)">𒈗</text>
+<text x="1256" y="514" font-size="52" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="url(#goldShim)" opacity=".32" transform="rotate(7,1256,514)">𓆣</text>
+<text x="1480" y="508" font-size="46" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="url(#goldShim)" opacity=".30" transform="rotate(-5,1480,508)">𒈗</text>
 
 <!-- ═══ ROW 5  y≈640 ═══ -->
-<text x="78"   y="650" font-size="50" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".28" transform="rotate(8,78,650)">𓆙</text>
-<text x="268"  y="658" font-size="52" font-family="serif"           fill="currentColor" opacity=".30" transform="rotate(-9,268,658)">ॐ</text>
-<text x="464"  y="644" font-size="46" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="currentColor" opacity=".26" transform="rotate(6,464,644)">𒆳</text>
+<text x="78"   y="650" font-size="50" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="url(#goldShim)" opacity=".28" transform="rotate(8,78,650)">𓆙</text>
+<text x="268"  y="658" font-size="52" font-family="serif"           fill="url(#goldShim)" opacity=".30" transform="rotate(-9,268,658)">ॐ</text>
+<text x="464"  y="644" font-size="46" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="url(#goldShim)" opacity=".26" transform="rotate(6,464,644)">𒆳</text>
 <g opacity=".28" transform="translate(654,610) rotate(-8)"><use href="#iv-man" width="34" height="56"/></g>
-<text x="856"  y="652" font-size="48" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".24" transform="rotate(-5,856,652)">𓃭</text>
+<text x="856"  y="652" font-size="48" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="url(#goldShim)" opacity=".24" transform="rotate(-5,856,652)">𓃭</text>
 <g opacity=".26" transform="translate(1048,612) rotate(9)"><use href="#iv-3c" width="70" height="28"/></g>
-<text x="1254" y="646" font-size="50" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".28" transform="rotate(-7,1254,646)">𓈖</text>
-<text x="1480" y="654" font-size="46" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="currentColor" opacity=".24" transform="rotate(5,1480,654)">𒄀</text>
+<text x="1254" y="646" font-size="50" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="url(#goldShim)" opacity=".28" transform="rotate(-7,1254,646)">𓈖</text>
+<text x="1480" y="654" font-size="46" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="url(#goldShim)" opacity=".24" transform="rotate(5,1480,654)">𒄀</text>
 
 <!-- ═══ ROW 6  y≈778  (mask softening) ═══ -->
-<text x="68"   y="786" font-size="46" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="currentColor" opacity=".20" transform="rotate(-5,68,786)">𒀭</text>
+<text x="68"   y="786" font-size="46" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="url(#goldShim)" opacity=".20" transform="rotate(-5,68,786)">𒀭</text>
 <g opacity=".20" transform="translate(240,748) rotate(8)"><use href="#iv-leaf" width="38" height="50"/></g>
-<text x="436"  y="782" font-size="48" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".18" transform="rotate(-10,436,782)">𓋹</text>
-<text x="630"  y="790" font-size="44" font-family="serif"           fill="currentColor" opacity=".20" transform="rotate(7,630,790)">ॐ</text>
+<text x="436"  y="782" font-size="48" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="url(#goldShim)" opacity=".18" transform="rotate(-10,436,782)">𓋹</text>
+<text x="630"  y="790" font-size="44" font-family="serif"           fill="url(#goldShim)" opacity=".20" transform="rotate(7,630,790)">ॐ</text>
 <g opacity=".18" transform="translate(820,752) rotate(-5)"><use href="#iv-fish" width="54" height="26"/></g>
-<text x="1040" y="784" font-size="48" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".18" transform="rotate(8,1040,784)">𓇳</text>
-<text x="1244" y="778" font-size="44" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="currentColor" opacity=".16" transform="rotate(-6,1244,778)">𒌓</text>
+<text x="1040" y="784" font-size="48" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="url(#goldShim)" opacity=".18" transform="rotate(8,1040,784)">𓇳</text>
+<text x="1244" y="778" font-size="44" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="url(#goldShim)" opacity=".16" transform="rotate(-6,1244,778)">𒌓</text>
 <g opacity=".16" transform="translate(1446,748) rotate(6)"><use href="#iv-jar" width="36" height="48"/></g>
 
 <!-- ═══ ROW 7  y≈916  (nearly masked out) ═══ -->
-<text x="128"  y="922" font-size="44" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".13" transform="rotate(6,128,922)">𓂀</text>
-<text x="348"  y="916" font-size="42" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="currentColor" opacity=".12" transform="rotate(-8,348,916)">𒂗</text>
+<text x="128"  y="922" font-size="44" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="url(#goldShim)" opacity=".13" transform="rotate(6,128,922)">𓂀</text>
+<text x="348"  y="916" font-size="42" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="url(#goldShim)" opacity=".12" transform="rotate(-8,348,916)">𒂗</text>
 <g opacity=".11" transform="translate(534,886) rotate(5)"><use href="#iv-3c" width="68" height="27"/></g>
-<text x="730"  y="920" font-size="46" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".12" transform="rotate(-5,730,920)">𓆣</text>
-<text x="944"  y="912" font-size="42" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="currentColor" opacity=".11" transform="rotate(9,944,912)">𒆳</text>
-<text x="1136" y="920" font-size="46" font-family="serif"           fill="currentColor" opacity=".11" transform="rotate(-7,1136,920)">ॐ</text>
+<text x="730"  y="920" font-size="46" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="url(#goldShim)" opacity=".12" transform="rotate(-5,730,920)">𓆣</text>
+<text x="944"  y="912" font-size="42" font-family="'Noto Sans Cuneiform','Segoe UI Historic','Akkadian',monospace" fill="url(#goldShim)" opacity=".11" transform="rotate(9,944,912)">𒆳</text>
+<text x="1136" y="920" font-size="46" font-family="serif"           fill="url(#goldShim)" opacity=".11" transform="rotate(-7,1136,920)">ॐ</text>
 <g opacity=".10" transform="translate(1330,884) rotate(6)"><use href="#iv-man" width="30" height="50"/></g>
-<text x="1524" y="916" font-size="44" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="currentColor" opacity=".10" transform="rotate(-5,1524,916)">𓈖</text>
+<text x="1524" y="916" font-size="44" font-family="'Noto Sans Egyptian Hieroglyphs','Segoe UI Historic','Aegyptus','JSeshFont',serif" fill="url(#goldShim)" opacity=".10" transform="rotate(-5,1524,916)">𓈖</text>
 
 </svg>
 </div>
