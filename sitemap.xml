@@ -528,4 +528,18 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://dssm.academy/p/the-woman-from-rakhigarhi</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://dssm.academy/p/before-the-silk-road</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
