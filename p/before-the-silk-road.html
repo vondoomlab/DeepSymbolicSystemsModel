@@ -49,6 +49,24 @@
   <a class="doi-link" href="https://doi.org/10.5281/zenodo.20369726" target="_blank" rel="noopener">↗ View on publisher site · doi:10.5281/zenodo.20369726</a><br/>
   <a class="download-link" href="https://dssm.academy/papers/72%20Before_the_Silk_Road_DSSM_v3.docx" download>↓ Download paper (DOCX · Free)</a>
   <div class="corpus-link">Part of the DSSM corpus — 72 open-access papers spanning cognitive archaeology, symbolic systems theory, and civilizational analysis.<br/>Full framework at <a href="https://dssm.academy/">dssm.academy</a></div>
+
+<div style="margin-top:2.4rem;padding-top:2rem;border-top:1px solid rgba(201,168,76,.12);display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
+  <span style="font-family:'Courier New',monospace;font-size:.7rem;letter-spacing:.1em;color:rgba(240,234,216,.35);text-transform:uppercase;">Share</span>
+  <a id="share-x" href="#" target="_blank" rel="noopener" style="font-family:'Courier New',monospace;font-size:.75rem;color:#c9a84c;border:1px solid rgba(201,168,76,.25);padding:.45rem .9rem;letter-spacing:.04em;">X / Twitter</a>
+  <a id="share-li" href="#" target="_blank" rel="noopener" style="font-family:'Courier New',monospace;font-size:.75rem;color:#c9a84c;border:1px solid rgba(201,168,76,.25);padding:.45rem .9rem;letter-spacing:.04em;">LinkedIn</a>
+  <a id="share-rd" href="#" target="_blank" rel="noopener" style="font-family:'Courier New',monospace;font-size:.75rem;color:#c9a84c;border:1px solid rgba(201,168,76,.25);padding:.45rem .9rem;letter-spacing:.04em;">Reddit</a>
+  <a id="share-cp" href="#" style="font-family:'Courier New',monospace;font-size:.75rem;color:#c9a84c;border:1px solid rgba(201,168,76,.25);padding:.45rem .9rem;letter-spacing:.04em;">Copy link</a>
+</div>
+<script>
+(function(){
+  var url=encodeURIComponent(window.location.href);
+  var txt=encodeURIComponent(document.title+' — Part of the DSSM corpus by Anthony Vondoom. dssm.academy');
+  document.getElementById('share-x').href='https://twitter.com/intent/tweet?url='+url+'&text='+txt;
+  document.getElementById('share-li').href='https://www.linkedin.com/sharing/share-offsite/?url='+url;
+  document.getElementById('share-rd').href='https://www.reddit.com/submit?url='+url+'&title='+txt;
+  document.getElementById('share-cp').addEventListener('click',function(e){e.preventDefault();navigator.clipboard.writeText(window.location.href).then(function(){var el=document.getElementById('share-cp');el.textContent='Copied!';setTimeout(function(){el.textContent='Copy link';},2000);});});
+})();
+</script>
 </main>
 <footer>© Anthony Vondoom · 2026 &nbsp;·&nbsp; Civilisation is not invented, it is rehearsed.</footer>
 </body>

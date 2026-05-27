@@ -1246,6 +1246,7 @@ footer a:hover{color:var(--gold2);}
 <section class="section rev" id="papers">
   <div class="sec-hd"><span class="sec-n">05</span><h2 class="sec-t" data-i18n="sec.papers">The Papers</h2></div>
   <p style="color:var(--mid);font-size:.95rem;max-width:520px;margin-bottom:2.8rem;line-height:1.85;" data-i18n="papers.intro">74 papers spanning cognitive archaeology, symbolic systems theory, and civilizational analysis. Click to view or download FREE</p>
+  <input id="papers-search" type="text" placeholder="Search papers…" autocomplete="off" style="width:100%;max-width:520px;background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.2);color:#f0ead8;font-family:'DM Mono',monospace;font-size:.82rem;padding:.7rem 1rem;outline:none;margin-bottom:1.6rem;letter-spacing:.03em;" oninput="searchPapers(this.value)"/>
   <div class="papers-tabs" id="papers-tabs">
     <button class="papers-tab active" data-filter="foundation"><span data-i18n="tab.foundation">Foundation</span> &nbsp;<span style="opacity:.4">7</span></button>
     <button class="papers-tab" data-filter="civilizations"><span data-i18n="tab.civilizations">Civilizations</span> &nbsp;<span style="opacity:.4">14</span></button>
@@ -1317,6 +1318,25 @@ footer a:hover{color:var(--gold2);}
     </a>
   </div>
 </section>
+
+<!-- SHARE -->
+<div style="border-top:1px solid rgba(201,168,76,.12);padding:2.4rem 3rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;background:rgba(4,3,2,.4);">
+  <span style="font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.1em;color:rgba(240,234,216,.35);text-transform:uppercase;">Share</span>
+  <a id="share-x" href="#" target="_blank" rel="noopener" style="font-family:'DM Mono',monospace;font-size:.75rem;color:#c9a84c;border:1px solid rgba(201,168,76,.25);padding:.45rem .9rem;letter-spacing:.04em;">X / Twitter</a>
+  <a id="share-li" href="#" target="_blank" rel="noopener" style="font-family:'DM Mono',monospace;font-size:.75rem;color:#c9a84c;border:1px solid rgba(201,168,76,.25);padding:.45rem .9rem;letter-spacing:.04em;">LinkedIn</a>
+  <a id="share-rd" href="#" target="_blank" rel="noopener" style="font-family:'DM Mono',monospace;font-size:.75rem;color:#c9a84c;border:1px solid rgba(201,168,76,.25);padding:.45rem .9rem;letter-spacing:.04em;">Reddit</a>
+  <a id="share-cp" href="#" style="font-family:'DM Mono',monospace;font-size:.75rem;color:#c9a84c;border:1px solid rgba(201,168,76,.25);padding:.45rem .9rem;letter-spacing:.04em;">Copy link</a>
+</div>
+<script>
+(function(){
+  var url=encodeURIComponent('https://dssm.academy/');
+  var txt=encodeURIComponent('The Deep Symbolic Systems Model — 74 open-access papers on cognitive archaeology, symbolic systems, and the deep structure of civilization. By Anthony Vondoom.');
+  document.getElementById('share-x').href='https://twitter.com/intent/tweet?url='+url+'&text='+txt;
+  document.getElementById('share-li').href='https://www.linkedin.com/sharing/share-offsite/?url='+url;
+  document.getElementById('share-rd').href='https://www.reddit.com/submit?url='+url+'&title='+txt;
+  document.getElementById('share-cp').addEventListener('click',function(e){e.preventDefault();navigator.clipboard.writeText('https://dssm.academy/').then(function(){var el=document.getElementById('share-cp');el.textContent='Copied!';setTimeout(function(){el.textContent='Copy link';},2000);});});
+})();
+</script>
 
 </div><!-- /wrap -->
 
@@ -1596,6 +1616,32 @@ function renderPapers(filter){
     </a>
   `).join('');
 }
+function searchPapers(q){
+  const list=document.getElementById('papers-list');
+  q=q.trim().toLowerCase();
+  if(!q){
+    const active=document.querySelector('.papers-tab.active');
+    renderPapers(active?active.dataset.filter:'foundation');
+    return;
+  }
+  const data=PAPERS.filter(p=>
+    p.title.toLowerCase().includes(q)||
+    p.desc.toLowerCase().includes(q)||
+    (p.doi&&p.doi.toLowerCase().includes(q))
+  );
+  list.innerHTML=data.length?data.map((p,i)=>`
+    <a class="paper-row" href="/p/${slugify(p.title)}" >
+      <span class="paper-num">${String(i+1).padStart(2,'0')}</span>
+      <span class="paper-body">
+        <span class="paper-title">${p.title}</span>
+        <span class="paper-desc">${p.desc}</span>
+        ${p.doi?`<span class="paper-doi">DOI: ${p.doi}</span>`:''}
+      </span>
+      <span class="paper-tag">${CAT_LABELS[p.cat]||p.cat}</span>
+      <span class="paper-dl">↗</span>
+    </a>
+  `).join(''):`<p style="color:rgba(240,234,216,.4);font-family:'DM Mono',monospace;font-size:.82rem;padding:2rem 0;">No papers found.</p>`;
+}
 renderPapers('foundation');
 
 document.getElementById('papers-tabs').addEventListener('click',e=>{
@@ -1603,6 +1649,7 @@ document.getElementById('papers-tabs').addEventListener('click',e=>{
   if(!tab)return;
   document.querySelectorAll('.papers-tab').forEach(t=>t.classList.remove('active'));
   tab.classList.add('active');
+  document.getElementById('papers-search').value='';
   renderPapers(tab.dataset.filter);
 });
 
