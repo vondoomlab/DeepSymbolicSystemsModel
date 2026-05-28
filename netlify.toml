@@ -1,0 +1,14 @@
+[[redirects]]
+  from   = "/index.html"
+  to     = "/"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "/p/*.html"
+  to     = "/p/:splat"
+  status = 301
+  force  = true
+
+[build]
+  publish = "."
