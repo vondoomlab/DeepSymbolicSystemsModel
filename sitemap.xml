@@ -789,4 +789,11 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://dssm.academy/p/folio-134-of-the-codex-atlanticus</loc>
+    <lastmod>2026-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
