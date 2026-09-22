@@ -90,8 +90,13 @@ a:hover{color:var(--cream)}
 #content{
   opacity:0;transition:opacity 1s ease;
   min-height:100vh;
+  background:var(--bg) url('/hearth/fresco.webp') center center / cover fixed;
 }
 #content.visible{opacity:1}
+@media(hover:none)and(pointer:coarse){
+  #content{background-attachment:scroll}
+}
+.content-overlay{background:rgba(43,24,16,.85);min-height:100vh}
 
 /* top bar */
 .topbar{padding:.9rem 2rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
@@ -149,6 +154,7 @@ footer{border-top:1px solid var(--border);padding:1.2rem 2rem;text-align:center;
 
 <!-- MAIN CONTENT -->
 <div id="content">
+<div class="content-overlay">
   <div class="topbar">
     <a class="topbar-return" href="https://dssm.academy/">&larr; Return to DSSM Academy</a>
     <span class="topbar-label">Private &mdash; Not for distribution</span>
@@ -182,6 +188,7 @@ footer{border-top:1px solid var(--border);padding:1.2rem 2rem;text-align:center;
   </div>
 
   <footer>The Hearth &nbsp;&middot;&nbsp; Confidential &nbsp;&middot;&nbsp; &copy; Anthony Vondoom 2026</footer>
+</div><!-- /.content-overlay -->
 </div>
 
 <script>
