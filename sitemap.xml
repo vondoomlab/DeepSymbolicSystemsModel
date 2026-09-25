@@ -810,4 +810,18 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://dssm.academy/p/a-fixed-claim-on-a-shrinking-supply-ai-data-centres-water-stress-and-lock-in</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://dssm.academy/p/enough-for-both-ai-water-and-where-data-centres-are-built</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
