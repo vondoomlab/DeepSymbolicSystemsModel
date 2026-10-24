@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Applied Research &mdash; Anthony Vondoom</title>
+<meta name="description" content="Policy papers, kitchen guides, and applied research by Anthony Vondoom — culinary and policy work outside the DSSM corpus."/>
+<meta name="author" content="Anthony Vondoom"/>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#F3ECDA;
+  --ink:#1C1410;
+  --mid:#5C4A38;
+  --light:#8A7560;
+  --gold:#7A5C2E;
+  --border:rgba(100,70,30,.14);
+  --border2:rgba(100,70,30,.22);
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;min-height:100vh;display:flex;flex-direction:column}
+a{color:var(--gold);text-decoration:none}
+a:hover{color:var(--ink)}
+
+nav{
+  border-bottom:1px solid var(--border);
+  padding:1.1rem 2.4rem;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.nav-back{
+  font-family:'Courier New',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--light);
+}
+.nav-back:hover{color:var(--gold)}
+.nav-title{
+  font-family:'Courier New',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--light);
+}
+
+main{flex:1;max-width:1000px;margin:0 auto;padding:5rem 2rem 7rem;width:100%}
+
+.page-label{
+  font-family:'Courier New',monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold);display:block;margin-bottom:1rem;
+}
+.page-title{
+  font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:normal;letter-spacing:.01em;
+  color:var(--ink);line-height:1.2;margin-bottom:1.6rem;
+}
+.page-intro{
+  font-size:1rem;line-height:1.9;color:var(--mid);max-width:680px;margin-bottom:4.5rem;text-align:justify;
+}
+
+/* ── CATEGORY HEADING ── */
+.cat-heading{
+  display:flex;align-items:center;gap:1.4rem;
+  margin-bottom:2.4rem;
+}
+.cat-heading-line{flex:1;height:1px;background:var(--border2)}
+.cat-heading-label{
+  font-family:'Courier New',monospace;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold);white-space:nowrap;
+}
+
+/* ── CARD GRID ── */
+.cards{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:1.6rem;
+  margin-bottom:5rem;
+}
+.card{
+  border:1px solid var(--border2);padding:2rem;
+  display:flex;flex-direction:column;gap:.9rem;
+  transition:border-color .2s,background .2s;
+}
+.card:hover{border-color:var(--gold);background:rgba(122,92,46,.04)}
+.card-type{
+  font-family:'Courier New',monospace;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold);
+}
+.card-title{font-size:.98rem;line-height:1.35;color:var(--ink)}
+.card-desc{font-size:.84rem;line-height:1.7;color:var(--light);flex:1;text-align:justify}
+.card-action{
+  margin-top:auto;padding-top:1rem;
+  font-family:'Courier New',monospace;font-size:.68rem;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--gold);display:inline-flex;align-items:center;gap:.4rem;
+}
+.card:hover .card-action{color:var(--ink)}
+
+footer{
+  border-top:1px solid var(--border);padding:1.8rem 2.4rem;
+  display:flex;justify-content:space-between;align-items:center;
+  font-family:'Courier New',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--light);flex-wrap:wrap;gap:1rem;
+}
+footer a{color:var(--light)}
+footer a:hover{color:var(--gold)}
+
+@media(max-width:480px){
+  nav{padding:.9rem 1.2rem}
+  main{padding:3.5rem 1.2rem 5rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-back" href="/anthony-vondoom">&larr; Anthony Vondoom</a>
+  <span class="nav-title">Applied Research</span>
+</nav>
+
+<main>
+  <span class="page-label">Anthony Vondoom</span>
+  <h1 class="page-title">Applied Research</h1>
+  <p class="page-intro">Alongside the DSSM corpus, I have published policy papers, practical kitchen guides, and applied research on food production and digital governance. These are collected here by category.</p>
+
+  <!-- POLICY -->
+  <div class="cat-heading">
+    <span class="cat-heading-label">Policy</span>
+    <div class="cat-heading-line"></div>
+  </div>
+  <div class="cards">
+
+    <a class="card" href="https://dssm.academy/p/a-fixed-claim-on-a-shrinking-supply-ai-data-centres-water-stress-and-lock-in">
+      <div class="card-type">Policy Paper &nbsp;&middot;&nbsp; 30 pages</div>
+      <div class="card-title">A Fixed Claim on a Shrinking Supply: AI Data Centres, Water Stress and Lock-In</div>
+      <div class="card-desc">AI data centres account for roughly 0.14% of global freshwater withdrawals — far less than farming or leaking pipes. The real risk is where they are being built: more than half of the world&rsquo;s data-centre hubs sit in high water-stress regions, and their location fixes their water source for decades. This paper maps the evidence, examines the Nile basin as a case study, and proposes three tracks to reduce lock-in.</div>
+      <span class="card-action">&#8594; &nbsp;Read Paper</span>
+    </a>
+
+    <a class="card" href="https://dssm.academy/p/enough-for-both-ai-water-and-where-data-centres-are-built">
+      <div class="card-type">Public Summary &nbsp;&middot;&nbsp; 8 pages</div>
+      <div class="card-title">Enough for Both: AI, Water and Where Data Centres Are Built</div>
+      <div class="card-desc">A public-facing summary of the above. Written for a general audience, it argues that AI is not draining the world&rsquo;s water — the problem is siting, and the tools to fix it already exist. Uses Egypt and the Nile as an illustrative case and outlines three practical measures.</div>
+      <span class="card-action">&#8594; &nbsp;Read Paper</span>
+    </a>
+
+    <a class="card" href="https://dssm.academy/p/sri-lankas-social-media-ban-wont-stop-predators">
+      <div class="card-type">Policy Paper &nbsp;&middot;&nbsp; 21 pages</div>
+      <div class="card-title">Sri Lanka&rsquo;s Social Media Ban Won&rsquo;t Stop Predators</div>
+      <div class="card-desc">Parliament&rsquo;s minimum-age law checks a birthdate, not a person. This paper uses complaint data, investigative reporting, and Australia&rsquo;s own evaluation of a comparable ban to show why it fails — and what would actually close the loop: prosecution of adults and verified-identity accountability rather than age gates that any child can bypass.</div>
+      <span class="card-action">&#8594; &nbsp;Read Paper</span>
+    </a>
+
+  </div>
+
+  <!-- CULINARY -->
+  <div class="cat-heading">
+    <span class="cat-heading-label">Culinary</span>
+    <div class="cat-heading-line"></div>
+  </div>
+  <div class="cards">
+
+    <a class="card" href="/anthony-vondoom/Staff_Food_Safety_Guide_2026.pdf" download>
+      <div class="card-type">Operational Guide &nbsp;&middot;&nbsp; 3 pages</div>
+      <div class="card-title">Staff Food Safety Guide 2026</div>
+      <div class="card-desc">A practical kitchen team guide written for multilingual brigade use. Covers handwashing, temperature control, cross-contamination, storage hierarchy, and personal hygiene — written plainly enough for a new commis and precisely enough to meet HACCP standards. Free to download and adapt.</div>
+      <span class="card-action">&#8595; &nbsp;Download PDF</span>
+    </a>
+
+    <a class="card" href="https://dssm.academy/p/why-we-cooked-food-preference-accidental-discovery-and-what-the-evidence-cannot-">
+      <div class="card-type">Research Paper &nbsp;&middot;&nbsp; Peer-Reviewed</div>
+      <div class="card-title">Why We Cooked: Food Preference, Accidental Discovery, and What the Evidence Cannot Yet Explain</div>
+      <div class="card-desc">Cooking is usually explained by what it gave hominins — more energy, smaller guts, larger brains. Why hominins cooked at all receives less attention. This paper reviews the ape preference evidence, makes the case for deliberate repetition of an accidental discovery, and sets out an experiment to settle what current data leaves open.</div>
+      <span class="card-action">&#8594; &nbsp;Read Paper</span>
+    </a>
+
+  </div>
+
+</main>
+
+<footer>
+  <span>&copy; Anthony Vondoom &middot; 2026</span>
+  <a href="https://dssm.academy/">DSSM Academy</a>
+</footer>
+
+</body>
+</html>
