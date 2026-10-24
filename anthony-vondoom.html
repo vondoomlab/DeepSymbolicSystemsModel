@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Anthony Vondoom &mdash; Chef, Researcher, Author</title>
-<meta name="description" content="Anthony Vondoom — Chef De Cuisine, independent researcher, and author of the Deep Symbolic Systems Model. Based between Europe and Sri Lanka."/>
+<meta name="description" content="Anthony Vondoom — Chef De Cuisine, independent researcher, and author of the Deep Symbolic Systems Model. Born in Sri Lanka. Based between Europe and Egypt."/>
 <meta name="author" content="Anthony Vondoom"/>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
 <meta property="og:title" content="Anthony Vondoom"/>
@@ -36,7 +36,7 @@ a:hover{color:var(--ink)}
   padding:.9rem 2.4rem;
   display:flex;align-items:center;justify-content:space-between;
   background:transparent;
-  transition:background .35s ease, box-shadow .35s ease;
+  transition:background .35s ease,box-shadow .35s ease;
 }
 #site-nav.scrolled{
   background:rgba(242,237,227,.96);
@@ -57,10 +57,7 @@ a:hover{color:var(--ink)}
 .nav-sections a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--gold);transition:width .3s}
 .nav-sections a:hover{color:var(--gold)}
 .nav-sections a:hover::after{width:100%}
-@media(max-width:680px){
-  .nav-sections{gap:1rem;font-size:.52rem}
-  #site-nav{padding:.8rem 1.2rem}
-}
+@media(max-width:680px){.nav-sections{gap:1rem;font-size:.52rem}#site-nav{padding:.8rem 1.2rem}}
 @media(max-width:480px){.nav-sections{display:none}}
 
 /* ── HERO ── */
@@ -68,7 +65,6 @@ a:hover{color:var(--ink)}
   min-height:100vh;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   text-align:center;padding:6rem 2rem 4rem;
-  background:var(--bg);
   position:relative;
 }
 .hero-emblem{
@@ -89,7 +85,7 @@ a:hover{color:var(--ink)}
 .hero-motto{
   font-style:italic;font-size:1rem;color:var(--mid);
   opacity:0;animation:fadeUp 1s .9s forwards;
-  margin-bottom:3.5rem;
+  margin-bottom:3.5rem;letter-spacing:.04em;
 }
 .scroll-hint{
   font-family:'Courier New',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;
@@ -105,8 +101,8 @@ a:hover{color:var(--ink)}
 }
 
 /* ── SECTION BASE ── */
-section{padding:7rem 2rem;max-width:1000px;margin:0 auto;width:100%}
 .section-wrap{padding:7rem 0;border-top:1px solid var(--border)}
+section{padding:0 2rem;max-width:1000px;margin:0 auto;width:100%}
 .section-label{
   font-family:'Courier New',monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;
   color:var(--gold);margin-bottom:1rem;display:block;
@@ -118,43 +114,52 @@ section{padding:7rem 2rem;max-width:1000px;margin:0 auto;width:100%}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
 
-/* ── ABOUT ── */
-.about-grid{display:grid;grid-template-columns:280px 1fr;gap:4rem;align-items:start}
-.about-portrait{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;filter:grayscale(100%);border:1px solid var(--border2)}
-.about-text p{font-size:1.05rem;line-height:1.9;color:var(--mid);margin-bottom:1.4rem}
-.about-text p:last-child{margin-bottom:0}
+/* ── MY STORY ── */
+.story-grid{display:grid;grid-template-columns:260px 1fr;gap:4rem;align-items:start}
+.story-portrait{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;filter:grayscale(100%);border:1px solid var(--border2)}
+.story-text p{font-size:1rem;line-height:1.95;color:var(--mid);margin-bottom:1.4rem}
+.story-text p:last-child{margin-bottom:0}
+.story-text p strong{color:var(--ink);font-weight:normal;font-style:italic}
+.story-text .story-bridge{
+  margin-top:2.2rem;padding-top:1.8rem;border-top:1px solid var(--border);
+  font-size:.88rem;line-height:1.85;color:var(--light);font-style:italic;
+}
 @media(max-width:720px){
-  .about-grid{grid-template-columns:1fr}
-  .about-portrait{max-width:240px}
+  .story-grid{grid-template-columns:1fr}
+  .story-portrait{max-width:220px}
 }
 
 /* ── CULINARY ── */
 .culinary-bg{background:var(--bg2)}
-.timeline{display:flex;flex-direction:column;gap:0}
+.timeline{display:flex;flex-direction:column}
 .timeline-item{
-  display:grid;grid-template-columns:120px 1fr;gap:2rem;
+  display:grid;grid-template-columns:140px 1fr;gap:2rem;
   padding:2rem 0;border-bottom:1px solid var(--border);
 }
 .timeline-item:last-child{border-bottom:none}
-.tl-year{
-  font-family:'Courier New',monospace;font-size:.72rem;letter-spacing:.1em;
-  color:var(--gold);padding-top:.15rem;
-}
-.tl-title{font-size:1.05rem;margin-bottom:.4rem;color:var(--ink)}
-.tl-desc{font-size:.9rem;line-height:1.75;color:var(--mid)}
+.tl-year{font-family:'Courier New',monospace;font-size:.7rem;letter-spacing:.1em;color:var(--gold);padding-top:.15rem}
+.tl-role{font-size:.7rem;font-family:'Courier New',monospace;letter-spacing:.04em;color:var(--light);margin-bottom:.35rem;text-transform:uppercase}
+.tl-title{font-size:1.02rem;margin-bottom:.45rem;color:var(--ink)}
+.tl-desc{font-size:.9rem;line-height:1.78;color:var(--mid)}
 @media(max-width:540px){
   .timeline-item{grid-template-columns:1fr}
   .tl-year{padding-top:0}
 }
 
 /* ── RESEARCH ── */
-.research-intro{font-size:1.1rem;line-height:1.9;color:var(--mid);max-width:640px;margin-bottom:2.8rem}
-.research-stat{display:inline-block;margin-right:3rem;margin-bottom:1.4rem}
-.rs-num{display:block;font-size:2.6rem;font-weight:normal;color:var(--gold);letter-spacing:-.02em;line-height:1}
-.rs-lbl{font-family:'Courier New',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--light)}
+.research-intro{font-size:1.05rem;line-height:1.9;color:var(--mid);max-width:680px;margin-bottom:2.8rem}
+.research-stats{display:flex;flex-wrap:wrap;gap:3rem;margin-bottom:2.8rem}
+.research-stat{}
+.rs-num{display:block;font-size:2.4rem;font-weight:normal;color:var(--gold);letter-spacing:-.02em;line-height:1}
+.rs-lbl{font-family:'Courier New',monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--light)}
+.pub-list{margin-bottom:2.4rem}
+.pub-item{padding:.9rem 0;border-bottom:1px solid var(--border);font-size:.85rem;line-height:1.75;color:var(--mid)}
+.pub-item:first-child{border-top:1px solid var(--border)}
+.pub-item a{color:var(--gold)}
+.pub-label{font-family:'Courier New',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.3rem}
 .research-link{
-  display:inline-flex;align-items:center;gap:.6rem;margin-top:2rem;
-  font-family:'Courier New',monospace;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-family:'Courier New',monospace;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;
   color:var(--gold);border:1px solid var(--border2);padding:.8rem 1.4rem;
   transition:background .2s,color .2s;
 }
@@ -162,25 +167,27 @@ section{padding:7rem 2rem;max-width:1000px;margin:0 auto;width:100%}
 
 /* ── EMBLEM ── */
 .emblem-bg{background:var(--bg2)}
-.emblem-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
-.emblem-img-wrap{text-align:center}
-.emblem-img-wrap img{width:100%;max-width:360px}
-.emblem-elements{display:flex;flex-direction:column;gap:1.8rem}
+.emblem-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.emblem-img-wrap{text-align:center;position:sticky;top:7rem}
+.emblem-img-wrap img{width:100%;max-width:340px}
+.emblem-elements{display:flex;flex-direction:column;gap:2.2rem}
 .emblem-el{}
 .el-label{
-  font-family:'Courier New',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;
+  font-family:'Courier New',monospace;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;
   color:var(--gold);margin-bottom:.35rem;display:block;
 }
-.el-title{font-size:1rem;margin-bottom:.3rem;color:var(--ink)}
-.el-desc{font-size:.88rem;line-height:1.75;color:var(--mid)}
+.el-title{font-size:1rem;margin-bottom:.35rem;color:var(--ink)}
+.el-desc{font-size:.88rem;line-height:1.8;color:var(--mid)}
+.emblem-intro{font-size:1rem;line-height:1.9;color:var(--mid);margin-bottom:2.8rem;max-width:660px}
 .motto-display{
-  margin-top:2.8rem;padding-top:2rem;border-top:1px solid var(--border);
-  font-style:italic;font-size:1.3rem;color:var(--gold);letter-spacing:.06em;
+  margin-top:2rem;padding:1.8rem;border:1px solid var(--border2);text-align:center;
 }
-.motto-translation{font-family:'Courier New',monospace;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--light);margin-top:.4rem;display:block;font-style:normal}
+.motto-latin{font-style:italic;font-size:1.5rem;color:var(--gold);letter-spacing:.06em;display:block;margin-bottom:.5rem}
+.motto-translation{font-family:'Courier New',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--light)}
 @media(max-width:720px){
   .emblem-layout{grid-template-columns:1fr}
-  .emblem-img-wrap img{max-width:260px}
+  .emblem-img-wrap{position:static}
+  .emblem-img-wrap img{max-width:240px}
 }
 
 /* ── DOCUMENTS ── */
@@ -191,10 +198,7 @@ section{padding:7rem 2rem;max-width:1000px;margin:0 auto;width:100%}
   transition:border-color .2s,background .2s;
 }
 .doc-card:hover{border-color:var(--gold);background:rgba(122,92,46,.04)}
-.doc-type{
-  font-family:'Courier New',monospace;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--gold);
-}
+.doc-type{font-family:'Courier New',monospace;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
 .doc-name{font-size:.95rem;color:var(--ink)}
 .doc-desc{font-size:.82rem;line-height:1.65;color:var(--light)}
 .doc-dl{
@@ -216,8 +220,7 @@ section{padding:7rem 2rem;max-width:1000px;margin:0 auto;width:100%}
 
 /* ── FOOTER ── */
 footer{
-  border-top:1px solid var(--border);
-  padding:2rem 2.4rem;
+  border-top:1px solid var(--border);padding:2rem 2.4rem;
   display:flex;justify-content:space-between;align-items:center;
   font-family:'Courier New',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;
   color:var(--light);flex-wrap:wrap;gap:1rem;
@@ -232,7 +235,7 @@ footer a:hover{color:var(--gold)}
 <nav id="site-nav">
   <a class="nav-home" href="https://dssm.academy/">&larr; DSSM Academy</a>
   <div class="nav-sections">
-    <a href="#about">About</a>
+    <a href="#my-story">My Story</a>
     <a href="#culinary">Culinary</a>
     <a href="#research">Research</a>
     <a href="#emblem">Emblem</a>
@@ -246,23 +249,26 @@ footer a:hover{color:var(--gold)}
   <img class="hero-emblem" src="/anthony-vondoom/emblem.webp" alt="Vondoom Family Emblem"/>
   <h1 class="hero-name">Anthony Vondoom</h1>
   <div class="hero-tagline">Chef &nbsp;&middot;&nbsp; Researcher &nbsp;&middot;&nbsp; Author</div>
-  <p class="hero-motto">[Placeholder tagline — one sentence about who you are and what drives you]</p>
+  <p class="hero-motto">Fide et Commercio</p>
   <div class="scroll-hint">Scroll<span></span></div>
 </div>
 
-<!-- ABOUT -->
-<div class="section-wrap" id="about">
+<!-- MY STORY -->
+<div class="section-wrap" id="my-story">
 <section>
   <div class="reveal">
-    <span class="section-label">About</span>
-    <h2 class="section-title">About the Author</h2>
+    <span class="section-label">My Story</span>
+    <h2 class="section-title">From Piliyandala to the World</h2>
   </div>
-  <div class="about-grid reveal">
-    <img class="about-portrait" src="/anthony-vondoom/portrait.jpg" alt="Anthony Vondoom"/>
-    <div class="about-text">
-      <p>[Placeholder — opening paragraph. Who you are, where you come from, what the thread is between your work as a chef and your work as a researcher.]</p>
-      <p>[Placeholder — second paragraph. Your background, the path you've taken, what drives the research and the cooking. What connects the hearth to the DSSM.]</p>
-      <p>[Placeholder — third paragraph. Where you are now. The Hearth, the corpus, what's next. The family, the emblem, the long arc.]</p>
+  <div class="story-grid">
+    <img class="story-portrait reveal" src="/anthony-vondoom/portrait.jpg" alt="Anthony Vondoom"/>
+    <div class="story-text">
+      <p class="reveal">I was born in Sri Lanka and grew up in Piliyandala, where I attended Somaweera Chandrasiri Vidyalaya. A scholarship from the Grade 5 exam took me to Nalanda College in Colombo, and during those years I also earned a diploma in graphic design. As the civil war grew stronger, my father decided the family should join him in Sirmione — a beautiful town on Lake Garda in Italy.</p>
+      <p class="reveal">I arrived at 16 speaking only English and Sinhala. On our second day, walking through the old town, we met Beppe Bignotti, who already knew my father from the restaurant nearby where he worked as a chef de partie. Beppe suggested I come in for some extra shifts as an apprentice. I went the next day and enjoyed it, but my mother didn't like me working until 23:00, so Beppe hired me as an apprentice storekeeper instead, and I took night classes to learn Italian.</p>
+      <p class="reveal">The job grew from there. Angelo, Beppe&rsquo;s son, asked his father to let me learn pizza-making. At 17 or 18 I started working alongside Angelo, and in the evenings I attended middle school in Rivoltella to earn my licenza media, which opened the door to Italian high school. Once my Italian was solid, I left school and joined the Bignotti gelateria full time as an apprentice gelato maker. Without realising it, I was being trained in fermentation and flavour profiles, which has served me ever since.</p>
+      <p class="reveal">After the gelateria I moved to boat rental outside the Sirmione castle, running front desk operations, managing a fleet, and building a team. Then Princess Cruises, then Nikki Beach in Sardinia, then a recruiting agency offered me a stage in Egypt with Veratour. I accepted without hesitation, because I had always wanted to live there. In Egypt I visited many historic sites, and I finally started writing down my research.</p>
+      <p class="reveal">I am now an independent researcher in cognitive archaeology and the creator of the <strong>Deep Symbolic Systems Model (DSSM)</strong> — a framework for how societies stabilise shared practices into rituals, institutions, and eventually monuments and writing. My corpus has more than 100 open-access papers across OSF, Zenodo, SSRN and Academia.edu, and three peer-reviewed publications with Egyptian universities.</p>
+      <p class="reveal story-bridge">Alongside the research, I have begun tracing where my own family actually comes from. My surname &mdash; <em>Anthonam Hettige</em>, later shortened to Anthony Vondoom &mdash; carries the story of a merchant house navigating centuries of colonial encounter in Sri Lanka. That investigation led me to commission the family emblem below. It is a work in progress, as is the research behind it.</p>
     </div>
   </div>
 </section>
@@ -277,31 +283,51 @@ footer a:hover{color:var(--gold)}
   </div>
   <div class="timeline">
     <div class="timeline-item reveal">
-      <div class="tl-year">Present</div>
+      <div class="tl-year">2024 &ndash; Present</div>
       <div>
-        <div class="tl-title">The Hearth — Founder &amp; Executive Concept Chef</div>
-        <div class="tl-desc">[Placeholder — describe The Hearth concept: live-fire dining in Sri Lanka, what makes it distinctive, where it stands now.]</div>
+        <div class="tl-role">Chef de Cuisine</div>
+        <div class="tl-title">Veratour &mdash; Egypt &amp; Greece</div>
+        <div class="tl-desc">Leading Italian production across rotating properties: Veraclub Reef Oasis and Veraclub Sharm (Sharm El-Sheikh), V Luxury (Hurghada), Jaz Oriental (Marsa Matrouh), Emerald Lagoon (Marsa Alam), and M/V Luxury (Ionian Sea). Each rotation means a new kitchen and a new team; re-establishing mise en place, stock, workflow and briefing from scratch is now a discipline in itself.</div>
       </div>
     </div>
     <div class="timeline-item reveal">
-      <div class="tl-year">[Year]</div>
+      <div class="tl-year">2023</div>
       <div>
-        <div class="tl-title">[Role] &mdash; [Establishment / Company]</div>
-        <div class="tl-desc">[Placeholder — describe this role, what you did, what you learned or built.]</div>
+        <div class="tl-role">Senior Chef de Partie</div>
+        <div class="tl-title">Nikki Beach &mdash; Porto Cervo, Sardinia</div>
+        <div class="tl-desc">Ran the kitchen of the marina outlet, an exclusive venue of around 100 covers a night, producing selected Nikki Beach signature dishes to the executive chef&rsquo;s specifications. Held the brand&rsquo;s standard for presentation, consistency and service pace through peak season.</div>
       </div>
     </div>
     <div class="timeline-item reveal">
-      <div class="tl-year">[Year]</div>
+      <div class="tl-year">2022</div>
       <div>
-        <div class="tl-title">[Role] &mdash; [Establishment / Company]</div>
-        <div class="tl-desc">[Placeholder — describe this role.]</div>
+        <div class="tl-role">Chef de Partie, Pizzeria</div>
+        <div class="tl-title">Princess Cruises &mdash; Discovery Princess</div>
+        <div class="tl-desc">Built and maintained daily production schedules against itinerary and passenger demand. Supervised the demi chef de partie and second commis through mise en place, production and baking, and trained staff in production methods, technique and presentation.</div>
       </div>
     </div>
     <div class="timeline-item reveal">
-      <div class="tl-year">[Year]</div>
+      <div class="tl-year">2021</div>
       <div>
-        <div class="tl-title">[Role] &mdash; [Establishment / Company]</div>
-        <div class="tl-desc">[Placeholder — describe this role. How cooking became research, or where the intellectual drive started alongside the kitchen work.]</div>
+        <div class="tl-role">Host &amp; PR Manager</div>
+        <div class="tl-title">Bar La Piccola &mdash; Sirmione</div>
+        <div class="tl-desc">Covered every front-of-house role in a three-person team on long shifts. Created all menus and venue materials, and ran social media and review responses.</div>
+      </div>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="tl-year">2015 &ndash; 2020</div>
+      <div>
+        <div class="tl-role">Boat Rental Supervisor</div>
+        <div class="tl-title">Garda Tours &mdash; Sirmione</div>
+        <div class="tl-desc">Directly ran the main rental point and oversaw two others. Managed a team of four, daily assignments, a fleet of 22 boats, mechanic coordination, cash and bookkeeping, and up to 200 calls a day.</div>
+      </div>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="tl-year">Earlier</div>
+      <div>
+        <div class="tl-role">Apprentice &mdash; Gelato, Pizza, Kitchen</div>
+        <div class="tl-title">Bignotti Family &mdash; Sirmione</div>
+        <div class="tl-desc">From storekeeper to pizza maker to gelato maker over several years with the Bignotti family. Trained in fermentation and flavour profiles in the gelateria — an education I didn&rsquo;t fully recognise until years later in professional kitchens.</div>
       </div>
     </div>
   </div>
@@ -315,11 +341,25 @@ footer a:hover{color:var(--gold)}
     <span class="section-label">Research</span>
     <h2 class="section-title">The Deep Symbolic Systems Model</h2>
   </div>
-  <p class="research-intro reveal">[Placeholder — one or two sentences explaining the DSSM in plain language for someone who hasn't read the papers. What it is, why it matters, what question it answers.]</p>
-  <div class="reveal">
+  <p class="research-intro reveal">The DSSM is a framework for understanding how human societies stabilise shared practices — cooking, ritual, architecture, writing — into the symbolic infrastructure that holds a civilisation together across generations. It grew out of fieldwork in Egypt and has since been tested across five civilisations.</p>
+  <div class="research-stats reveal">
     <div class="research-stat"><span class="rs-num">121</span><span class="rs-lbl">Published papers</span></div>
     <div class="research-stat"><span class="rs-num">5</span><span class="rs-lbl">Civilisations mapped</span></div>
-    <div class="research-stat"><span class="rs-num">6</span><span class="rs-lbl">FCP observables</span></div>
+    <div class="research-stat"><span class="rs-num">3</span><span class="rs-lbl">Peer-reviewed journals</span></div>
+  </div>
+  <div class="pub-list reveal">
+    <div class="pub-item">
+      <span class="pub-label">Peer-Reviewed &mdash; 2027</span>
+      Vondoom, A. &ldquo;Cognitive Foundations of Early Egyptian Civilization: Insights from the Deep Symbolic Systems Model (DSSM).&rdquo; <em>IWNW</em>, Faculty of Archaeology, Ain Shams University, Vol.&nbsp;6: 1&ndash;46. <a href="https://doi.org/10.21608/iwnw.2026.464676.1075" target="_blank" rel="noopener">10.21608/iwnw.2026.464676.1075</a>
+    </div>
+    <div class="pub-item">
+      <span class="pub-label">Peer-Reviewed &mdash; 2026</span>
+      Vondoom, A. &ldquo;Before the Monument: Cooking, Cognition, and the Social Origins of Civilization.&rdquo; <em>IJTAH</em>, Faculty of Tourism and Hotels, Beni-Suef University. <a href="https://doi.org/10.21608/IJTAH.2026.511445.1178" target="_blank" rel="noopener">10.21608/IJTAH.2026.511445.1178</a>
+    </div>
+    <div class="pub-item">
+      <span class="pub-label">Peer-Reviewed &mdash; 2026</span>
+      Vondoom, A. &ldquo;Absorption, Not Conquest: Symbolic Continuity and Its Limits Across Five Political Regimes at Tell el-Deir.&rdquo; <em>Journal of Egypt Heritage Association (Turath Misr)</em>, Vol.&nbsp;5(5): 80&ndash;103. <a href="https://doi.org/10.21608/mgtm.2026.524322.1060" target="_blank" rel="noopener">10.21608/mgtm.2026.524322.1060</a>
+    </div>
   </div>
   <a class="research-link reveal" href="https://dssm.academy/">Explore the full corpus &rarr;</a>
 </section>
@@ -332,34 +372,38 @@ footer a:hover{color:var(--gold)}
     <span class="section-label">Family Emblem</span>
     <h2 class="section-title">Fide et Commercio</h2>
   </div>
+  <p class="emblem-intro reveal">My surname &mdash; <em>Anthonam Hettige</em> &mdash; is a Sinhala house name built from two parts: <em>Anthonam</em>, a Christian baptismal name derived from the Latin Antonius, taken by ancestors navigating Portuguese and Dutch colonial rule; and <em>Hettige</em>, meaning &ldquo;of the Hetti&rdquo; &mdash; the Sinhala form of Chetty, the merchant caste. Dutch-era land registers, a 1954 Ceylon Government Gazette and current genealogical records document these elements together. I am currently researching the full line. The emblem was commissioned to hold that story in a single image.</p>
   <div class="emblem-layout">
     <div class="emblem-img-wrap reveal">
-      <img src="/anthony-vondoom/emblem.webp" alt="Vondoom Family Emblem — Fide et Commercio"/>
+      <img src="/anthony-vondoom/emblem.webp" alt="Vondoom Family Emblem &mdash; Fide et Commercio"/>
     </div>
     <div class="emblem-elements">
       <div class="emblem-el reveal">
-        <span class="el-label">Left Supporter</span>
-        <div class="el-title">The Tiger</div>
-        <div class="el-desc">[Placeholder — what the tiger represents in the context of this family's history. Strength, a particular heritage, a geographic or cultural origin.]</div>
-      </div>
-      <div class="emblem-el reveal">
-        <span class="el-label">Right Supporter</span>
-        <div class="el-title">The Makara</div>
-        <div class="el-desc">[Placeholder — what the makara (sea-creature lion) represents. Maritime heritage, Sri Lankan connection, the bridge between worlds.]</div>
-      </div>
-      <div class="emblem-el reveal">
-        <span class="el-label">Central Shield</span>
+        <span class="el-label">Arms &mdash; The Shield</span>
         <div class="el-title">The Ship, the Cross, and the Scales</div>
-        <div class="el-desc">[Placeholder — the ship in the oval: voyaging and trade. The cross and the scales below it: faith and justice. What these three symbols together say about the family's identity and values.]</div>
+        <div class="el-desc">At the centre of the oval shield, a sailing ship moves across waves &mdash; the emblem of a merchant family whose trade routes crossed the Indian Ocean from the Coromandel Coast to the western ports of Ceylon. Below the ship, a Latin cross stands between a pair of balanced scales. The cross encodes the Christian baptismal name <em>Anthonam</em>, adopted under Portuguese rule and carried forward. The scales encode <em>Hettige</em>: the merchant&rsquo;s instrument, the measure of honest commerce, and the Chetty identity that the name carries into the present.</div>
+      </div>
+      <div class="emblem-el reveal">
+        <span class="el-label">Dexter Supporter</span>
+        <div class="el-title">The Tiger</div>
+        <div class="el-desc">The tiger stands to the left of the shield, rampant and jewelled &mdash; banded at the gorget and armleted in gold. In Sri Lankan and South Asian heraldic tradition, the tiger represents strength, sovereignty, and territorial origin. Here it anchors the emblem in the island: the Sinhala side of an identity that absorbed Portuguese names, Dutch registers, and English administration without losing its root.</div>
+      </div>
+      <div class="emblem-el reveal">
+        <span class="el-label">Sinister Supporter</span>
+        <div class="el-title">The Ornate Lion with Sword</div>
+        <div class="el-desc">To the right stands a lion whose body is covered in Eastern scrollwork, holding an upright sword. It is not a European heraldic lion; the ornamentation is drawn from South Asian decorative tradition. The sword it carries is both martial and judicial &mdash; the authority of the merchant who could defend his contracts. Together the two supporters frame a family that stood between worlds: the tiger rooted in Ceylon, the ornate lion facing outward toward trade.</div>
       </div>
       <div class="emblem-el reveal">
         <span class="el-label">Crest</span>
-        <div class="el-title">The Lotus and the Helm</div>
-        <div class="el-desc">[Placeholder — what sits at the top of the crest, and what it signifies. Eastern symbolism meeting Western heraldic form.]</div>
+        <div class="el-title">The Mace, the Turban, and the Lotus</div>
+        <div class="el-desc">Above the shield, a mace crosses behind a bejewelled turban &mdash; authority and Eastern dress, the visible markers of a merchant family of standing. Beside them, a lotus flower: in Buddhist and Hindu symbolic tradition, the lotus grows through still water and surfaces untouched, a figure for dignity maintained through difficult passage. It is the appropriate crest for a family that moved through four colonial regimes without losing its name.</div>
       </div>
       <div class="reveal">
-        <div class="motto-display">Fide et Commercio</div>
-        <span class="motto-translation">By Faith and Commerce</span>
+        <div class="motto-display">
+          <span class="motto-latin">Fide et Commercio</span>
+          <span class="motto-translation">By Faith and Commerce</span>
+        </div>
+        <p style="font-size:.85rem;line-height:1.8;color:var(--mid);margin-top:1.2rem">Four words that compress the double identity the surname carries: <em>Fide</em> &mdash; the faith encoded in <em>Anthonam</em>, the Christian baptismal name; <em>Commercio</em> &mdash; the commerce encoded in <em>Hettige</em>, the merchant house. The research into the full family line is ongoing.</p>
       </div>
     </div>
   </div>
@@ -376,19 +420,19 @@ footer a:hover{color:var(--gold)}
   <div class="docs-grid">
     <a class="doc-card reveal" href="/anthony-vondoom/Anthony_Vondoom_CV_2026.pdf" download>
       <div class="doc-type">Curriculum Vitae</div>
-      <div class="doc-name">Anthony Vondoom — CV 2026</div>
-      <div class="doc-desc">[Placeholder — one line describing what this CV covers: culinary career, research background, or both.]</div>
+      <div class="doc-name">Anthony Vondoom &mdash; CV 2026</div>
+      <div class="doc-desc">Culinary career, research background, and publications. Free to download.</div>
       <span class="doc-dl">&#8595; &nbsp;Download PDF</span>
     </a>
     <a class="doc-card reveal" href="https://dssm.academy/#papers">
       <div class="doc-type">Research Corpus</div>
       <div class="doc-name">121 Open-Access Papers</div>
-      <div class="doc-desc">The full DSSM corpus — cognitive archaeology, symbolic systems theory, and civilizational analysis. Free to read and download.</div>
+      <div class="doc-desc">The full DSSM corpus &mdash; cognitive archaeology, symbolic systems theory, and civilizational analysis. Free to read and download.</div>
       <span class="doc-dl">&#8594; &nbsp;View at DSSM Academy</span>
     </a>
     <a class="doc-card reveal" href="https://dssm.academy/the-hearth/">
       <div class="doc-type">Investor Deck</div>
-      <div class="doc-name">The Hearth — Concept &amp; Deck</div>
+      <div class="doc-name">The Hearth &mdash; Concept &amp; Deck</div>
       <div class="doc-desc">Live-fire dining in Sri Lanka. The full investor deck and concept overview.</div>
       <span class="doc-dl">&#8594; &nbsp;View The Hearth</span>
     </a>
@@ -403,7 +447,7 @@ footer a:hover{color:var(--gold)}
     <span class="section-label">Contact</span>
     <h2 class="section-title">Get in Touch</h2>
   </div>
-  <p class="contact-intro reveal">[Placeholder — a line about what kind of conversations you welcome: collaborations, culinary opportunities, research inquiries, The Hearth investors, or just a good conversation.]</p>
+  <p class="contact-intro reveal">For culinary enquiries, research collaborations, The Hearth investment discussions, or anything else &mdash; the address below is the right place to start.</p>
   <div class="contact-links reveal">
     <a class="contact-link" href="mailto:anthony.vondoom@outlook.com">Email</a>
     <a class="contact-link" href="https://www.linkedin.com/in/anthony-vondoom-7b14043a6/" target="_blank" rel="noopener">LinkedIn</a>
@@ -412,30 +456,22 @@ footer a:hover{color:var(--gold)}
 </section>
 </div>
 
-<!-- FOOTER -->
 <footer>
   <span>&copy; Anthony Vondoom &middot; 2026</span>
   <a href="https://dssm.academy/">DSSM Academy</a>
 </footer>
 
 <script>
-// Sticky nav
 (function(){
   var nav=document.getElementById('site-nav');
-  window.addEventListener('scroll',function(){
-    nav.classList.toggle('scrolled',window.scrollY>60);
-  },{passive:true});
+  window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>60);},{passive:true});
 })();
-
-// Reveal on scroll
 (function(){
   var els=document.querySelectorAll('.reveal');
   if(!els.length)return;
   var obs=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}
-    });
-  },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
+  },{threshold:.1,rootMargin:'0px 0px -40px 0px'});
   els.forEach(function(el){obs.observe(el);});
 })();
 </script>
